@@ -1,0 +1,65 @@
+Slot1,Slot2,Slot3,Slot4,Slot5,Slot6,Slot7,Slot8,Slot9,Slot10,Slot11,Slot12,Slot13,Slot14,Slot15,Slot16,Name
+e1,e28,e47,e63,e77,e103,e106,e107,e108,e112,e0,e0,Nothing,Nothing,Nothing,Nothing,Bale Weapon
+i11,i30,i13,i14,i6,i16,i31,i0,i0,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Bale Item
+e21,e83,e89,e104,e105,e106,e111,e156,e149,e150,e151,e157,Nothing,Nothing,Nothing,Nothing,Lohan Weapon
+i11,i37,i30,i13,i14,i7,i17,i31,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Lohan Item
+e2,e29,e78,e94,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Kazas Weapon
+i11,i37,i30,i10,i22,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Kazas Item
+e14,e48,e97,e103,e104,e105,e106,e107,e108,e109,e111,e112,e156,Nothing,Nothing,Nothing,Fletz Weapon
+i11,i57,i37,i30,i13,i14,i9,i24,i31,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Fletz Item
+e64,e84,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Donau Weapon
+i11,i37,i30,i13,i14,i28,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Donau Item
+e22,e41,e58,e107,e109,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Queen Fury Weapon
+i11,i57,i37,i30,i13,i14,i9,i18,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Queen Fury Item
+e3,e30,e35,e49,e65,e79,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Fueno Weapon
+i11,i57,i37,i30,i13,i31,i3,i17,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Fueno Item
+e15,e80,e95,e110,e115,e118,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Furni Weapon
+i39,i37,i30,i12,i15,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Furni Item
+e9,e23,e42,e54,e59,e81,e85,e98,e105,e108,e110,e74,Nothing,Nothing,Nothing,Nothing,Deningrand Weapon
+i39,i57,i37,i30,i12,i13,i14,i2,i15,i31,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Deningrad Item
+e36,e113,e114,e119,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Forest of Winglies Weapon
+i39,i37,i57,i30,i13,i14,i10,i24,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Forest of Winglies Item
+e24,e37,e55,e60,e117,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Vellweb Weapon
+i39,i57,i37,i30,i13,i14,i31,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Vellweb Item
+e5,e33,e43,e99,e113,e114,e118,e119,e120,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Ulara Weapon
+i39,i57,i37,i30,i31,i20,i23,i25,i26,i8,i33,Nothing,Nothing,Nothing,Nothing,Nothing,Ulara Item
+e115,e116,e117,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Rouge Weapon
+i39,i57,i37,i30,i13,i14,i20,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Rouge Item
+e6,e25,e38,e44,e51,e52,e56,e61,e67,e68,e69,e113,e114,e115,e116,e117,Moon Weapon
+i39,i57,i37,i30,i12,i13,i14,i20,i25,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Moon Item
+i11,i30,i2,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Hellena I
+e4,e10,e16,e31,e50,e66,e116,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Kashua Weapon
+i39,i57,i37,i30,i14,i31,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Kashua Item
+e142,e143,e146,e148,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Fletz Jewelry
+i11,i14,i3,i31,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Forest
+e153,e154,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Kazas Secret
+i11,i37,i30,i13,i14,i18,i5,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Volcano Villude
+e11,e17,e51,e52,e68,e69,e106,e108,e110,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Zenebatow Weapon
+i39,i37,i57,i30,i12,i13,i14,i31,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Zenebatos Item
+i11,i37,i30,i13,i26,i15,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Hellena II
+i11,i37,i30,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unknown
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unused 1
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unused 2
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unused 3
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unused 4
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unused 5
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unused 6
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,

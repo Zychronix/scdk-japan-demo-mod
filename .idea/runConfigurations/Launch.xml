@@ -1,10 +1,11 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Launch" type="Application" factoryName="Application">
-    <option name="ALTERNATIVE_JRE_PATH" value="17" />
+    <option name="ALTERNATIVE_JRE_PATH" value="corretto-21" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
     <option name="MAIN_CLASS_NAME" value="legend.game.Main" />
-    <option name="PROGRAM_PARAMETERS" value="-Xmx1g -Xms1g -ea" />
-    <option name="VM_PARAMETERS" value="-Dscdk=true" />
+    <module name="dragoon-modifier.main" />
+    <option name="PROGRAM_PARAMETERS" value="-Xms1g" />
+    <option name="VM_PARAMETERS" value="-Dscdk=true -Xmx2g -ea -Djoml.fastmath -Djoml.sinLookup -Djoml.useMathFma" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

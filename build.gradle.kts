@@ -2,16 +2,21 @@ import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
 
 plugins {
   id("java")
-  id("org.openjfx.javafxplugin") version "0.0.13"
+  id("java-library")
   id("com.github.johnrengelman.shadow") version "7.1.2"
+  id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
-group = "scdk-csv-stat-changer"
-version = "1.0-SNAPSHOT"
+group = "dragoon-modifier"
+version = "2.0-SNAPSHOT"
 
 java {
-  sourceCompatibility = JavaVersion.VERSION_17
-  targetCompatibility = JavaVersion.VERSION_17
+  sourceCompatibility = JavaVersion.VERSION_21
+  targetCompatibility = JavaVersion.VERSION_21
+}
+
+javafx {
+  modules("javafx.controls", "javafx.fxml")
 }
 
 // This is so it picks up new builds on jitpack
@@ -19,41 +24,18 @@ configurations.all {
   resolutionStrategy.cacheChangingModulesFor(0, "seconds")
 }
 
-val lwjglVersion = "3.2.3"
-var lwjglNatives = ""
-
-if(DefaultNativePlatform.getCurrentOperatingSystem().isWindows) {
-  lwjglNatives = "natives-windows"
-}
-
-if(DefaultNativePlatform.getCurrentOperatingSystem().isLinux) {
-  lwjglNatives = "natives-linux"
-}
-
-if(DefaultNativePlatform.getCurrentOperatingSystem().isMacOsX) {
-  lwjglNatives = "natives-macos"
-}
-
 repositories {
   mavenCentral()
   mavenLocal() // Uncomment to use mavenLocal version of LoD engine
-  maven { url = uri("https://jitpack.io") }
+//  maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
   implementation("legend:lod:snapshot") // Uncomment to use mavenLocal version of LoD engine (also comment out next line)
 //  implementation("com.github.Legend-of-Dragoon-Modding:Legend-of-Dragoon-Java:main-SNAPSHOT")
   implementation("com.opencsv:opencsv:5.7.1")
-  runtimeOnly("org.lwjgl", "lwjgl", classifier = lwjglNatives)
-  runtimeOnly("org.lwjgl", "lwjgl-glfw", classifier = lwjglNatives)
-  runtimeOnly("org.lwjgl", "lwjgl-nuklear", classifier = lwjglNatives)
-  runtimeOnly("org.lwjgl", "lwjgl-opengl", classifier = lwjglNatives)
-  runtimeOnly("org.lwjgl", "lwjgl-stb", classifier = lwjglNatives)
-}
-
-javafx {
-  version = "18.0.2"
-  modules("javafx.controls", "javafx.fxml")
+  api("org.legendofdragoon:mod-loader:2.0.2")
+  api("org.legendofdragoon:script-recompiler:0.3.0")
 }
 
 sourceSets {
@@ -76,6 +58,7 @@ buildscript {
 
 apply(plugin = "com.github.johnrengelman.shadow")
 apply(plugin = "java")
+apply(plugin = "org.openjfx.javafxplugin")
 
 tasks.jar {
   exclude("*.jar")

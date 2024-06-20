@@ -1,2 +1,2 @@
-rootProject.name = "scdk-csv-stat-changer"
+rootProject.name = "dragoon-modifier"
 

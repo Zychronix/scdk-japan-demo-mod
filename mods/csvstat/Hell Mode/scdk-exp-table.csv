@@ -1,4 +1,5 @@
 EXP To Next Level,Name
+0,Dart
 0,Dart Lv 0
 20,Dart Lv 1
 43,Dart Lv 2
@@ -59,7 +60,7 @@ EXP To Next Level,Name
 340224,Dart Lv 57
 360758,Dart Lv 58
 382000,Dart Lv 59
-0,Dart Lv 60
+0,Lavitz
 0,Lavitz Lv 0
 35,Lavitz Lv 1
 60,Lavitz Lv 2
@@ -120,7 +121,7 @@ EXP To Next Level,Name
 345327,Lavitz Lv 57
 366169,Lavitz Lv 58
 387730,Lavitz Lv 59
-0,Lavitz Lv 60
+0,Shana
 0,Shana Lv 0
 30,Shana Lv 1
 50,Shana Lv 2
@@ -181,7 +182,7 @@ EXP To Next Level,Name
 347028,Shana Lv 57
 367973,Shana Lv 58
 389640,Shana Lv 59
-0,Shana Lv 60
+0,Rose
 0,Rose Lv 0
 20,Rose Lv 1
 44,Rose Lv 2
@@ -242,7 +243,7 @@ EXP To Next Level,Name
 348049,Rose Lv 57
 369055,Rose Lv 58
 390786,Rose Lv 59
-0,Rose Lv 60
+0,Hashchel
 0,Haschel Lv 0
 20,Haschel Lv 1
 43,Haschel Lv 2
@@ -303,7 +304,7 @@ EXP To Next Level,Name
 343626,Haschel Lv 57
 364365,Haschel Lv 58
 385820,Haschel Lv 59
-0,Haschel Lv 60
+0,Albert
 0,Albert Lv 0
 35,Albert Lv 1
 60,Albert Lv 2
@@ -364,7 +365,7 @@ EXP To Next Level,Name
 345327,Albert Lv 57
 366169,Albert Lv 58
 387730,Albert Lv 59
-0,Albert Lv 60
+0,Meru
 0,Meru Lv 0
 20,Meru Lv 1
 43,Meru Lv 2
@@ -425,7 +426,7 @@ EXP To Next Level,Name
 344306,Meru Lv 57
 365087,Meru Lv 58
 386584,Meru Lv 59
-0,Meru Lv 60
+0,Kongol
 0,Kongol Lv0
 20,Kongol Lv1
 43,Kongol Lv2
@@ -486,7 +487,7 @@ EXP To Next Level,Name
 346007,Kongol Lv57
 366890,Kongol Lv58
 388494,Kongol Lv59
-0,Kongol Lv60
+0,Miranda
 0,??? Lv 0
 30,??? Lv 1
 50,??? Lv 2
@@ -547,4 +548,3 @@ EXP To Next Level,Name
 347028,??? Lv 57
 367973,??? Lv 58
 389640,??? Lv 59
-0,??? Lv 60

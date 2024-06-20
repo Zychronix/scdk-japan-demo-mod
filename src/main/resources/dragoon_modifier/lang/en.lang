@@ -1,0 +1,19 @@
+# Global config
+dragoon_modifier.name=Dragoon Modifier
+dragoon_modifier.config.difficulty.label=[DM]Difficulty Mode
+dragoon_modifier.config.faust_defeated.label=[DM]Fausts Defeated
+dragoon_modifier.config.hp_names.label=[DM]HP Names
+dragoon_modifier.config.hp_names.ON=On
+dragoon_modifier.config.hp_names.OFF=Off
+dragoon_modifier.config.enrage_mode.label=[DM]Enrage
+dragoon_modifier.config.enrage_mode.ON=On
+dragoon_modifier.config.enrage_mode.OFF=Off
+dragoon_modifier.config.flower_storm.label=[DM]Flower Storm Turns
+dragoon_modifier.config.elemental_bomb.label=[DM]Elemental Bomb
+dragoon_modifier.config.elemental_bomb.ON=On
+dragoon_modifier.config.elemental_bomb.OFF=Off
+dragoon_modifier.config.ultimate_boss.label=[DM]Ultimate Boss
+dragoon_modifier.config.ultimate_boss_defeated.label=[DM]Ultimates Done
+dragoon_modifier.config.damage_tracker.label=[DM]Damage Tracker
+dragoon_modifier.config.damage_tracker.ON=On
+dragoon_modifier.config.damage_tracker.OFF=Off
