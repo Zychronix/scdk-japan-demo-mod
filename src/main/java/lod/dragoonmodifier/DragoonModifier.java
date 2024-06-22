@@ -402,7 +402,95 @@ public class DragoonModifier {
     }
   }
 
-  @EventListener public void submapWArp(final SubmapWarpEvent event) {
+  @EventListener public void submapWarp(final SubmapWarpEvent event) {
+    final String difficulty = GameEngine.CONFIG.getConfig(DIFFICULTY.get());
+    if(submapCut_80052c30 == 676) {
+      event.gameState.items_2e9.clear();
+      event.gameState.items_2e9.add(REGISTRIES.items.getEntry("dragoon_modifier:i3").get());
+      event.gameState.items_2e9.add(REGISTRIES.items.getEntry("dragoon_modifier:i11").get());
+      event.gameState.items_2e9.add(REGISTRIES.items.getEntry("dragoon_modifier:i11").get());
+      event.gameState.items_2e9.add(REGISTRIES.items.getEntry("dragoon_modifier:i11").get());
+      event.gameState.items_2e9.add(REGISTRIES.items.getEntry("dragoon_modifier:i11").get());
+
+      final Map<EquipmentSlot, Equipment> dart = event.gameState.charData_32c[0].equipment_14;
+      dart.put(EquipmentSlot.WEAPON, REGISTRIES.equipment.getEntry("dragoon_modifier:e0").get());
+      dart.put(EquipmentSlot.HELMET, REGISTRIES.equipment.getEntry("dragoon_modifier:e76").get());
+      dart.put(EquipmentSlot.ARMOUR, REGISTRIES.equipment.getEntry("dragoon_modifier:e46").get());
+      dart.put(EquipmentSlot.BOOTS, REGISTRIES.equipment.getEntry("dragoon_modifier:e93").get());
+      dart.put(EquipmentSlot.ACCESSORY, REGISTRIES.equipment.getEntry("dragoon_modifier:e152").get());
+
+      final Map<EquipmentSlot, Equipment> lavitz = event.gameState.charData_32c[1].equipment_14;
+      lavitz.put(EquipmentSlot.WEAPON, REGISTRIES.equipment.getEntry("dragoon_modifier:e20").get());
+      lavitz.put(EquipmentSlot.HELMET, REGISTRIES.equipment.getEntry("dragoon_modifier:e77").get());
+      lavitz.put(EquipmentSlot.ARMOUR, REGISTRIES.equipment.getEntry("dragoon_modifier:e47").get());
+      lavitz.put(EquipmentSlot.BOOTS, REGISTRIES.equipment.getEntry("dragoon_modifier:e93").get());
+      lavitz.put(EquipmentSlot.ACCESSORY, REGISTRIES.equipment.getEntry("dragoon_modifier:e152").get());
+
+      final Map<EquipmentSlot, Equipment> shana = event.gameState.charData_32c[2].equipment_14;
+      shana.put(EquipmentSlot.WEAPON, REGISTRIES.equipment.getEntry("dragoon_modifier:e27").get());
+      shana.put(EquipmentSlot.HELMET, REGISTRIES.equipment.getEntry("dragoon_modifier:e82").get());
+      shana.put(EquipmentSlot.ARMOUR, REGISTRIES.equipment.getEntry("dragoon_modifier:e62").get());
+      shana.put(EquipmentSlot.BOOTS, REGISTRIES.equipment.getEntry("dragoon_modifier:e94").get());
+      shana.put(EquipmentSlot.ACCESSORY, REGISTRIES.equipment.getEntry("dragoon_modifier:e152").get());
+
+      final Map<EquipmentSlot, Equipment> rose = event.gameState.charData_32c[3].equipment_14;
+      rose.put(EquipmentSlot.WEAPON, REGISTRIES.equipment.getEntry("dragoon_modifier:e13").get());
+      rose.put(EquipmentSlot.HELMET, REGISTRIES.equipment.getEntry("dragoon_modifier:e82").get());
+      rose.put(EquipmentSlot.ARMOUR, REGISTRIES.equipment.getEntry("dragoon_modifier:e63").get());
+      rose.put(EquipmentSlot.BOOTS, REGISTRIES.equipment.getEntry("dragoon_modifier:e96").get());
+      rose.put(EquipmentSlot.ACCESSORY, REGISTRIES.equipment.getEntry("dragoon_modifier:e152").get());
+
+      final Map<EquipmentSlot, Equipment> haschel = event.gameState.charData_32c[4].equipment_14;
+      haschel.put(EquipmentSlot.WEAPON, REGISTRIES.equipment.getEntry("dragoon_modifier:e40").get());
+      haschel.put(EquipmentSlot.HELMET, REGISTRIES.equipment.getEntry("dragoon_modifier:e78").get());
+      haschel.put(EquipmentSlot.ARMOUR, REGISTRIES.equipment.getEntry("dragoon_modifier:e57").get());
+      haschel.put(EquipmentSlot.BOOTS, REGISTRIES.equipment.getEntry("dragoon_modifier:e94").get());
+      haschel.put(EquipmentSlot.ACCESSORY, REGISTRIES.equipment.getEntry("dragoon_modifier:e152").get());
+
+      final Map<EquipmentSlot, Equipment> albert = event.gameState.charData_32c[5].equipment_14;
+      albert.put(EquipmentSlot.WEAPON, REGISTRIES.equipment.getEntry("dragoon_modifier:e20").get());
+      albert.put(EquipmentSlot.HELMET, REGISTRIES.equipment.getEntry("dragoon_modifier:e77").get());
+      albert.put(EquipmentSlot.ARMOUR, REGISTRIES.equipment.getEntry("dragoon_modifier:e47").get());
+      albert.put(EquipmentSlot.BOOTS, REGISTRIES.equipment.getEntry("dragoon_modifier:e93").get());
+      albert.put(EquipmentSlot.ACCESSORY, REGISTRIES.equipment.getEntry("dragoon_modifier:e152").get());
+
+      final Map<EquipmentSlot, Equipment> meru = event.gameState.charData_32c[6].equipment_14;
+      meru.put(EquipmentSlot.WEAPON, REGISTRIES.equipment.getEntry("dragoon_modifier:e34").get());
+      meru.put(EquipmentSlot.HELMET, REGISTRIES.equipment.getEntry("dragoon_modifier:e84").get());
+      meru.put(EquipmentSlot.ARMOUR, REGISTRIES.equipment.getEntry("dragoon_modifier:e64").get());
+      meru.put(EquipmentSlot.BOOTS, REGISTRIES.equipment.getEntry("dragoon_modifier:e97").get());
+      meru.put(EquipmentSlot.ACCESSORY, REGISTRIES.equipment.getEntry("dragoon_modifier:e152").get());
+
+      final Map<EquipmentSlot, Equipment> kongol = event.gameState.charData_32c[7].equipment_14;
+      kongol.put(EquipmentSlot.WEAPON, REGISTRIES.equipment.getEntry("dragoon_modifier:e8").get());
+      kongol.put(EquipmentSlot.HELMET, REGISTRIES.equipment.getEntry("dragoon_modifier:e78").get());
+      kongol.put(EquipmentSlot.ARMOUR, REGISTRIES.equipment.getEntry("dragoon_modifier:e53").get());
+      kongol.put(EquipmentSlot.BOOTS, REGISTRIES.equipment.getEntry("dragoon_modifier:e94").get());
+      kongol.put(EquipmentSlot.ACCESSORY, REGISTRIES.equipment.getEntry("dragoon_modifier:e152").get());
+
+      final Map<EquipmentSlot, Equipment> miranda = event.gameState.charData_32c[8].equipment_14;
+      miranda.put(EquipmentSlot.WEAPON, REGISTRIES.equipment.getEntry("dragoon_modifier:e27").get());
+      miranda.put(EquipmentSlot.HELMET, REGISTRIES.equipment.getEntry("dragoon_modifier:e82").get());
+      miranda.put(EquipmentSlot.ARMOUR, REGISTRIES.equipment.getEntry("dragoon_modifier:e62").get());
+      miranda.put(EquipmentSlot.BOOTS, REGISTRIES.equipment.getEntry("dragoon_modifier:e94").get());
+      miranda.put(EquipmentSlot.ACCESSORY, REGISTRIES.equipment.getEntry("dragoon_modifier:e152").get());
+
+      if(difficulty.equals("Hell Mode") || difficulty.equals("Hard + Hell Bosses")) {
+        event.gameState.gold_94 = 200;
+      } else {
+        event.gameState.gold_94 = 20;
+      }
+    } else if(submapCut_80052c30 == 10) {
+      if((difficulty.equals("Hell Mode") || difficulty.equals("Hard + Hell Bosses")) && gameState_800babc8.charData_32c[0].level_12 == 1) {
+        gameState_800babc8.goods_19c[0] ^= 1 << 0;
+        gameState_800babc8.goods_19c[0] ^= 1 << 1;
+        gameState_800babc8.goods_19c[0] ^= 1 << 2;
+        gameState_800babc8.goods_19c[0] ^= 1 << 3;
+        gameState_800babc8.goods_19c[0] ^= 1 << 4;
+        gameState_800babc8.goods_19c[0] ^= 1 << 5;
+        gameState_800babc8.goods_19c[0] ^= 1 << 6;
+      }
+    }
   }
 
   public void configSwapped() {
@@ -2536,7 +2624,7 @@ public class DragoonModifier {
                   if(bobj instanceof PlayerBattleEntity player) {
                     if(player.isDragoon() && shanaRapidFireContinue[player.charSlot_276]) {
                       if(scriptStatePtrArr_800bc1c0[i].offset_18 == 0x1d2) {
-                        scriptStatePtrArr_800bc1c0[i].offset_18 = 0x2050;
+                        scriptStatePtrArr_800bc1c0[i].offset_18 = 0x2050; //TODO not this lol
                         shanaRapidFireCount[player.charSlot_276]++;
                         if(shanaRapidFireCount[player.charSlot_276] == 2) {
                           shanaRapidFireContinue[player.charSlot_276] = false;
