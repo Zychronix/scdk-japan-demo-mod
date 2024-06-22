@@ -8,6 +8,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import legend.core.GameEngine;
+import legend.core.gte.MV;
 import legend.game.EngineStateEnum;
 import legend.game.Scus94491BpeSegment_8002;
 import legend.game.Scus94491BpeSegment_8007;
@@ -20,6 +21,7 @@ import legend.game.characters.VitalsStat;
 import legend.game.combat.Battle;
 import legend.game.combat.bent.AttackEvent;
 import legend.game.combat.bent.BattleEntity27c;
+import legend.game.combat.bent.BattleEntityStat;
 import legend.game.combat.bent.MonsterBattleEntity;
 import legend.game.combat.bent.PlayerBattleEntity;
 import legend.game.combat.types.AdditionHitProperties10;
@@ -34,6 +36,7 @@ import legend.game.inventory.ItemRegistryEvent;
 import legend.game.inventory.SpellRegistryEvent;
 import legend.game.inventory.WhichMenu;
 import legend.game.inventory.screens.ShopScreen;
+import legend.game.inventory.screens.TextColour;
 import legend.game.modding.coremod.CoreMod;
 import legend.game.modding.events.battle.AttackSpGainEvent;
 import legend.game.modding.events.battle.BattleDescriptionEvent;
@@ -47,8 +50,10 @@ import legend.game.modding.events.battle.EnemyRewardsEvent;
 import legend.game.modding.events.battle.ItemIdEvent;
 import legend.game.modding.events.battle.MonsterStatsEvent;
 import legend.game.modding.events.battle.SelectedItemEvent;
+import legend.game.modding.events.battle.SingleMonsterTargetEvent;
 import legend.game.modding.events.battle.SpellItemDeffEvent;
 import legend.game.modding.events.battle.SpellStatsEvent;
+import legend.game.modding.events.battle.StatDisplayEvent;
 import legend.game.modding.events.battle.TemporaryItemStatsEvent;
 import legend.game.modding.events.characters.AdditionUnlockEvent;
 import legend.game.modding.events.characters.XpToLevelEvent;
@@ -56,10 +61,13 @@ import legend.game.modding.events.config.ConfigLoadedEvent;
 import legend.game.modding.events.gamestate.NewGameEvent;
 import legend.game.modding.events.input.InputPressedEvent;
 import legend.game.modding.events.input.InputReleasedEvent;
+import legend.game.modding.events.inventory.GiveEquipmentEvent;
+import legend.game.modding.events.inventory.GiveItemEvent;
 import legend.game.modding.events.inventory.RepeatItemReturnEvent;
 import legend.game.modding.events.inventory.ShopEquipmentEvent;
 import legend.game.modding.events.inventory.ShopItemEvent;
 import legend.game.modding.events.inventory.ShopTypeEvent;
+import legend.game.modding.events.inventory.TakeItemEvent;
 import legend.game.modding.events.submap.SubmapWarpEvent;
 import legend.game.saves.ConfigEntry;
 import legend.game.saves.ConfigRegistryEvent;
@@ -77,6 +85,7 @@ import legend.game.wmap.WMap;
 import legend.game.wmap.WmapState;
 import legend.lodmod.LodEquipment;
 import legend.lodmod.LodItems;
+import legend.lodmod.LodMod;
 import legend.lodmod.items.FileBasedItem;
 import lod.dragoonmodifier.configs.DamageTrackerConfig;
 import lod.dragoonmodifier.configs.DifficultyEntryConfig;
@@ -93,6 +102,7 @@ import lod.dragoonmodifier.values.DamageTracker;
 import lod.dragoonmodifier.values.ElementalBomb;
 import lod.dragoonmodifier.values.EnrageMode;
 import lod.dragoonmodifier.values.MonsterHPNames;
+import org.joml.Vector2f;
 import org.legendofdragoon.modloader.Mod;
 import org.legendofdragoon.modloader.events.EventListener;
 import org.legendofdragoon.modloader.registries.Registrar;
@@ -119,7 +129,9 @@ import java.util.stream.IntStream;
 
 import static legend.core.GameEngine.CONFIG;
 import static legend.core.GameEngine.REGISTRIES;
+import static legend.core.GameEngine.RENDERER;
 import static legend.game.SItem.getXpToNextLevel;
+import static legend.game.Scus94491BpeSegment_8004._8004dd48;
 import static legend.game.Scus94491BpeSegment_8004.currentEngineState_8004dd04;
 import static legend.game.Scus94491BpeSegment_8004.engineState_8004dd20;
 import static legend.game.Scus94491BpeSegment_8005.submapCut_80052c30;
@@ -131,6 +143,7 @@ import static legend.game.Scus94491BpeSegment_800b.gameState_800babc8;
 import static legend.game.Scus94491BpeSegment_800b.scriptStatePtrArr_800bc1c0;
 import static legend.game.Scus94491BpeSegment_800b.spGained_800bc950;
 import static legend.game.combat.Battle.spellStats_800fa0b8;
+import static legend.game.combat.SEffe.transformToScreenSpace;
 
 @Mod(id = DragoonModifier.MOD_ID)
 public class DragoonModifier {
@@ -393,7 +406,6 @@ public class DragoonModifier {
   }
 
   public void configSwapped() {
-    //TODO SP bars
     CoreMod.MAX_CHARACTER_LEVEL = this.maxCharacterLevel;
     CoreMod.MAX_DRAGOON_LEVEL = this.maxDragoonLevel;
     CoreMod.MAX_ADDITION_LEVEL = this.maxAdditionLevel;
@@ -420,6 +432,7 @@ public class DragoonModifier {
     }
 
     for(int i = 0; i < 9; i++) {
+      CoreMod.CHARACTER_DATA[i].spBarColours = new int[this.maxDragoonLevel + 2][6];
       for(int x = 0; x < this.maxDragoonLevel + 1; x++) {
         CoreMod.CHARACTER_DATA[i].dxpTable[x] = Integer.parseInt(dxpNextStats.get(i)[x]);
       }
@@ -429,6 +442,30 @@ public class DragoonModifier {
           Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[2]), Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[3]),
           Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[4]), Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[5]),
           Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[6]));
+      }
+    }
+
+    for(int i = 0; i < 9; i++) {
+      for(int x = 0; x < this.maxDragoonLevel + 2; x++) {
+        int top = Integer.decode(spBarColours.get(i * 2)[x].replace("#", "0x"));
+        int btm = Integer.decode(spBarColours.get(1 * 2 + 1)[x].replace("#", "0x"));
+
+        final int[] topArray = {
+          ((top >> 24) & 0xff),
+          ((top >> 16) & 0xff),
+          ((top >> 8) & 0xff),
+          (top & 0xff)
+        };
+
+        final int[] btmArray = {
+          ((btm >> 24) & 0xff),
+          ((btm >> 16) & 0xff),
+          ((btm >> 8) & 0xff),
+          (btm & 0xff)
+        };
+
+        final int[] rgbArray = {topArray[1], topArray[2], topArray[3], btmArray[1], btmArray[2], btmArray[3]};
+        CoreMod.CHARACTER_DATA[i].spBarColours[x] = rgbArray;
       }
     }
 
@@ -541,7 +578,7 @@ public class DragoonModifier {
   }*/
   //endregion
 
-  //region Inventory Registry
+  //region Inventory
   @Deprecated public static final Int2ObjectMap<RegistryId> equipmentIdMap = new Int2ObjectOpenHashMap<>();
   @Deprecated public static final Object2IntMap<RegistryId> idEquipmentMap = new Object2IntOpenHashMap<>();
   private static final Slugify slug = Slugify.builder().locale(Locale.US).underscoreSeparator(true).customReplacement("'", "").customReplacement("-", "_").build();
@@ -760,6 +797,16 @@ public class DragoonModifier {
         Integer.parseInt(spellStats.get(i)[11]));
     }
   }
+
+  @EventListener public void giveItem(final GiveItemEvent event) {
+    event.override = true;
+    event.item = REGISTRIES.items.getEntry("dragoon_modifier:i" + LodMod.idItemMap.get(event.item.getRegistryId())).get();
+  }
+
+  @EventListener public void takeItem(final GiveEquipmentEvent event) {
+    event.override = true;
+    event.equip = REGISTRIES.equipment.getEntry("dragoon_modifier:e" + LodMod.idEquipmentMap.get(event.equip.getRegistryId())).get();
+  }
   //endregion
 
   //region Inventory Battle
@@ -821,23 +868,23 @@ public class DragoonModifier {
   @EventListener public void dragoonDeff(final DragoonDeffEvent event) {
     print("Dragoon DEFF: " + event.scriptId);
     switch (event.scriptId) {
-      case 4206: //Transform?
-      case 4236: //Dart Attack
-      case 4238: //Lavitz Attack
-      case 4242: //Rose Attack
-      case 4244: //Haschel Attack
-      case 4246: //Albert Attack
-      case 4248: //Meru Attack
-      case 4250: //Kongol Attack
-      case 4254: //Divine Attack
-      case 4308: //Burn Out
-      case 4312: //Spark Net
-      case 4316: //???
-      case 4318: //Pellet
-      case 4320: //Spear Frost
-      case 4322: //Spinning Gale
-      case 4326: //Trans Light
-      case 4328: //Dark Mist
+      case 4205: //Transform?
+      case 4235: //Dart Attack
+      case 4237: //Lavitz Attack
+      case 4241: //Rose Attack
+      case 4243: //Haschel Attack
+      case 4245: //Albert Attack
+      case 4247: //Meru Attack
+      case 4249: //Kongol Attack
+      case 4253: //Divine Attack
+      case 4307: //Burn Out
+      case 4311: //Spark Net
+      case 4315: //???
+      case 4317: //Pellet
+      case 4319: //Spear Frost
+      case 4321: //Spinning Gale
+      case 4325: //Trans Light
+      case 4327: //Dark Mist
         new Thread(() -> {
           for (int i = 0; i < 80; i++) {
             try {
@@ -966,6 +1013,10 @@ public class DragoonModifier {
         final ScriptState<? extends BattleEntity27c> state = battleState_8006e398.allBents_e0c[i];
         final BattleEntity27c bobj = state.innerStruct_00;
         if (bobj instanceof PlayerBattleEntity player) {
+          if (player.charId_272 == 0) {
+            burnStacksMax = player.dlevel_06 == 0 ? 0 : player.dlevel_06 == 1 ? 3 : player.dlevel_06 == 2 ? 6 : player.dlevel_06 == 3 ? 9 : player.dlevel_06 == 7 ? 15 : 12;
+          }
+
           player.equipmentElementalImmunity_22.clear();
 
           if (player.charId_272 == 7) { //Kongol SPD reduction
@@ -1509,6 +1560,13 @@ public class DragoonModifier {
           }
         }
 
+        if (event.defender instanceof MonsterBattleEntity monster) {
+          if (windMark[event.defender.charSlot_276] > 0) { //Wind mark turn value reduction
+            monster.turnValue_4c = Math.max(0, monster.turnValue_4c - 10);
+            windMark[event.defender.charSlot_276] -= 1;
+          }
+        }
+
         if (event.attacker.charId_272 == 0) {
           if (burnStackMode) {
             if (burnStacks == burnStacksMax) {
@@ -1720,13 +1778,6 @@ public class DragoonModifier {
           }
         }
 
-        if (event.defender instanceof MonsterBattleEntity monster) {
-          if (windMark[event.defender.charSlot_276] > 0) { //Wind mark turn value reduction
-            monster.turnValue_4c = Math.max(0, monster.turnValue_4c - 10);
-            windMark[event.defender.charSlot_276] -= 1;
-          }
-        }
-
         if (event.defender instanceof PlayerBattleEntity defender) { //If Meru's in Wingly Boost Mode all healing is 0
           if (meruBoost[defender.charSlot_276]) {
             try {
@@ -1887,7 +1938,7 @@ public class DragoonModifier {
     if (!burnStackMode) {
       previousBurnStacks = burnStacks;
       int dlv = dart.dlevel_06;
-      burnStacksMax = dlv == 1 ? 3 : dlv == 2 ? 6 : dlv == 3 ? 9 : dlv == 7 ? 15 : 12;
+      burnStacksMax = dlv== 0 ? 0 : dlv == 1 ? 3 : dlv == 2 ? 6 : dlv == 3 ? 9 : dlv == 7 ? 15 : 12;
       burnStacks = Math.min(burnStacksMax, burnStacks + stacks);
 
       if (burnStacks >= 4 && previousBurnStacks < 4) {
@@ -2051,11 +2102,11 @@ public class DragoonModifier {
     }
   }
 
-  public void updateElementalBomb(final AttackEvent attack) { //TODO item registries
+  public void updateElementalBomb(final AttackEvent event) { //TODO item registries
     if (GameEngine.CONFIG.getConfig(ELEMENTAL_BOMB.get()) == ElementalBomb.ON) {
-      if (attack.attacker instanceof PlayerBattleEntity player) {
+      if (event.attacker instanceof PlayerBattleEntity player) {
         try {
-          if (player.itemId_52 >= 49 && player.itemId_52 != 57 && attack.defender instanceof MonsterBattleEntity monster) {
+          if (player.itemId_52 >= 49 && player.itemId_52 != 57 && event.defender instanceof MonsterBattleEntity monster) {
             //for (int i = 0; i < monsterCount_800c6768.get(); i++) {
             if (elementalBombTurns[monster.charSlot_276] == 0) {
               Element swapTo;
@@ -2084,6 +2135,19 @@ public class DragoonModifier {
           }
           //}
         } catch (Exception ignored) {}
+      }
+    }
+  }
+
+  @EventListener public void shanaItemSpGain(AttackEvent event) {
+    final String difficulty = GameEngine.CONFIG.getConfig(DIFFICULTY.get());
+    if(difficulty.equals("Hell Mode") || difficulty.equals("Hard + Hell Bosses")) {
+      if(event.attacker instanceof PlayerBattleEntity player && event.defender instanceof MonsterBattleEntity monster) {
+        if(player.charId_272 == 2 || player.charId_272 == 8) {
+          final int sp = player.getStat(BattleEntityStat.CURRENT_SP);
+          spGained_800bc950[player.charSlot_276] += 50;
+          player.setStat(BattleEntityStat.CURRENT_SP, sp + 50);
+        }
       }
     }
   }
@@ -2148,8 +2212,75 @@ public class DragoonModifier {
     }
   }
 
-  @EventListener
-  public void battleEnded(final BattleEndedEvent event) {
+  @EventListener public void statDisplay(StatDisplayEvent event) {
+    if(event.player.charId_272 == 0 && burnStacksMax > 0) {
+      final MV transforms = new MV();
+      final float burn =  burnStacks == 0 ? 0.0f : (float) burnStacks / burnStacksMax;
+      transforms.transfer.set(event.charSlot * 94 + 16, 226.0, 124.0f);
+      transforms.scaling(92.0f, 12.0f, 1.0f);
+      RENDERER
+        .queueOrthoModel(RENDERER.opaqueQuad, transforms)
+        .screenspaceOffset(0.0f, 0.0f)
+        .monochrome(0.0f);
+
+      transforms.transfer.set(event.charSlot * 94 + 16, 226.0, 120.0f);
+      transforms.scaling(92.0f * burn, 12.0f, 1.0f);
+      RENDERER
+        .queueOrthoModel(RENDERER.opaqueQuad, transforms)
+        .screenspaceOffset(0.0f, 0.0f)
+        .colour(1.0f, 0.0f, 0.0f);
+
+      Scus94491BpeSegment_8002.renderText(String.valueOf(burnStacks), event.charSlot * 94 + 16, 226.0f, TextColour.WHITE, 0);
+    }
+  }
+
+  @EventListener public void selectedTarget(final SingleMonsterTargetEvent event) {
+    for(int i = 0; i < battleState_8006e398.getAllBentCount(); i++) {
+      final ScriptState<? extends BattleEntity27c> state = battleState_8006e398.allBents_e0c[i];
+      final BattleEntity27c bent = state.innerStruct_00;
+      if (bent instanceof PlayerBattleEntity player) {
+        if (player.charId_272 == 1 || player.charId_272 == 5) {
+          final MV transforms = new MV();
+          final float wind =  windMark[event.monster.charSlot_276] == 0 ? 0.0f : (float) windMark[event.monster.charSlot_276] / 3;
+          transforms.transfer.set(player.charSlot_276 * 94 + 16, 226.0, 124.0f);
+          transforms.scaling(92.0f, 12.0f, 1.0f);
+          RENDERER
+            .queueOrthoModel(RENDERER.opaqueQuad, transforms)
+            .screenspaceOffset(0.0f, 0.0f)
+            .monochrome(0.0f);
+
+          transforms.transfer.set(player.charSlot_276 * 94 + 16, 226.0, 120.0f);
+          transforms.scaling(92.0f * wind, 12.0f, 1.0f);
+          RENDERER
+            .queueOrthoModel(RENDERER.opaqueQuad, transforms)
+            .screenspaceOffset(0.0f, 0.0f)
+            .colour(0.0f, 1.0f, 0.0f);
+
+          Scus94491BpeSegment_8002.renderText(String.valueOf(windMark[event.monster.charSlot_276]), player.charSlot_276 * 94 + 16, 226.0f, TextColour.WHITE, 0);
+        } else if (player.charId_272 == 4) {
+          final MV transforms = new MV();
+          final float thunder = thunderCharge[event.monster.charSlot_276] == 0 ? 0.0f : (float) thunderCharge[event.monster.charSlot_276] / 10;
+          transforms.transfer.set(player.charSlot_276 * 94 + 16, 226.0, 124.0f);
+          transforms.scaling(92.0f, 12.0f, 1.0f);
+          RENDERER
+            .queueOrthoModel(RENDERER.opaqueQuad, transforms)
+            .screenspaceOffset(0.0f, 0.0f)
+            .monochrome(0.0f);
+
+          transforms.transfer.set(player.charSlot_276 * 94 + 16, 226.0, 120.0f);
+          transforms.scaling(92.0f * thunder, 12.0f, 1.0f);
+          RENDERER
+            .queueOrthoModel(RENDERER.opaqueQuad, transforms)
+            .screenspaceOffset(0.0f, 0.0f)
+            .colour(0.63f, 0.0f, 1.0f);
+
+          Scus94491BpeSegment_8002.renderText(String.valueOf(thunderCharge[event.monster.charSlot_276]), player.charSlot_276 * 94 + 16, 226.0f, TextColour.WHITE, 0);
+        }
+      }
+    }
+  }
+
+  @EventListener public void battleEnded(final BattleEndedEvent event) {
     final String difficulty = GameEngine.CONFIG.getConfig(DIFFICULTY.get());
     updateItemMagicDamage();
 
@@ -2193,7 +2324,6 @@ public class DragoonModifier {
             ultimateBossSelected = ultimateBossesDefeated;
           }
         }
-        System.out.println("HERE: " + ultimateBossesDefeated + "/" + ultimateBossSelected);
       }
 
       if (ultimateBossesDefeated == ultimateBossSelected) {
