@@ -27,9 +27,9 @@ public class DifficultyEntryConfig extends ConfigEntry<String> {
       final File[] modFolders = Path.of("./mods/csvstat/").toFile().listFiles(File::isDirectory);
       int i = 0;
       for (File directory : modFolders) {
-        if (!directory.getName().equals("Ultimate")) {
+        if(!directory.getName().equals("Ultimate")) {
           dropdown.addOption(directory.getName());
-          if (directory.getName().equals(gameState.getConfig(this))) {
+          if(directory.getName().equals(gameState.getConfig(this))) {
             dropdown.setSelectedIndex(i);
           }
           i++;

@@ -12,7 +12,7 @@ public class DifficultyChangedEvent extends Event {
     this.configCollection = configCollection;
     this.difficulty = difficulty;
 
-    if (difficulty.equals("Hell Mode") || difficulty.equals("Hard + Hell Bosses")) {
+    if(difficulty.equals("Hell Mode") || difficulty.equals("Hard + Hell Bosses")) {
       GameEngine.EVENTS.postEvent(new HellModeAdjustmentEvent());
     }
   }
