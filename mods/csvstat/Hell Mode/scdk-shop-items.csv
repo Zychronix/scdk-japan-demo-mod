@@ -1,6 +1,6 @@
 Slot1,Slot2,Slot3,Slot4,Slot5,Slot6,Slot7,Slot8,Slot9,Slot10,Slot11,Slot12,Slot13,Slot14,Slot15,Slot16,Name
-e1,e28,e47,e63,e77,e103,e106,e107,e108,e112,e0,e0,Nothing,Nothing,Nothing,Nothing,Bale Weapon
-i11,i30,i13,i14,i6,i16,i31,i0,i0,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Bale Item
+e1,e28,e47,e63,e77,e103,e106,e107,e108,e112,e102,Nothing,Nothing,Nothing,Nothing,Nothing,Bale Weapon
+i11,i30,i13,i14,i6,i16,i31,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Bale Item
 e21,e83,e89,e104,e105,e106,e111,e156,e149,e150,e151,e157,Nothing,Nothing,Nothing,Nothing,Lohan Weapon
 i11,i37,i30,i13,i14,i7,i17,i31,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Lohan Item
 e2,e29,e78,e94,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Kazas Weapon
@@ -27,7 +27,7 @@ e115,e116,e117,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,N
 i39,i57,i37,i30,i13,i14,i20,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Rouge Item
 e6,e25,e38,e44,e51,e52,e56,e61,e67,e68,e69,e113,e114,e115,e116,e117,Moon Weapon
 i39,i57,i37,i30,i12,i13,i14,i20,i25,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Moon Item
-i11,i30,i2,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Hellena I
+i11,i30,i2,i37,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Hellena I
 e4,e10,e16,e31,e50,e66,e116,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Kashua Weapon
 i39,i57,i37,i30,i14,i31,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Kashua Item
 e142,e143,e146,e148,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Fletz Jewelry
@@ -39,10 +39,10 @@ i39,i37,i57,i30,i12,i13,i14,i31,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
 i11,i37,i30,i13,i26,i15,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Hellena II
 i11,i37,i30,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
 Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
-i19,i29,i41,255,255,255,255,255,255,255,255,255,255,255,255,255,Lohan Hero Shop
-i50,i51,i52,i53,i54,i55,i56,255,255,255,255,255,255,255,255,255,Power Element Shop
-e166,e167,e168,e169,e170,e171,e172,e173,e174,e175,e176,e189,255,255,255,255,Ultimate Boss 1
-e177,e178,e179,e180,e181,e182,e183,e184,e185,e186,e191,e188,187,190,255,255,Ultimate Boss 2
+i19,i29,i41,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Lohan Hero Shop
+i50,i51,i52,i53,i54,i55,i56,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Power Element Shop
+e166,e167,e168,e169,e170,e171,e172,e173,e174,e175,e176,e189,Nothing,Nothing,Nothing,Nothing,Ultimate Boss 1
+e177,e178,e179,e180,e181,e182,e183,e184,e185,e186,e191,e188,e187,e190,Nothing,Nothing,Ultimate Boss 2
 Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
 Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
 Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,

@@ -101,7 +101,7 @@ Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status 
 0,16,64,255,0,0,0,0,0,0,0,0,0,0,20,10,0,0,0,0,0,0,5,5,0,0,0,0,150,Magical Greaves,Increases escape§chance from phys./§mag. attacks by 5%.
 0,16,64,7,0,0,0,0,0,0,0,0,0,0,21,20,0,0,0,0,0,0,0,0,0,0,0,0,250,Dancer's Boots,Raises speed§by 20.
 0,16,64,240,0,0,0,0,0,0,0,0,0,0,19,20,0,0,0,0,0,0,0,0,0,0,0,0,150,Bandit's Shoes,Raises speed§by 20.
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1, ,
+0,8,32,255,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,8,0,0,0,0,0,0,0,0,100,Sage's Shield,Raises magical§defense by 8.
 0,8,32,247,0,0,0,0,128,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Poison Guard,Grants immunity§to poison.
 0,8,32,247,0,0,0,0,64,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Active Ring,Grants immunity§to dispiriting.
 0,8,32,247,0,0,0,0,32,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Protector,Grants immunity§to arm blocking.
