@@ -91,7 +91,7 @@ Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status 
 0,64,64,247,0,0,0,0,0,0,0,0,4,0,18,0,0,50,0,0,100,100,0,0,0,0,0,0,30000,Legend Casque,"Reduces magic dmg,§increases MDF§per turn."
 0,64,64,247,0,0,0,0,0,0,0,0,2,50,18,0,0,50,10,0,100,100,0,0,0,0,0,0,3750,Dragon Helm,Raises maximum§HP 50%.
 0,64,64,247,0,0,0,0,0,0,0,0,1,50,17,0,0,50,0,10,100,100,0,0,0,0,0,0,3750,Magical Hat,Raises maximum§MP 50%.
-0,16,64,247,0,0,0,0,0,0,0,0,128,50,21,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Theif's Shoes,Increases escape§rate by 50%
+0,16,64,247,0,0,0,0,0,0,0,0,128,50,21,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Thief's Shoes,Increases escape§rate by 50%
 0,16,64,240,0,0,0,0,0,0,0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,5,Leather Boots,
 0,16,64,240,0,0,0,0,0,0,0,0,0,0,20,0,0,0,5,0,0,0,0,0,0,0,0,0,50,Iron Kneepiece,
 0,16,64,240,0,0,0,0,0,0,0,0,0,0,19,0,0,0,5,0,0,0,5,0,0,0,0,0,75,Combat Shoes,Increases escape§chance from physicalattacks by 5%.
