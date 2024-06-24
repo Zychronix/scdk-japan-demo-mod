@@ -73,7 +73,7 @@ Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status 
 0,32,64,16,0,0,0,0,176,0,0,0,0,0,14,0,0,0,40,31,0,0,10,0,0,0,0,0,250,Satori Vest,"Grants immunity§to poison, stun,§and arm blocking."
 0,32,64,7,0,0,0,0,176,0,0,0,0,0,9,0,0,0,32,55,0,0,5,5,0,0,0,0,250,Rainbow Dress,"Grants immunity§to poison, stun,§and arm blocking."
 0,32,64,7,0,0,0,0,0,0,0,0,8,40,9,0,0,0,10,20,0,0,5,5,40,0,0,0,250,Angel Robe,30% chance of§reviving from§death.
-0,32,64,247,0,0,0,0,0,0,0,32,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,5000,Armor of Legend,"Reduces phys dmg,§increases DF§per turn."
+0,32,64,247,0,0,0,0,0,0,0,32,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,30000,Armor of Legend,"Reduces phys dmg,§increases DF§per turn."
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1, ,
 0,64,64,240,0,0,0,0,0,0,0,0,0,0,16,0,0,3,0,0,100,100,0,0,0,0,0,0,5,Bandana,
 0,64,64,240,0,0,0,0,0,0,0,0,0,0,18,0,0,8,0,0,110,100,0,0,0,0,0,0,20,Sallet,Increases hit§chance of physical§attacks by 10%.
@@ -88,10 +88,10 @@ Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status 
 128,64,64,4,0,0,0,0,0,0,0,0,0,0,16,0,0,36,0,0,100,100,0,0,0,0,0,0,125,Rose's Hair Band,Grants immunity§to instant death.
 0,64,64,247,0,0,0,0,0,0,0,0,0,0,18,0,0,0,0,0,100,100,0,0,0,0,0,0,1, ,
 0,64,64,247,0,0,0,0,78,0,0,0,0,0,18,0,0,30,0,10,100,100,0,0,0,0,0,0,300,Phoenix Plume,"Avoids bewitchment,§confusion, fear,§and dispiriting."
-0,64,64,247,0,0,0,0,0,0,0,0,4,0,18,0,0,50,0,0,100,100,0,0,0,0,0,0,5000,Legend Casque,"Reduces magic dmg,§increases MDF§per turn."
-0,64,64,247,0,0,0,0,0,0,0,0,2,50,18,0,0,50,10,0,100,100,0,0,0,0,0,0,250,Dragon Helm,Raises maximum§HP 50%.
-0,64,64,247,0,0,0,0,0,0,0,0,1,50,17,0,0,50,0,10,100,100,0,0,0,0,0,0,250,Magical Hat,Raises maximum§MP 50%.
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1, ,
+0,64,64,247,0,0,0,0,0,0,0,0,4,0,18,0,0,50,0,0,100,100,0,0,0,0,0,0,30000,Legend Casque,"Reduces magic dmg,§increases MDF§per turn."
+0,64,64,247,0,0,0,0,0,0,0,0,2,50,18,0,0,50,10,0,100,100,0,0,0,0,0,0,3750,Dragon Helm,Raises maximum§HP 50%.
+0,64,64,247,0,0,0,0,0,0,0,0,1,50,17,0,0,50,0,10,100,100,0,0,0,0,0,0,3750,Magical Hat,Raises maximum§MP 50%.
+0,16,64,247,0,0,0,0,0,0,0,0,128,50,21,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Theif's Shoes,Increases escape§rate by 50%
 0,16,64,240,0,0,0,0,0,0,0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,5,Leather Boots,
 0,16,64,240,0,0,0,0,0,0,0,0,0,0,20,0,0,0,5,0,0,0,0,0,0,0,0,0,50,Iron Kneepiece,
 0,16,64,240,0,0,0,0,0,0,0,0,0,0,19,0,0,0,5,0,0,0,5,0,0,0,0,0,75,Combat Shoes,Increases escape§chance from physicalattacks by 5%.
@@ -99,9 +99,9 @@ Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status 
 0,16,64,7,0,0,0,0,0,0,0,0,0,0,21,0,0,0,5,0,0,0,0,0,0,0,0,0,50,Soft Boots,
 0,16,64,7,0,0,0,0,0,0,0,0,0,0,21,0,0,0,5,0,0,0,0,5,0,0,0,0,75,Stardust Boots,Increases escape§chance from magical§attacks by 5%.
 0,16,64,255,0,0,0,0,0,0,0,0,0,0,20,10,0,0,0,0,0,0,5,5,0,0,0,0,150,Magical Greaves,Increases escape§chance from phys./§mag. attacks by 5%.
-0,16,64,7,0,0,0,0,0,0,0,0,0,0,21,20,0,0,0,0,0,0,0,0,0,0,0,0,250,Dancer's Boots,Raises speed§by 20.
-0,16,64,240,0,0,0,0,0,0,0,0,0,0,19,20,0,0,0,0,0,0,0,0,0,0,0,0,150,Bandit's Shoes,Raises speed§by 20.
-0,8,32,255,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,8,0,0,0,0,0,0,0,0,100,Sage's Shield,Raises magical§defense by 8.
+0,16,64,7,0,0,0,0,0,0,0,0,0,0,21,20,0,0,0,0,0,0,0,0,0,0,0,0,1875,Dancer's Boots,Raises speed§by 20.
+0,16,64,240,0,0,0,0,0,0,0,0,0,0,19,20,0,0,0,0,0,0,0,0,0,0,0,0,1875,Bandit's Shoes,Raises speed§by 20.
+0,8,32,255,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,8,0,0,0,0,0,0,0,0,200,Sage's Shield,Raises magical§defense by 8.
 0,8,32,247,0,0,0,0,128,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Poison Guard,Grants immunity§to poison.
 0,8,32,247,0,0,0,0,64,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Active Ring,Grants immunity§to dispiriting.
 0,8,32,247,0,0,0,0,32,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Protector,Grants immunity§to arm blocking.
@@ -130,9 +130,9 @@ Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status 
 128,8,32,247,0,0,0,0,0,0,0,0,0,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0,250,Talisman,Grants immunity§to instant death.
 0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,250, ,
 0,8,32,247,0,0,0,0,0,0,0,0,8,40,23,0,0,0,0,0,0,0,0,0,40,0,0,0,250,Holy Ankh,30% chance of§reviving from§death.
-0,8,32,7,0,0,0,0,0,0,0,0,0,0,23,20,0,0,0,0,0,0,0,0,0,0,0,0,250,Dancer's Ring,Raises speed§by 20.
+0,8,32,7,0,0,0,0,0,0,0,0,0,0,23,20,0,0,0,0,0,0,0,0,0,0,0,0,2500,Dancer's Ring,Raises speed§by 20.
 0,8,32,247,0,0,0,0,255,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,250, ,
-0,8,32,240,0,0,0,0,0,0,0,0,0,0,23,20,0,0,0,0,0,0,0,0,0,0,0,0,250,Bandit's Ring,Raises speed§by 20.
+0,8,32,240,0,0,0,0,0,0,0,0,0,0,23,20,0,0,0,0,0,0,0,0,0,0,0,0,2500,Bandit's Ring,Raises speed§by 20.
 0,8,32,247,0,0,128,0,0,0,0,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,0,0,250,Red-Eye Stone,Halves damage§from fire-based§attacks.
 0,8,32,247,0,0,64,0,0,0,0,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,0,0,250,Jade Stone,Halves damage§from wind-based§attacks.
 0,8,32,247,0,0,32,0,0,0,0,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,0,0,250,Silver Stone,Halves damage§from light-based§attacks.
@@ -165,29 +165,29 @@ Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status 
 0,128,128,1,1,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1500,Hydro Hammer,Water-based attack.
 0,8,32,247,0,0,0,0,0,0,0,0,0,0,32,0,30,30,0,0,0,0,0,0,0,0,0,0,4000,Attack Horn,Raises physical§& magical§attack by 30.
 0,8,32,247,0,0,0,0,0,0,0,0,0,0,32,0,0,0,30,30,0,0,0,0,0,0,0,0,4000,Defense Horn,Raises physical§& magical§defense by 30.
-0,128,128,128,0,0,0,0,0,0,0,0,0,0,0,0,75,25,0,0,0,0,0,0,0,0,0,0,1,Spirit Eater,"Powerful, but SP§decays each turn§unless full."
-0,128,128,32,0,0,0,0,0,0,0,0,0,0,1,0,110,0,0,0,0,0,0,0,0,0,0,0,1,Giant Axe,Will occasionally§cast guard after§physical dmg.
-0,128,128,4,0,0,0,0,0,0,0,0,64,5,0,0,80,25,0,0,0,0,0,0,0,0,0,0,1,Dragon Beater,Grants life and SP§steal on§physical attacks.
-0,128,128,64,0,0,0,0,0,0,0,0,0,0,3,0,82,0,0,0,0,0,0,0,0,0,0,0,1,Ouroboros,Enhances dragoon§but has negative§effects.
-0,128,128,2,0,0,0,0,0,0,0,0,0,0,4,0,0,50,0,0,0,0,0,0,0,0,0,0,1,Elemental Arrow,Changes element§based on party§and monsters.
-0,128,128,1,0,0,0,0,0,0,0,5,32,8,2,0,0,80,0,0,0,0,0,0,0,0,0,0,1,Magic Hammer,Transfers all§physical power§to magical damage.
-0,128,128,16,16,0,0,0,0,0,0,0,0,0,6,0,69,0,0,0,0,0,0,0,0,0,0,0,1,Overcharge Glove,Thunder-based§attack that deals§more to thunder.
-0,32,64,247,0,0,0,0,0,0,0,15,0,5,38,1,5,5,5,5,5,5,1,1,0,0,0,0,1,Crystal Armor,Increases stats§the more crystal§equips are set.
-0,64,64,247,0,0,0,0,0,0,0,15,0,5,38,1,5,5,5,5,105,105,1,1,0,0,0,0,1,Crystal Hat,Increases stats§the more crystal§equips are set.
-0,16,64,247,0,0,0,0,0,0,0,15,0,5,38,1,5,5,5,5,5,5,1,1,0,0,0,0,1,Crystal Boots,Increases stats§the more crystal§equips are set.
-0,8,32,247,0,0,0,0,0,0,0,15,0,5,38,1,5,5,5,5,5,5,1,1,0,0,0,0,1,Crystal Ring,Increases stats§the more crystal§equips are set.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Ring of Reversal,Reverse physical§and magical defense.
-0,8,32,247,0,0,0,0,0,0,0,0,112,7,22,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Ring of Healing,Heals 7% HP/MP§and 7 SP§per turn.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,60,0,0,0,0,0,0,0,0,0,0,0,1,Ring of Power,Raises physical§attack by 60.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,0,60,0,0,0,0,0,0,0,0,0,0,1,Ring of Magic,Raises magical§attack by 60.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,0,0,60,0,0,0,0,0,0,0,0,0,1,Ring of Defense,Raises physical§& defense§by 60.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,0,0,0,60,0,0,0,0,0,0,0,0,1,Ring of Block,Raises defense§& magical§by 60.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Ring of Shielding,Chance to cast§perfect shield§before death.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Ring of Elements,Extends dragoon§space based on§turns in special.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,1,1,1,1,1,1,1,1,1,0,0,0,0,1,The One Ring,One.
-0,16,64,247,0,0,0,0,0,0,0,0,0,0,21,10,0,0,0,0,0,0,10,10,0,0,0,0,1,Lloyd's Boots,Lloyd's favorite boots.
-0,32,64,247,0,0,0,0,0,0,0,15,0,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Divine DG Armor,20 SP and 10% MP on§all hits.
-0,64,64,247,0,0,0,0,0,0,0,0,3,30,18,0,0,0,0,0,100,100,0,0,0,0,0,0,1,Halo of Balance,Raises maximum§HP/MP by 30%.
-0,128,128,128,8,0,0,0,0,0,0,0,0,0,0,0,50,50,0,0,0,0,0,0,0,0,0,0,1,Firebrand,Fire and Divine§based attack.
-0,8,32,247,0,0,0,0,0,0,0,0,16,100,22,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Super Spirit Ring,Removes SP from§additions. Heals§100 SP per turn.
-0,16,64,247,0,0,0,0,0,0,0,0,0,0,21,10,0,0,0,0,0,0,20,20,0,0,0,0,1,Winged Shoes,
+0,128,128,128,0,0,0,0,0,0,0,0,0,0,0,0,75,25,0,0,0,0,0,0,0,0,0,0,10000,Spirit Eater,"Powerful, but SP§decays each turn§unless full."
+0,128,128,32,0,0,0,0,0,0,0,0,0,0,1,0,110,0,0,0,0,0,0,0,0,0,0,0,10000,Giant Axe,Will occasionally§cast guard after§physical dmg.
+0,128,128,4,0,0,0,0,0,0,0,0,64,5,0,0,80,25,0,0,0,0,0,0,0,0,0,0,10000,Dragon Beater,Grants life and SP§steal on§physical attacks.
+0,128,128,64,0,0,0,0,0,0,0,0,0,0,3,0,82,0,0,0,0,0,0,0,0,0,0,0,10000,Ouroboros,Enhances dragoon§but has negative§effects.
+0,128,128,2,0,0,0,0,0,0,0,0,0,0,4,0,0,50,0,0,0,0,0,0,0,0,0,0,10000,Elemental Arrow,Changes element§based on party§and monsters.
+0,128,128,1,0,0,0,0,0,0,0,5,32,8,2,0,0,80,0,0,0,0,0,0,0,0,0,0,10000,Magic Hammer,Transfers all§physical power§to magical damage.
+0,128,128,16,16,0,0,0,0,0,0,0,0,0,6,0,69,0,0,0,0,0,0,0,0,0,0,0,10000,Overcharge Glove,Thunder-based§attack that deals§more to thunder.
+0,32,64,247,0,0,0,0,0,0,0,15,0,5,38,1,5,5,5,5,5,5,1,1,0,0,0,0,15000,Crystal Armor,Increases stats§the more crystal§equips are set.
+0,64,64,247,0,0,0,0,0,0,0,15,0,5,38,1,5,5,5,5,105,105,1,1,0,0,0,0,15000,Crystal Hat,Increases stats§the more crystal§equips are set.
+0,16,64,247,0,0,0,0,0,0,0,15,0,5,38,1,5,5,5,5,5,5,1,1,0,0,0,0,15000,Crystal Boots,Increases stats§the more crystal§equips are set.
+0,8,32,247,0,0,0,0,0,0,0,15,0,5,38,1,5,5,5,5,5,5,1,1,0,0,0,0,15000,Crystal Ring,Increases stats§the more crystal§equips are set.
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,0,0,15000,Ring of Reversal,Reverse physical§and magical defense.
+0,8,32,247,0,0,0,0,0,0,0,0,112,7,22,0,0,0,0,0,0,0,0,0,0,0,0,0,7500,Ring of Healing,Heals 7% HP/MP§and 7 SP§per turn.
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,60,0,0,0,0,0,0,0,0,0,0,0,7500,Ring of Power,Raises physical§attack by 60.
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,0,60,0,0,0,0,0,0,0,0,0,0,7500,Ring of Magic,Raises magical§attack by 60.
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,0,0,60,0,0,0,0,0,0,0,0,0,7500,Ring of Defense,Raises physical§& defense§by 60.
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,0,0,0,60,0,0,0,0,0,0,0,0,7500,Ring of Block,Raises defense§& magical§by 60.
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,0,0,7500,Ring of Shielding,Chance to cast§perfect shield§before death.
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,0,0,7500,Ring of Elements,Extends dragoon§space based on§turns in special.
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,1,1,1,1,1,1,1,1,1,0,0,0,0,7500,The One Ring,One.
+0,16,64,247,0,0,0,0,0,0,0,0,0,0,21,10,0,0,0,0,0,0,10,10,0,0,0,0,7500,Lloyd's Boots,Lloyd's favorite boots.
+0,32,64,247,0,0,0,0,0,0,0,15,0,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,15000,Divine DG Armor,20 SP and 10% MP on§all hits.
+0,64,64,247,0,0,0,0,0,0,0,0,3,30,18,0,0,0,0,0,100,100,0,0,0,0,0,0,7500,Halo of Balance,Raises maximum§HP/MP by 30%.
+0,128,128,128,8,0,0,0,0,0,0,0,0,0,0,0,50,50,0,0,0,0,0,0,0,0,0,0,15000,Firebrand,Fire and Divine§based attack.
+0,8,32,247,0,0,0,0,0,0,0,0,16,100,22,0,0,0,0,0,0,0,0,0,0,0,0,0,7500,Super Spirit Ring,Removes SP from§additions. Heals§100 SP per turn.
+0,16,64,247,0,0,0,0,0,0,0,0,0,0,21,10,0,0,0,0,0,0,20,20,0,0,0,0,7500,Winged Shoes,
