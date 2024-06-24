@@ -36,6 +36,7 @@ dependencies {
   implementation("com.opencsv:opencsv:5.7.1")
   api("org.legendofdragoon:mod-loader:2.0.2")
   api("org.legendofdragoon:script-recompiler:0.3.0")
+  api("com.badlogicgames.jamepad:jamepad:2.30.0.0")
 }
 
 sourceSets {
