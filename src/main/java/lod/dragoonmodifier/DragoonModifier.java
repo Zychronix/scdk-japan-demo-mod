@@ -73,6 +73,7 @@ import legend.game.saves.ConfigEntry;
 import legend.game.saves.ConfigRegistryEvent;
 import legend.game.scripting.ScriptState;
 import legend.game.submap.SMap;
+import legend.game.submap.SubmapObject210;
 import legend.game.submap.SubmapState;
 import legend.game.types.ActiveStatsa0;
 import legend.game.types.EquipmentSlot;
@@ -2830,6 +2831,23 @@ public class DragoonModifier {
           }
 
           faustBattle = true;
+        } else if(mapId == 190) {
+          submapCut_80052c30 = 177;
+          ((SMap)currentEngineState_8004dd04).smapLoadingStage_800cb430 = SubmapState.CHANGE_SUBMAP_4;
+        } else if(mapId == 177) {
+          final ScriptState<SubmapObject210> state = ((SMap)currentEngineState_8004dd04).sobjs_800c6880[0];
+          final float posX = state.innerStruct_00.model_00.coord2_14.coord.transfer.x;
+          if(posX >= 580.0f && posX <= 603.0f) {
+            state.innerStruct_00.model_00.coord2_14.coord.transfer.x += 100.0f;
+          }
+        } else if(mapId == 181) {
+          final ScriptState<SubmapObject210> state = ((SMap)currentEngineState_8004dd04).sobjs_800c6880[0];
+          final float posX = state.innerStruct_00.model_00.coord2_14.coord.transfer.x;
+          final float posZ = state.innerStruct_00.model_00.coord2_14.coord.transfer.z;
+          if((posX >= 190.0f && posX <= 230.0f) && (posZ >= 260.0f && posZ <= 290.0f)) {
+            submapCut_80052c30 = 182;
+            ((SMap)currentEngineState_8004dd04).smapLoadingStage_800cb430 = SubmapState.CHANGE_SUBMAP_4;
+          }
         }
       } else if(hotkey.contains(InputAction.BUTTON_SOUTH) && hotkey.contains(InputAction.BUTTON_THUMB_2)) { //Add all party members back
         for(int i = 0; i < 9; i++) {
