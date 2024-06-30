@@ -7,7 +7,7 @@ Target Type,Element,Damage,Special1,Special2,UK1,Special Amount,Icon,Status,Perc
 76,2,64,0,0,0,0,38,0,0,0,0,5,Pellet,"Earth-based,§single-target§(multi).",Earth S attack,4317,5
 76,1,64,0,0,0,0,38,0,0,0,0,5,Spear Frost,"Water-based,§single-target§(multi).",Water S attack,4319,6
 76,64,64,0,0,0,0,38,0,0,0,0,5,Spinning Gale,"Wind-based,§single-target§(multi).",Wind S attack,4321,7
-76,0,0,0,0,0,0,46,0,0,0,0,50,Attack Ball,Generates a random§attack item.,Random attack item,4323,8
+76,0,0,0,0,0,0,46,0,0,0,0,50,Attack Ball,Generates a random§attack item.,Random attack item,-1,8
 76,32,64,0,0,0,0,38,0,0,0,0,5,Trans Light,"Light-based,§single-target§(multi).",Light S attack,4325,9
 76,4,64,0,0,0,0,38,0,0,0,0,5,Dark Mist,"Dark-based,§single-target§(multi).",Dark S attack,4327,10
 88,0,0,0,0,0,0,33,0,50,0,128,5,Healing Potion,Recovers half of§maximum HP.,Recovers 50% HP,4385,11
@@ -32,7 +32,7 @@ Target Type,Element,Damage,Special1,Special2,UK1,Special Amount,Icon,Status,Perc
 8,0,0,0,0,0,0,36,0,50,0,16,15,Angel's Prayer,Revives and§recovers half§of maximum HP.,Revives & Recovers 50% HP,4367,30
 80,0,0,0,0,0,0,45,0,0,0,0,2,Charm Potion,Reduces encounter§risk.,Avoids minor enemy 3x,4369,31
 64,0,0,0,0,0,0,45,0,0,0,0,200,Pandemonium,Minor enemies only§attack target for§3 turns (repeat).,Allow minor enemy attack 3x,4371,32
-64,0,0,0,0,0,0,46,0,0,0,0,50,Recovery Ball,Generates a random§recovery item.,Random recovery item,4373,33
+64,0,0,0,0,0,0,46,0,0,0,0,50,Recovery Ball,Generates a random§recovery item.,Random recovery item,-1,33
 72,0,0,0,192,0,0,42,0,0,0,0,1, , ,,4375,34
 72,0,0,0,64,0,0,42,0,0,0,0,200,Magic Shield,Nullifies magical§attacks for 3 turns§(repeat).,Magical immunity for 3 turns(rep),4377,35
 72,0,0,0,128,0,0,42,0,0,0,0,200,Material Shield,Nullifies physical§attacks for 3 turns§(repeat).,Physical immunity for 3 turns(rep),4379,36

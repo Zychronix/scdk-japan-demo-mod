@@ -102,6 +102,7 @@ import lod.dragoonmodifier.values.DamageTracker;
 import lod.dragoonmodifier.values.ElementalBomb;
 import lod.dragoonmodifier.values.EnrageMode;
 import lod.dragoonmodifier.values.MonsterHPNames;
+import org.apache.commons.lang3.ArrayUtils;
 import org.joml.Vector2f;
 import org.legendofdragoon.modloader.Mod;
 import org.legendofdragoon.modloader.events.EventListener;
@@ -140,6 +141,8 @@ import static legend.game.Scus94491BpeSegment_800b.battleStage_800bb0f4;
 import static legend.game.Scus94491BpeSegment_800b.encounterId_800bb0f8;
 import static legend.game.Scus94491BpeSegment_800b.fullScreenEffect_800bb140;
 import static legend.game.Scus94491BpeSegment_800b.gameState_800babc8;
+import static legend.game.Scus94491BpeSegment_800b.livingCharCount_800bc97c;
+import static legend.game.Scus94491BpeSegment_800b.livingCharIds_800bc968;
 import static legend.game.Scus94491BpeSegment_800b.scriptStatePtrArr_800bc1c0;
 import static legend.game.Scus94491BpeSegment_800b.spGained_800bc950;
 import static legend.game.combat.Battle.spellStats_800fa0b8;
@@ -250,6 +253,51 @@ public class DragoonModifier {
   public static final RegistryDelegate<UltimateBossDefeatedConfig> ULTIMATE_BOSS_DEFEATED = DRAMOD_CONFIG_REGISTRAR.register("ultimate_boss_defeated", UltimateBossDefeatedConfig::new);
   public static final RegistryDelegate<ElementalBombConfig> ELEMENTAL_BOMB = DRAMOD_CONFIG_REGISTRAR.register("elemental_bomb", ElementalBombConfig::new);
   public static final RegistryDelegate<DamageTrackerConfig> DAMAGE_TRACKER = DRAMOD_CONFIG_REGISTRAR.register("damage_tracker", DamageTrackerConfig::new);
+
+  public final int[] bossEncounters = {
+    384, //Commander
+    386, //Fruegel I
+    414, //Urobolus
+    385, //Sandora Elite
+    388, //Kongol I
+    408, //Virage I
+    415, //Fire Bird
+    393, //Greham + Feyrbrand
+    412, //Drake the Bandit
+    413, //Jiango
+    387, //Fruegel II
+    461, //Sandora Elite II
+    389, //Kongol II
+    390, //Emperor Doel
+    402, //Mappi
+    409, //Virage II
+    403, //Gehrich + Mappi
+    396, //Lenus
+    417, //Ghost Commander
+    397, //Lenus + Regole
+    418, //Kamuy
+    410, //S Virage
+    416, //Grand Jewel
+    394, //Divine Dragon
+    422, //Windigo
+    392, //Lloyd
+    423, //Polter Set
+    398, //Damia
+    399, //Syuveil
+    400, //Belzac
+    401, //Kanzas
+    420, //Magician Faust
+    432, //Last Kraken
+    430, //Executioners
+    449, //Spirit (Feyrbrand)
+    448, //Spirit (Regole)
+    447, //Spirit (Divine Dragon)
+    431, //Zackwell
+    433, //Imago
+    411, //S Virage II
+    442, //Zieg
+    443 //Melbu Fraahma
+  };
 
   //region Startup
   public DragoonModifier() {
@@ -1038,7 +1086,8 @@ public class DragoonModifier {
       }
     } else {
       final String item = monstersRewardsStats.get(enemyId)[3];
-      event.xp = Integer.parseInt(monstersRewardsStats.get(enemyId)[0]);
+      final int exp = Integer.parseInt(monstersRewardsStats.get(enemyId)[0]);
+      event.xp = ArrayUtils.contains(bossEncounters, encounterId_800bb0f8) ? (int) (exp * 1.5) : exp;
       event.gold = Integer.parseInt(monstersRewardsStats.get(enemyId)[1]);
       if(!item.startsWith("N")) {
         event.add(new CombatantStruct1a8.ItemDrop(Integer.parseInt(monstersRewardsStats.get(enemyId)[2]), item.startsWith("e") ? REGISTRIES.equipment.getEntry(equipmentIdMap.get(Integer.parseInt(item.substring(1, item.length())))).get() : REGISTRIES.items.getEntry(itemIdMap.get(Integer.parseInt(item.substring(1, item.length())))).get()));
@@ -1428,6 +1477,7 @@ public class DragoonModifier {
 
     if(event.bent instanceof PlayerBattleEntity player) {
       damageTrackerLog.add(charNames[player.charId_272] + " Turn Started");
+      selectedItemStats = null;
 
       if(difficulty.equals("Hard Mode") || difficulty.equals("US + Hard Bosses") || difficulty.equals("Hell Mode") || difficulty.equals("Hard + Hell Bosses")) {
         if(player.isDragoon()) {
@@ -2381,6 +2431,13 @@ public class DragoonModifier {
   @EventListener public void battleEnded(final BattleEndedEvent event) {
     final String difficulty = GameEngine.CONFIG.getConfig(DIFFICULTY.get());
     updateItemMagicDamage();
+
+    if(ArrayUtils.contains(bossEncounters, encounterId_800bb0f8)) {
+      livingCharCount_800bc97c = 3;
+      for(int i = 0; i < 3; i++) {
+        livingCharIds_800bc968[i] = gameState_800babc8.charIds_88[i];
+      }
+    }
 
     if(faustBattle) {
       faustBattle = false;
