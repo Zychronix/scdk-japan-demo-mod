@@ -148,7 +148,7 @@ Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status 
 0,8,32,247,0,0,0,0,0,0,0,8,0,20,23,0,0,0,0,0,0,0,0,0,0,0,0,0,500,Emerald Earring,Gain 20 SP when§damaged physically.
 0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1, ,
 0,8,32,247,0,0,0,0,0,0,0,4,0,10,23,0,0,0,0,0,0,0,0,0,0,0,0,0,500,Platinum Collar,Gain 10% MP when§damaged physically.
-0,8,32,247,0,0,0,0,0,0,0,32,4,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,5000,Phantom Shield,Halves damage§from all attacks butdecreases DF/MDF.
+0,8,32,247,0,0,0,0,0,0,0,32,4,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,5000,Phantom Shield,Halves damage§from all attacks but§decreases DF/MDF.
 0,8,32,247,0,0,0,0,0,0,0,32,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,2500,Dragon Shield,Halves physical§damage but§decreases DF.
 0,8,32,247,0,0,0,0,0,0,0,0,4,0,30,0,0,0,0,0,0,0,0,0,0,0,0,0,2500,Angel Scarf,Halves magical§damage but§decreases MDF.
 0,8,32,247,0,0,0,0,0,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,0,0,5,Bracelet,
@@ -191,3 +191,8 @@ Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status 
 0,128,128,128,8,0,0,0,0,0,0,0,0,0,0,0,50,50,0,0,0,0,0,0,0,0,0,0,15000,Firebrand,Fire and Divine§based attack.
 0,8,32,247,0,0,0,0,0,0,0,0,16,100,22,0,0,0,0,0,0,0,0,0,0,0,0,0,7500,Super Spirit Ring,Removes SP from§additions. Heals§100 SP per turn.
 0,16,64,247,0,0,0,0,0,0,0,0,0,0,21,10,0,0,0,0,0,0,20,20,0,0,0,0,7500,Winged Shoes,
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,42,0,0,0,0,0,0,0,0,0,0,0,0,0,500,Protection Shield,Negates damage up§to 50% Max HP§per battle.
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,35,0,0,0,0,0,0,0,0,0,0,0,0,0,500,Spirit Bottle,Recovers 80 SP§on first turn of battle.
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,37,0,0,0,0,0,0,0,0,0,0,0,0,0,500,Speed Bottle,Start battle with one§extra turn on first§turn once per battle.
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,33,0,0,0,0,0,0,0,0,0,0,0,0,0,500,Healing Bottle,Recovers 70% HP§when HP is critical§once per battle.
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,34,0,0,0,0,0,0,0,0,0,0,0,0,0,500,Sun Bottle,Recovers 20 MP§when available§once per battle.
