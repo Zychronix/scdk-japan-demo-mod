@@ -16,7 +16,7 @@ import legend.game.Scus94491BpeSegment_800b;
 import legend.game.characters.Addition04;
 import legend.game.characters.Element;
 import legend.game.characters.ElementSet;
-import legend.game.characters.TurnBasedPercentileBuff;
+import legend.game.characters.UnaryStatModConfig;
 import legend.game.characters.VitalsStat;
 import legend.game.combat.Battle;
 import legend.game.combat.bent.AttackEvent;
@@ -127,6 +127,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.stream.IntStream;
 
 import static legend.core.GameEngine.CONFIG;
@@ -148,6 +150,18 @@ import static legend.game.Scus94491BpeSegment_800b.scriptStatePtrArr_800bc1c0;
 import static legend.game.Scus94491BpeSegment_800b.spGained_800bc950;
 import static legend.game.combat.Battle.spellStats_800fa0b8;
 import static legend.game.combat.SEffe.transformToScreenSpace;
+import static legend.lodmod.LodMod.DARK_ELEMENT;
+import static legend.lodmod.LodMod.DIVINE_ELEMENT;
+import static legend.lodmod.LodMod.EARTH_ELEMENT;
+import static legend.lodmod.LodMod.FIRE_ELEMENT;
+import static legend.lodmod.LodMod.HP_STAT;
+import static legend.lodmod.LodMod.LIGHT_ELEMENT;
+import static legend.lodmod.LodMod.MP_STAT;
+import static legend.lodmod.LodMod.SPEED_STAT;
+import static legend.lodmod.LodMod.SP_STAT;
+import static legend.lodmod.LodMod.THUNDER_ELEMENT;
+import static legend.lodmod.LodMod.WATER_ELEMENT;
+import static legend.lodmod.LodMod.WIND_ELEMENT;
 
 @Mod(id = DragoonModifier.MOD_ID)
 public class DragoonModifier {
@@ -548,96 +562,109 @@ public class DragoonModifier {
   }
 
   public void configSwapped() {
-    CoreMod.MAX_CHARACTER_LEVEL = this.maxCharacterLevel;
-    CoreMod.MAX_DRAGOON_LEVEL = this.maxDragoonLevel;
-    CoreMod.MAX_ADDITION_LEVEL = this.maxAdditionLevel;
-    CoreMod.ADDITIONS_PER_LEVEL = this.additionsPerLevel;
+    try {
+      CoreMod.MAX_CHARACTER_LEVEL = this.maxCharacterLevel;
+      CoreMod.MAX_DRAGOON_LEVEL = this.maxDragoonLevel;
+      CoreMod.MAX_ADDITION_LEVEL = this.maxAdditionLevel;
+      CoreMod.ADDITIONS_PER_LEVEL = this.additionsPerLevel;
 
-    for(int i = 0; i < 9; i++) {
-      //CoreMod.CHARACTER_DATA[i].xpTable = new int[this.maxCharacterLevel + 1];
-      CoreMod.CHARACTER_DATA[i].statsTable = new LevelStuff08[this.maxCharacterLevel + 1];
-      CoreMod.CHARACTER_DATA[i].dxpTable = new int[CoreMod.MAX_DRAGOON_LEVEL + 1];
-      CoreMod.CHARACTER_DATA[i].dragoonStatsTable = new MagicStuff08[CoreMod.MAX_DRAGOON_LEVEL + 1];
-      CoreMod.CHARACTER_DATA[i].additions = new ArrayList<>();
-      CoreMod.CHARACTER_DATA[i].additionsMultiplier = new ArrayList<>();
-      CoreMod.CHARACTER_DATA[i].dragoonAddition = new ArrayList<>();
-    }
-
-    for(int i = 0; i < 9; i++) {
-      for(int x = 0; x < maxCharacterLevel + 1; x++) {
-        CoreMod.CHARACTER_DATA[i].xpTable[x] = Integer.parseInt(xpNextStats.get((this.maxCharacterLevel + 1) * i + x)[0]);
-        CoreMod.CHARACTER_DATA[i].statsTable[x] = new LevelStuff08(Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[5]), Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[6]),
-          Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[0]), Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[1]),
-          Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[2]), Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[3]),
-          Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[4]));
+      for(int i = 0; i < 9; i++) {
+        CoreMod.CHARACTER_DATA[i].xpTable = new int[this.maxCharacterLevel + 1];
+        CoreMod.CHARACTER_DATA[i].statsTable = new LevelStuff08[this.maxCharacterLevel + 1];
+        CoreMod.CHARACTER_DATA[i].dxpTable = new int[CoreMod.MAX_DRAGOON_LEVEL + 1];
+        CoreMod.CHARACTER_DATA[i].dragoonStatsTable = new MagicStuff08[CoreMod.MAX_DRAGOON_LEVEL + 1];
+        CoreMod.CHARACTER_DATA[i].additions = new ArrayList<>();
+        CoreMod.CHARACTER_DATA[i].additionsMultiplier = new ArrayList<>();
+        CoreMod.CHARACTER_DATA[i].dragoonAddition = new ArrayList<>();
       }
-    }
 
-    for(int i = 0; i < 9; i++) {
-      CoreMod.CHARACTER_DATA[i].spBarColours = new int[this.maxDragoonLevel + 2][6];
-      for(int x = 0; x < this.maxDragoonLevel + 1; x++) {
-        CoreMod.CHARACTER_DATA[i].dxpTable[x] = Integer.parseInt(dxpNextStats.get(i)[x]);
+      for(int i = 0; i < 9; i++) {
+        for(int x = 0; x < maxCharacterLevel + 1; x++) {
+          CoreMod.CHARACTER_DATA[i].xpTable[x] = Integer.parseInt(xpNextStats.get((this.maxCharacterLevel + 1) * i + x)[0]);
+          CoreMod.CHARACTER_DATA[i].statsTable[x] = new LevelStuff08(Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[5]), Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[6]),
+            Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[0]), Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[1]),
+            Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[2]), Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[3]),
+            Integer.parseInt(characterStatsTable.get((this.maxCharacterLevel + 1) * i + x)[4]));
+        }
       }
-      for(int x = 0; x < this.maxDragoonLevel + 1; x++) {
-        int spellIndex = Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[1]);
-        CoreMod.CHARACTER_DATA[i].dragoonStatsTable[x] = new MagicStuff08(Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[0]), spellIndex == 255 ? (byte) -1 : (byte) spellIndex,
-          Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[2]), Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[3]),
-          Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[4]), Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[5]),
-          Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[6]));
+
+      for(int i = 0; i < 9; i++) {
+        CoreMod.CHARACTER_DATA[i].spBarColours = new int[this.maxDragoonLevel + 2][6];
+        for(int x = 0; x < this.maxDragoonLevel + 1; x++) {
+          CoreMod.CHARACTER_DATA[i].dxpTable[x] = Integer.parseInt(dxpNextStats.get(i)[x]);
+        }
+        for(int x = 0; x < this.maxDragoonLevel + 1; x++) {
+          int spellIndex = Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[1]);
+          CoreMod.CHARACTER_DATA[i].dragoonStatsTable[x] = new MagicStuff08(Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[0]), spellIndex == 255 ? (byte)-1 : (byte)spellIndex,
+            Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[2]), Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[3]),
+            Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[4]), Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[5]),
+            Integer.parseInt(dragoonStatsTable.get((this.maxDragoonLevel + 1) * i + x)[6]));
+        }
       }
-    }
 
-    for(int i = 0; i < 9; i++) {
-      for(int x = 0; x < this.maxDragoonLevel + 2; x++) {
-        int top = Integer.decode(spBarColours.get(i * 2)[x].replace("#", "0x"));
-        int btm = Integer.decode(spBarColours.get(1 * 2 + 1)[x].replace("#", "0x"));
+      for(int i = 0; i < 9; i++) {
+        for(int x = 0; x < this.maxDragoonLevel + 2; x++) {
+          int top = Integer.decode(spBarColours.get(i * 2)[x].replace("#", "0x"));
+          int btm = Integer.decode(spBarColours.get(1 * 2 + 1)[x].replace("#", "0x"));
 
-        final int[] topArray = {
-          ((top >> 24) & 0xff),
-          ((top >> 16) & 0xff),
-          ((top >> 8) & 0xff),
-          (top & 0xff)
-        };
+          final int[] topArray = {
+            ((top >> 24) & 0xff),
+            ((top >> 16) & 0xff),
+            ((top >> 8) & 0xff),
+            (top & 0xff)
+          };
 
-        final int[] btmArray = {
-          ((btm >> 24) & 0xff),
-          ((btm >> 16) & 0xff),
-          ((btm >> 8) & 0xff),
-          (btm & 0xff)
-        };
+          final int[] btmArray = {
+            ((btm >> 24) & 0xff),
+            ((btm >> 16) & 0xff),
+            ((btm >> 8) & 0xff),
+            (btm & 0xff)
+          };
 
-        final int[] rgbArray = {topArray[1], topArray[2], topArray[3], btmArray[1], btmArray[2], btmArray[3]};
-        CoreMod.CHARACTER_DATA[i].spBarColours[x] = rgbArray;
+          final int[] rgbArray = {topArray[1], topArray[2], topArray[3], btmArray[1], btmArray[2], btmArray[3]};
+          CoreMod.CHARACTER_DATA[i].spBarColours[x] = rgbArray;
+        }
       }
+
+      loadCharacterAdditions(0, 0, 7);
+      loadCharacterAdditions(1, 8, 13);
+      loadCharacterAdditions(3, 14, 18);
+      loadCharacterAdditions(7, 19, 22);
+      loadCharacterAdditions(6, 23, 28);
+      loadCharacterAdditions(4, 29, 35);
+      loadCharacterAdditions(5, 36, 41);
+      loadAdditionMultiplier(0, 0, 7);
+      loadAdditionMultiplier(1, 8, 13);
+      loadAdditionMultiplier(3, 14, 18);
+      loadAdditionMultiplier(7, 19, 22);
+      loadAdditionMultiplier(6, 23, 28);
+      loadAdditionMultiplier(4, 29, 35);
+      loadAdditionMultiplier(5, 36, 41);
+      loadDragoonAddition(0, 7, false);
+      loadDragoonAddition(1, 13, false);
+      loadDragoonAddition(3, 18, false);
+      loadDragoonAddition(7, 22, false);
+      loadDragoonAddition(6, 28, false);
+      loadDragoonAddition(4, 35, false);
+      loadDragoonAddition(5, 41, false);
+      loadDragoonAddition(0, 42, true);
+      loadShanaAdditions();
+      loadAdditionMultiplier(2, 7, 8);
+      loadAdditionMultiplier(8, 7, 8);
+
+      print("MOD loaded. Config swapped." + equipStats.size());
+    } catch(final Exception ex) {
+      print("MOD failed to load retrying.");
+      print(ex.toString());
+      Timer timer = new Timer();
+      timer.schedule(new TimerTask() {
+
+        @Override
+        public void run() {
+          configSwapped();
+        }
+      }, 0, 3000);
     }
-
-    loadCharacterAdditions(0, 0, 7);
-    loadCharacterAdditions(1, 8, 13);
-    loadCharacterAdditions(3, 14, 18);
-    loadCharacterAdditions(7, 19, 22);
-    loadCharacterAdditions(6, 23, 28);
-    loadCharacterAdditions(4, 29, 35);
-    loadCharacterAdditions(5, 36, 41);
-    loadAdditionMultiplier(0, 0, 7);
-    loadAdditionMultiplier(1, 8, 13);
-    loadAdditionMultiplier(3, 14, 18);
-    loadAdditionMultiplier(7, 19, 22);
-    loadAdditionMultiplier(6, 23, 28);
-    loadAdditionMultiplier(4, 29, 35);
-    loadAdditionMultiplier(5, 36, 41);
-    loadDragoonAddition(0, 7, false);
-    loadDragoonAddition(1, 13, false);
-    loadDragoonAddition(3, 18, false);
-    loadDragoonAddition(7, 22, false);
-    loadDragoonAddition(6, 28, false);
-    loadDragoonAddition(4, 35, false);
-    loadDragoonAddition(5, 41, false);
-    loadDragoonAddition(0, 42, true);
-    loadShanaAdditions();
-    loadAdditionMultiplier(2, 7, 8);
-    loadAdditionMultiplier(8, 7, 8);
-
-    print("Config swapped."  + equipStats.size());
   }
   //endregion
 
@@ -757,6 +784,10 @@ public class DragoonModifier {
       final int mpRegen = (special2 & 0x20) != 0 ? specialAmount : 0;
       final int hpRegen = (special2 & 0x40) != 0 ? specialAmount : 0;
       final int special2Flag80 = (special2 & 0x80) != 0 ? specialAmount : 0;
+
+      elementalResistance.add(Element.fromFlag(Integer.parseInt(equipStats.get(i)[6])));
+      elementalImmunity.add(Element.fromFlag(Integer.parseInt(equipStats.get(i)[7])));
+
       final Equipment dmEquip = new Equipment(
         equipStats.get(i)[29],
         equipStats.get(i)[30].replace('\u00a7', '\n'),
@@ -1116,7 +1147,7 @@ public class DragoonModifier {
     if(faustBattle) {
       final ScriptState<? extends BattleEntity27c> state = battleState_8006e398.allBents_e0c[0];
       final BattleEntity27c bobj = state.innerStruct_00;
-      final VitalsStat hp = bobj.stats.getStat(CoreMod.HP_STAT.get());
+      final VitalsStat hp = bobj.stats.getStat(HP_STAT.get());
       hp.setCurrent(25600);
       hp.setMaxRaw(25600);
       bobj.attack_34 = 125;
@@ -1174,7 +1205,7 @@ public class DragoonModifier {
 
           if(player.charId_272 == 7) { //Kongol SPD reduction
             final ActiveStatsa0 stats = Scus94491BpeSegment_800b.stats_800be5f8[player.charId_272];
-            player.stats.getStat(CoreMod.SPEED_STAT.get()).setRaw(stats.bodySpeed_69 + (int) Math.round(stats.equipmentSpeed_86 / 2d));
+            player.stats.getStat(SPEED_STAT.get()).setRaw(stats.bodySpeed_69 + (int) Math.round(stats.equipmentSpeed_86 / 2d));
           }
 
           if(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString().equals("dragoon_modifier:e149")) { //Phantom Shield
@@ -1221,12 +1252,12 @@ public class DragoonModifier {
             player.attackAvoid_40 += 12;
             player.magicAvoid_42 += 12;
             if(player.charId_272 != 7) {
-              player.stats.getStat(CoreMod.SPEED_STAT.get()).setRaw(player.stats.getStat(CoreMod.SPEED_STAT.get()).get() + 12);
+              player.stats.getStat(SPEED_STAT.get()).setRaw(player.stats.getStat(SPEED_STAT.get()).get() + 12);
             } else {
-              player.stats.getStat(CoreMod.SPEED_STAT.get()).setRaw(player.stats.getStat(CoreMod.SPEED_STAT.get()).get() + 6);
+              player.stats.getStat(SPEED_STAT.get()).setRaw(player.stats.getStat(SPEED_STAT.get()).get() + 6);
             }
-            player.stats.getStat(CoreMod.HP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(CoreMod.HP_STAT.get()).getMax() * 1.3d));
-            player.stats.getStat(CoreMod.MP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(CoreMod.MP_STAT.get()).getMax() * 1.3d));
+            player.stats.getStat(HP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(HP_STAT.get()).getMax() * 1.3d));
+            player.stats.getStat(MP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(MP_STAT.get()).getMax() * 1.3d));
             player.hpRegen_134 = 10;
             player.mpRegen_136 = 10;
             player.spRegen_138 = 100;
@@ -1240,9 +1271,9 @@ public class DragoonModifier {
             player.attackAvoid_40 += 6;
             player.magicAvoid_42 += 6;
             if(player.charId_272 != 7) {
-              player.stats.getStat(CoreMod.SPEED_STAT.get()).setRaw(player.stats.getStat(CoreMod.SPEED_STAT.get()).get() + 6);
+              player.stats.getStat(SPEED_STAT.get()).setRaw(player.stats.getStat(SPEED_STAT.get()).get() + 6);
             } else {
-              player.stats.getStat(CoreMod.SPEED_STAT.get()).setRaw(player.stats.getStat(CoreMod.SPEED_STAT.get()).get() + 3);
+              player.stats.getStat(SPEED_STAT.get()).setRaw(player.stats.getStat(SPEED_STAT.get()).get() + 3);
             }
             player.hpRegen_134 = 4;
             player.mpRegen_136 = 4;
@@ -1257,7 +1288,7 @@ public class DragoonModifier {
             player.attackAvoid_40 += 1;
             player.magicAvoid_42 += 1;
             if(player.charId_272 != 7) {
-              player.stats.getStat(CoreMod.SPEED_STAT.get()).setRaw(player.stats.getStat(CoreMod.SPEED_STAT.get()).get() + 1);
+              player.stats.getStat(SPEED_STAT.get()).setRaw(player.stats.getStat(SPEED_STAT.get()).get() + 1);
             }
           }
 
@@ -1267,16 +1298,16 @@ public class DragoonModifier {
             player.magicDefence_3a = df;
             player.defence_38 = mdf;
             if(player.defence_38 > player.magicDefence_3a) {
-              player.stats.getStat(CoreMod.HP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(CoreMod.HP_STAT.get()).getMax() * 1.5d));
+              player.stats.getStat(HP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(HP_STAT.get()).getMax() * 1.5d));
             } else {
-              player.stats.getStat(CoreMod.HP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(CoreMod.HP_STAT.get()).getMax() / 1.5d));
+              player.stats.getStat(HP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(HP_STAT.get()).getMax() / 1.5d));
               player.spMultiplier_128 += 35;
             }
           }
 
           if(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString().equals("dragoon_modifier:e185")) { //The One Ring
-            player.stats.getStat(CoreMod.HP_STAT.get()).setCurrent(1);
-            player.stats.getStat(CoreMod.HP_STAT.get()).setMaxRaw(1);
+            player.stats.getStat(HP_STAT.get()).setCurrent(1);
+            player.stats.getStat(HP_STAT.get()).setMaxRaw(1);
             player.attackAvoid_40 = 80;
             player.magicAvoid_42 = 80;
           }
@@ -1287,14 +1318,14 @@ public class DragoonModifier {
           }
 
           if(player.equipment_11e.get(EquipmentSlot.HELMET).getRegistryId().toString().equals("dragoon_modifier:e188")) { //Halo of Balance
-            player.stats.getStat(CoreMod.HP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(CoreMod.HP_STAT.get()).getMax() * 1.3d));
-            player.stats.getStat(CoreMod.MP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(CoreMod.MP_STAT.get()).getMax() * 1.3d));
+            player.stats.getStat(HP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(HP_STAT.get()).getMax() * 1.3d));
+            player.stats.getStat(MP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(MP_STAT.get()).getMax() * 1.3d));
           }
 
           if(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString().equals("dragoon_modifier:e189")) { //Firebrand
             player.equipmentAttackElements_1c.clear();
-            player.equipmentAttackElements_1c.add(CoreMod.DIVINE_ELEMENT.get());
-            player.equipmentAttackElements_1c.add(CoreMod.FIRE_ELEMENT.get());
+            player.equipmentAttackElements_1c.add(DIVINE_ELEMENT.get());
+            player.equipmentAttackElements_1c.add(FIRE_ELEMENT.get());
           }
 
           if(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString().equals("dragoon_modifier:e190")) { //Super Spirit Ring
@@ -1326,8 +1357,20 @@ public class DragoonModifier {
                 Integer.parseInt(spellStats.get(flowerStorm)[11]));
             }
 
-            if(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString().equals("dragoon_modifier:e192")) {
-              protectionShield[player.charSlot_276] = player.stats.getStat(CoreMod.HP_STAT.get()).getMax() / 2;
+            if(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString().equals("dragoon_modifier:e192")) { //Protection Shield
+              protectionShield[player.charSlot_276] += player.stats.getStat(HP_STAT.get()).getMax() / 2;
+            }
+
+            if(player.equipment_11e.get(EquipmentSlot.BOOTS).getRegistryId().toString().equals("dragoon_modifier:e197")) { //Protection Shoes
+              protectionShield[player.charSlot_276] += player.stats.getStat(HP_STAT.get()).getMax() / 4;
+            }
+
+            if(player.equipment_11e.get(EquipmentSlot.HELMET).getRegistryId().toString().equals("dragoon_modifier:e198")) { //Protection Helmet
+              protectionShield[player.charSlot_276] += player.stats.getStat(HP_STAT.get()).getMax() / 4;
+            }
+
+            if(player.equipment_11e.get(EquipmentSlot.ARMOUR).getRegistryId().toString().equals("dragoon_modifier:e198")) { //Protection Armor
+              protectionShield[player.charSlot_276] += player.stats.getStat(HP_STAT.get()).getMax();
             }
 
             if(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString().equals("dragoon_modifier:e193")) {
@@ -1372,7 +1415,7 @@ public class DragoonModifier {
                   Integer.parseInt(spellStats.get(moonLight)[9]),
                   Integer.parseInt(spellStats.get(moonLight)[10]),
                   Integer.parseInt(spellStats.get(moonLight)[11]));
-                if(player.dlevel_06 >= 4 && player.stats.getStat(CoreMod.MP_STAT.get()).getMax() >= 120) {
+                if(player.dlevel_06 >= 4 && player.stats.getStat(MP_STAT.get()).getMax() >= 120) {
                   spellStats_800fa0b8[gatesOfHeaven] = new SpellStats0c(spellStats.get(gatesOfHeaven)[12],
                     spellStats.get(gatesOfHeaven)[13],
                     Integer.parseInt(spellStats.get(gatesOfHeaven)[0]),
@@ -1381,7 +1424,7 @@ public class DragoonModifier {
                     Integer.parseInt(spellStats.get(gatesOfHeaven)[3]),
                     Integer.parseInt(spellStats.get(gatesOfHeaven)[4]),
                     Integer.parseInt(spellStats.get(gatesOfHeaven)[5]),
-                    player.stats.getStat(CoreMod.MP_STAT.get()).getMax() / 3,
+                    player.stats.getStat(MP_STAT.get()).getMax() / 3,
                     Integer.parseInt(spellStats.get(gatesOfHeaven)[7]),
                     Element.fromFlag(Integer.parseInt(spellStats.get(gatesOfHeaven)[8])),
                     Integer.parseInt(spellStats.get(gatesOfHeaven)[9]),
@@ -1394,8 +1437,8 @@ public class DragoonModifier {
         }
 
         elementArrowsElements.add(bobj.getElement());
-        if(bobj instanceof PlayerBattleEntity && bobj.getElement() == CoreMod.FIRE_ELEMENT.get() && gameState_800babc8.goods_19c[0] << 7 == 1) {
-          elementArrowsElements.add(CoreMod.DIVINE_ELEMENT.get());
+        if(bobj instanceof PlayerBattleEntity && bobj.getElement() == FIRE_ELEMENT.get() && gameState_800babc8.goods_19c[0] << 7 == 1) {
+          elementArrowsElements.add(DIVINE_ELEMENT.get());
         }
       }
     }
@@ -1455,8 +1498,8 @@ public class DragoonModifier {
           }
 
           if(ultimatePenality[player.charSlot_276][0] > 1) {
-            int currentMax = player.stats.getStat(CoreMod.HP_STAT.get()).getMaxRaw();
-            player.stats.getStat(CoreMod.HP_STAT.get()).setMaxRaw(Math.round(Math.round((double) currentMax / ultimatePenality[player.charSlot_276][0])));
+            int currentMax = player.stats.getStat(HP_STAT.get()).getMaxRaw();
+            player.stats.getStat(HP_STAT.get()).setMaxRaw(Math.round(Math.round((double) currentMax / ultimatePenality[player.charSlot_276][0])));
           }
 
           ultimateZeroSPStart(player);
@@ -1464,11 +1507,11 @@ public class DragoonModifier {
           int enemyId = monster.charId_272;
           for(int x = 0; x < 86; x++) {
             if(enemyId == Integer.parseInt(ultimateData.get(x)[0])) {
-              monster.stats.getStat(CoreMod.HP_STAT.get()).setMaxRaw(Integer.parseInt(ultimateData.get(x)[1]));
-              monster.stats.getStat(CoreMod.HP_STAT.get()).setCurrent(Integer.parseInt(ultimateData.get(x)[1]));
+              monster.stats.getStat(HP_STAT.get()).setMaxRaw(Integer.parseInt(ultimateData.get(x)[1]));
+              monster.stats.getStat(HP_STAT.get()).setCurrent(Integer.parseInt(ultimateData.get(x)[1]));
               monster.attack_34 = Integer.parseInt(ultimateData.get(x)[3]);
               monster.magicAttack_36 = Integer.parseInt(ultimateData.get(x)[4]);
-              monster.stats.getStat(CoreMod.SPEED_STAT.get()).setRaw(Integer.parseInt(ultimateData.get(x)[5]));
+              monster.stats.getStat(SPEED_STAT.get()).setRaw(Integer.parseInt(ultimateData.get(x)[5]));
               monster.defence_38 = Integer.parseInt(ultimateData.get(x)[6]);
               monster.magicDefence_3a = Integer.parseInt(ultimateData.get(x)[7]);
               monster.attackAvoid_40 = Integer.parseInt(ultimateData.get(x)[8]);
@@ -1492,7 +1535,7 @@ public class DragoonModifier {
 
     for(int i = 0; i < battleState_8006e398.getMonsterCount(); i++) {
       final MonsterBattleEntity monster = battleState_8006e398.monsterBents_e50[i].innerStruct_00;
-      int hp = monster.stats.getStat(CoreMod.HP_STAT.get()).getCurrent();
+      int hp = monster.stats.getStat(HP_STAT.get()).getCurrent();
       damageTrackerPreviousHP[monster.charSlot_276] = hp;
     }
 
@@ -1520,8 +1563,8 @@ public class DragoonModifier {
         if(bonusItemSP[player.charSlot_276]) {
           bonusItemSP[player.charSlot_276] = false;
           if(player.isDragoon()) {
-            player.stats.getStat(CoreMod.SP_STAT.get()).setCurrent(player.stats.getStat(CoreMod.SP_STAT.get()).getCurrent() + 50);
-            int newSP = player.stats.getStat(CoreMod.SP_STAT.get()).getCurrent();
+            player.stats.getStat(SP_STAT.get()).setCurrent(player.stats.getStat(SP_STAT.get()).getCurrent() + 50);
+            int newSP = player.stats.getStat(SP_STAT.get()).getCurrent();
             if(player.charSlot_276 == 0) {
               battleState_8006e398.dragoonTurns_294[0] = newSP / 100;
             } else if(player.charSlot_276 == 1) {
@@ -1533,15 +1576,15 @@ public class DragoonModifier {
         }
 
         if(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString().equals("dragoon_modifier:e166")) { //Spirit Eater
-          int sp = player.stats.getStat(CoreMod.SP_STAT.get()).getCurrent();
-          if(!player.isDragoon() && sp != player.stats.getStat(CoreMod.SP_STAT.get()).getMax()) {
-            player.stats.getStat(CoreMod.SP_STAT.get()).setCurrent(sp - 20);
+          int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
+          if(!player.isDragoon() && sp != player.stats.getStat(SP_STAT.get()).getMax()) {
+            player.stats.getStat(SP_STAT.get()).setCurrent(sp - 20);
           }
           spGained_800bc950[player.charSlot_276] += 40;
         }
 
         if(ouroboros[player.charSlot_276] && !player.isDragoon()) { //Ouroboros
-          player.stats.getStat(CoreMod.SPEED_STAT.get()).addMod(new TurnBasedPercentileBuff(-50, 3));
+          player.stats.getStat(SPEED_STAT.get()).addMod(LodMod.id("speed_down"), LodMod.UNARY_STAT_MOD_TYPE.get().make(new UnaryStatModConfig().percent(-50).turns(3)));
           ouroboros[player.charSlot_276] = false;
         }
 
@@ -1550,7 +1593,7 @@ public class DragoonModifier {
             ringOfElements[player.charSlot_276]++;
             ringOfElementsElement[player.charSlot_276] = ((Battle)currentEngineState_8004dd04).dragoonSpaceElement_800c6b64;
           } else {
-            if(player.element == CoreMod.FIRE_ELEMENT.get() && ((Battle)currentEngineState_8004dd04).dragoonSpaceElement_800c6b64 == CoreMod.DIVINE_ELEMENT.get()) {
+            if(player.element == FIRE_ELEMENT.get() && ((Battle)currentEngineState_8004dd04).dragoonSpaceElement_800c6b64 == DIVINE_ELEMENT.get()) {
               ringOfElements[player.charSlot_276]++;
               ringOfElementsElement[player.charSlot_276] = ((Battle)currentEngineState_8004dd04).dragoonSpaceElement_800c6b64;
             }
@@ -1605,7 +1648,7 @@ public class DragoonModifier {
         if(player.charId_272 == 2 || player.charId_272 == 8) {
           if(shanaStarChildrenHeal[player.charSlot_276] && !player.isDragoon()) {
             shanaStarChildrenHeal[player.charSlot_276] = false;
-            player.stats.getStat(CoreMod.HP_STAT.get()).setCurrent(player.stats.getStat(CoreMod.HP_STAT.get()).getMax());
+            player.stats.getStat(HP_STAT.get()).setCurrent(player.stats.getStat(HP_STAT.get()).getMax());
           }
 
           if(shanaRapidFire[player.charSlot_276]) {
@@ -1626,14 +1669,14 @@ public class DragoonModifier {
           meruBoostTurns[player.charSlot_276] -= 1;
           if(meruBoostTurns[player.charSlot_276] == 0) {
             meruBoost[player.charSlot_276] = false;
-            player.stats.getStat(CoreMod.HP_STAT.get()).setMaxRaw(meruMaxHpSave[player.charSlot_276]);
+            player.stats.getStat(HP_STAT.get()).setMaxRaw(meruMaxHpSave[player.charSlot_276]);
             player.magicDefence_3a = meruMDFSave[player.charSlot_276];
           }
         }
 
         if(spiritBottle[player.charSlot_276]) {
-          int sp = player.stats.getStat(CoreMod.SP_STAT.get()).getCurrent();
-          player.stats.getStat(CoreMod.SP_STAT.get()).setCurrent(sp + 80);
+          int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
+          player.stats.getStat(SP_STAT.get()).setCurrent(sp + 80);
           spGained_800bc950[player.charSlot_276] += 80;
           spiritBottle[player.charSlot_276] = false;
         }
@@ -1644,18 +1687,18 @@ public class DragoonModifier {
         }
 
         if(healingBottle[player.charSlot_276]) {
-          final int hp = player.stats.getStat(CoreMod.HP_STAT.get()).getCurrent();
-          if(hp <= player.stats.getStat(CoreMod.HP_STAT.get()).getMax() * 0.25) {
-            player.stats.getStat(CoreMod.HP_STAT.get()).setCurrent(hp + (int) Math.round(player.stats.getStat(CoreMod.HP_STAT.get()).getMax() * 0.7));
+          final int hp = player.stats.getStat(HP_STAT.get()).getCurrent();
+          if(hp <= player.stats.getStat(HP_STAT.get()).getMax() * 0.25) {
+            player.stats.getStat(HP_STAT.get()).setCurrent(hp + (int) Math.round(player.stats.getStat(HP_STAT.get()).getMax() * 0.7));
             healingBottle[player.charSlot_276] = false;
           }
         }
 
         if(sunBottle[player.charSlot_276]) {
-          final int mp = player.stats.getStat(CoreMod.MP_STAT.get()).getCurrent();
-          print("MP: " + mp + " / " + (player.stats.getStat(CoreMod.MP_STAT.get()).getMax() - 20));
-          if(mp <= player.stats.getStat(CoreMod.MP_STAT.get()).getMax() - 20) {
-            player.stats.getStat(CoreMod.MP_STAT.get()).setCurrent(mp + 20);
+          final int mp = player.stats.getStat(MP_STAT.get()).getCurrent();
+          print("MP: " + mp + " / " + (player.stats.getStat(MP_STAT.get()).getMax() - 20));
+          if(mp <= player.stats.getStat(MP_STAT.get()).getMax() - 20) {
+            player.stats.getStat(MP_STAT.get()).setCurrent(mp + 20);
             sunBottle[player.charSlot_276] = false;
           }
         }
@@ -1816,15 +1859,15 @@ public class DragoonModifier {
               final ScriptState<? extends BattleEntity27c> state = battleState_8006e398.allBents_e0c[i];
               final BattleEntity27c bobj = state.innerStruct_00;
               if(bobj instanceof PlayerBattleEntity) {
-                final int playerHealedHP = bobj.stats.getStat(CoreMod.HP_STAT.get()).getCurrent();
-                final int roseMaxHP = player.stats.getStat(CoreMod.HP_STAT.get()).getMax();
+                final int playerHealedHP = bobj.stats.getStat(HP_STAT.get()).getCurrent();
+                final int roseMaxHP = player.stats.getStat(HP_STAT.get()).getMax();
                 if(playerHealedHP > 0) {
-                  bobj.stats.getStat(CoreMod.HP_STAT.get()).setCurrent((int) Math.min(bobj.stats.getStat(CoreMod.HP_STAT.get()).getMax(), (playerHealedHP + Math.round(roseMaxHP * player.dlevel_06 * 0.0425d))));
+                  bobj.stats.getStat(HP_STAT.get()).setCurrent((int) Math.min(bobj.stats.getStat(HP_STAT.get()).getMax(), (playerHealedHP + Math.round(roseMaxHP * player.dlevel_06 * 0.0425d))));
                 }
               }
             }
           } else if(player.spellId_4e == 19) {
-            player.stats.getStat(CoreMod.HP_STAT.get()).setCurrent((int) Math.min(player.stats.getStat(CoreMod.HP_STAT.get()).getMax(), player.stats.getStat(CoreMod.HP_STAT.get()).getCurrent() + event.damage * 0.1d));
+            player.stats.getStat(HP_STAT.get()).setCurrent((int) Math.min(player.stats.getStat(HP_STAT.get()).getMax(), player.stats.getStat(HP_STAT.get()).getCurrent() + event.damage * 0.1d));
           }
         }
 
@@ -1848,23 +1891,23 @@ public class DragoonModifier {
 
         if(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString().equals("dragoon_modifier:e168") && event.attackType.isPhysical()) { //Dragon Beater
           final int heal = (int) Math.round(event.damage * 0.01d);
-          final int hp = player.stats.getStat(CoreMod.HP_STAT.get()).getCurrent();
-          final int sp = player.stats.getStat(CoreMod.SP_STAT.get()).getCurrent();
-          player.stats.getStat(CoreMod.HP_STAT.get()).setCurrent(hp + Math.min(1000, heal));
-          player.stats.getStat(CoreMod.SP_STAT.get()).setCurrent(sp + Math.min(100, heal));
+          final int hp = player.stats.getStat(HP_STAT.get()).getCurrent();
+          final int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
+          player.stats.getStat(HP_STAT.get()).setCurrent(hp + Math.min(1000, heal));
+          player.stats.getStat(SP_STAT.get()).setCurrent(sp + Math.min(100, heal));
         }
 
         if(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString().equals("dragoon_modifier:e169") && player.isDragoon()) { //Ouroboros
           final int dragoonTurns = player.charSlot_276 == 0 ? battleState_8006e398.dragoonTurns_294[0] : player.charSlot_276 == 1 ? battleState_8006e398.dragoonTurns_294[1] : battleState_8006e398.dragoonTurns_294[2];
-          final int sp = player.stats.getStat(CoreMod.SP_STAT.get()).getCurrent();
+          final int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
           if(player.isDragoon() && dragoonTurns >= 2 && sp >= 200) {
-            player.stats.getStat(CoreMod.SP_STAT.get()).setCurrent(sp - 100);
+            player.stats.getStat(SP_STAT.get()).setCurrent(sp - 100);
             if(player.charSlot_276 == 0) {
-              battleState_8006e398.dragoonTurns_294[0] = player.stats.getStat(CoreMod.SP_STAT.get()).getCurrent() / 100;
+              battleState_8006e398.dragoonTurns_294[0] = player.stats.getStat(SP_STAT.get()).getCurrent() / 100;
             } else if(player.charSlot_276 == 1) {
-              battleState_8006e398.dragoonTurns_294[1] = player.stats.getStat(CoreMod.SP_STAT.get()).getCurrent() / 100;
+              battleState_8006e398.dragoonTurns_294[1] = player.stats.getStat(SP_STAT.get()).getCurrent() / 100;
             } else if(player.charSlot_276 == 2) {
-              battleState_8006e398.dragoonTurns_294[2] = player.stats.getStat(CoreMod.SP_STAT.get()).getCurrent() / 100;
+              battleState_8006e398.dragoonTurns_294[2] = player.stats.getStat(SP_STAT.get()).getCurrent() / 100;
             }
             event.damage *= 2;
             ouroboros[player.charSlot_276] = true;
@@ -1904,7 +1947,7 @@ public class DragoonModifier {
           }
 
           if(player.itemId_52 > 0) {
-            player.stats.getStat(CoreMod.SP_STAT.get()).setCurrent(player.stats.getStat(CoreMod.SP_STAT.get()).getCurrent() + 100);
+            player.stats.getStat(SP_STAT.get()).setCurrent(player.stats.getStat(SP_STAT.get()).getCurrent() + 100);
           }
         }
 
@@ -1912,12 +1955,12 @@ public class DragoonModifier {
           if(event.attackType.isPhysical()) {
             event.damage = 0;
           }
-          player.stats.getStat(CoreMod.MP_STAT.get()).setCurrent(player.stats.getStat(CoreMod.MP_STAT.get()).getCurrent() + 8);
+          player.stats.getStat(MP_STAT.get()).setCurrent(player.stats.getStat(MP_STAT.get()).getCurrent() + 8);
         }
 
         if(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString().equals("dragoon_modifier:e172")) { //Overcharge Glove
           if(event.defender instanceof MonsterBattleEntity monster) {
-            if(monster.getElement() == CoreMod.THUNDER_ELEMENT.get()) {
+            if(monster.getElement() == THUNDER_ELEMENT.get()) {
               event.damage *= 3;
             }
           }
@@ -1954,23 +1997,23 @@ public class DragoonModifier {
 
         if(event.defender instanceof MonsterBattleEntity monster) { //Haschel in party thunder charge
           try {
-            if(event.attacker.spell_94.element_08 == CoreMod.THUNDER_ELEMENT.get() && new Random().nextBoolean()) {
+            if(event.attacker.spell_94.element_08 == THUNDER_ELEMENT.get() && new Random().nextBoolean()) {
               thunderCharge[monster.charSlot_276] = Math.min(10, thunderCharge[monster.charSlot_276] + 1);
             }
           } catch (Exception ignored) {}
 
           try {
-            if(event.attacker.item_d4.element_01 == CoreMod.THUNDER_ELEMENT.get() && new Random().nextBoolean()) {
+            if(event.attacker.item_d4.element_01 == THUNDER_ELEMENT.get() && new Random().nextBoolean()) {
               thunderCharge[monster.charSlot_276] = Math.min(10, thunderCharge[monster.charSlot_276] + 1);
             }
           } catch (Exception ignored) {}
 
-          if(event.attackType.isPhysical() && player.equipmentAttackElements_1c.contains(CoreMod.THUNDER_ELEMENT.get()) && new Random().nextBoolean()) {
+          if(event.attackType.isPhysical() && player.equipmentAttackElements_1c.contains(THUNDER_ELEMENT.get()) && new Random().nextBoolean()) {
             thunderCharge[monster.charSlot_276] = Math.min(10, thunderCharge[monster.charSlot_276] + 1);
           }
         }
 
-        if(player.charSlot_276 == 4) { //Haschel thunder charge on physical and spark net boost on max stacks and thunder element
+        if(player.charId_272 == 4) { //Haschel thunder charge on physical and spark net boost on max stacks and thunder element
           if(event.defender instanceof MonsterBattleEntity monster) {
             if(player.dlevel_06 > 0) {
               if(event.attackType.isPhysical() && new Random().nextBoolean()) {
@@ -1979,7 +2022,7 @@ public class DragoonModifier {
                 if(player.isDragoon() && player.spellId_4e == 86) {
                   if(thunderCharge[monster.charSlot_276] == 10) {
                     thunderCharge[monster.charSlot_276] = 0;
-                    event.damage *= monster.getElement() == CoreMod.THUNDER_ELEMENT.get() ? 8.8 : 2.93333;
+                    event.damage *= monster.getElement() == THUNDER_ELEMENT.get() ? 8.8 : 2.93333;
                   }
                 }
               }
@@ -2014,30 +2057,25 @@ public class DragoonModifier {
 
       if(event.defender instanceof PlayerBattleEntity defender) {
         if(defender.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString().equals("dragoon_modifier:e183")) { //Ring of Shielding
-          final int hp = defender.stats.getStat(CoreMod.HP_STAT.get()).getCurrent();
+          final int hp = defender.stats.getStat(HP_STAT.get()).getCurrent();
           if((hp - event.damage) <= 0 && new Random().nextInt(0, 99) < 35) {
-            for(int i = 0; i < battleState_8006e398.getAllBentCount(); i++) {
-              final ScriptState<? extends BattleEntity27c> state = battleState_8006e398.allBents_e0c[i];
-              final BattleEntity27c bobj = state.innerStruct_00;
-              if(bobj == defender) {
-                battleState_8006e398.specialEffect_00[i].shieldsSigStoneCharmTurns_1c = 5;
-              }
-            }
+            //defender.stats.getStat(null).addMod(LodMod.id("material_shield"), LodMod.UNARY_STAT_MOD_TYPE.get().make(new UnaryStatModConfig().percent(100).turns(5)));
+            //defender.stats.getStat(SPEED_STAT.get()).addMod(LodMod.id("magic_shield"), LodMod.UNARY_STAT_MOD_TYPE.get().make(new UnaryStatModConfig().percent(100).turns(5)));
           }
         }
 
         if(defender.charId_272 == 6) { //If Meru dies in Wingly Boost turn it off
-          final int hp = defender.stats.getStat(CoreMod.HP_STAT.get()).getCurrent();
+          final int hp = defender.stats.getStat(HP_STAT.get()).getCurrent();
           if(meruBoost[defender.charSlot_276] && hp - event.damage <= 0) {
             meruBoostTurns[defender.charSlot_276] = 0;
             meruBoost[defender.charSlot_276] = false;
-            defender.stats.getStat(CoreMod.HP_STAT.get()).setMaxRaw(meruMaxHpSave[defender.charSlot_276]);
+            defender.stats.getStat(HP_STAT.get()).setMaxRaw(meruMaxHpSave[defender.charSlot_276]);
             defender.magicDefence_3a = meruMDFSave[defender.charSlot_276];
           }
         }
 
         if(ringOfElements[defender.charSlot_276] > 0) {
-          final int hp = defender.stats.getStat(CoreMod.HP_STAT.get()).getCurrent();
+          final int hp = defender.stats.getStat(HP_STAT.get()).getCurrent();
           if(event.damage <= 0) {
             ringOfElements[defender.charSlot_276] = 0;
           }
@@ -2075,19 +2113,19 @@ public class DragoonModifier {
           }
 
           //Divine Dragon Armor 15% elemental reduction instead of half
-          if(attackElement == CoreMod.FIRE_ELEMENT.get() && armorEquipped == 51) {
+          if(attackElement == FIRE_ELEMENT.get() && armorEquipped == 51) {
             event.damage = (int) Math.round(event.damage / 1.15d);
-          } else if(attackElement == CoreMod.WIND_ELEMENT.get() && armorEquipped == 52) {
+          } else if(attackElement == WIND_ELEMENT.get() && armorEquipped == 52) {
             event.damage = (int) Math.round(event.damage / 1.15d);
-          } else if(attackElement == CoreMod.EARTH_ELEMENT.get() && armorEquipped == 56) {
+          } else if(attackElement == EARTH_ELEMENT.get() && armorEquipped == 56) {
             event.damage = (int) Math.round(event.damage / 1.15d);
-          } else if(attackElement == CoreMod.THUNDER_ELEMENT.get() && armorEquipped == 61) {
+          } else if(attackElement == THUNDER_ELEMENT.get() && armorEquipped == 61) {
             event.damage = (int) Math.round(event.damage / 1.15d);
-          } else if(attackElement == CoreMod.LIGHT_ELEMENT.get() && armorEquipped == 67) {
+          } else if(attackElement == LIGHT_ELEMENT.get() && armorEquipped == 67) {
             event.damage = (int) Math.round(event.damage / 1.15d);
-          } else if(attackElement == CoreMod.DARK_ELEMENT.get() && armorEquipped == 68) {
+          } else if(attackElement == DARK_ELEMENT.get() && armorEquipped == 68) {
             event.damage = (int) Math.round(event.damage / 1.15d);
-          } else if(attackElement == CoreMod.WATER_ELEMENT.get() && armorEquipped == 69) {
+          } else if(attackElement == WATER_ELEMENT.get() && armorEquipped == 69) {
             event.damage = (int) Math.round(event.damage / 1.15d);
           }
         }
@@ -2164,11 +2202,11 @@ public class DragoonModifier {
       burnStacks = Math.min(burnStacksMax, burnStacks + stacks);
 
       if(burnStacks >= 4 && previousBurnStacks < 4) {
-        dart.stats.getStat(CoreMod.MP_STAT.get()).setCurrent(dart.stats.getStat(CoreMod.MP_STAT.get()).getCurrent() + 10);
+        dart.stats.getStat(MP_STAT.get()).setCurrent(dart.stats.getStat(MP_STAT.get()).getCurrent() + 10);
       } else if(burnStacks >= 8 && previousBurnStacks < 8) {
-        dart.stats.getStat(CoreMod.MP_STAT.get()).setCurrent(dart.stats.getStat(CoreMod.MP_STAT.get()).getCurrent() + 20);
+        dart.stats.getStat(MP_STAT.get()).setCurrent(dart.stats.getStat(MP_STAT.get()).getCurrent() + 20);
       } else if(burnStacks >= 12 && previousBurnStacks < 12) {
-        dart.stats.getStat(CoreMod.MP_STAT.get()).setCurrent(dart.stats.getStat(CoreMod.MP_STAT.get()).getCurrent() + 30);
+        dart.stats.getStat(MP_STAT.get()).setCurrent(dart.stats.getStat(MP_STAT.get()).getCurrent() + 30);
       }
     }
   }
@@ -2289,8 +2327,8 @@ public class DragoonModifier {
     if(GameEngine.CONFIG.getConfig(ENRAGE_MODE.get()) == EnrageMode.ON) {
       for(int i = 0; i < battleState_8006e398.getMonsterCount(); i++) {
         final MonsterBattleEntity monster = battleState_8006e398.monsterBents_e50[i].innerStruct_00;
-        int hp = monster.stats.getStat(CoreMod.HP_STAT.get()).getCurrent();
-        int maxHp = monster.stats.getStat(CoreMod.HP_STAT.get()).getMax();
+        int hp = monster.stats.getStat(HP_STAT.get()).getCurrent();
+        int maxHp = monster.stats.getStat(HP_STAT.get()).getMax();
         if(hp <= maxHp / 2 && enrageMode[i] == 0) {
           monster.attack_34 = (int) Math.round(monster.attack_34 * 1.1d);
           monster.magicAttack_36 = (int) Math.round(monster.magicAttack_36 * 1.1d);
@@ -2313,7 +2351,7 @@ public class DragoonModifier {
     if(GameEngine.CONFIG.getConfig(DAMAGE_TRACKER.get()) == DamageTracker.ON) {
       for(int i = 0; i < battleState_8006e398.getMonsterCount(); i++) {
         final MonsterBattleEntity monster = battleState_8006e398.monsterBents_e50[i].innerStruct_00;
-        int hp = monster.stats.getStat(CoreMod.HP_STAT.get()).getCurrent();
+        int hp = monster.stats.getStat(HP_STAT.get()).getCurrent();
         if(hp < damageTrackerPreviousHP[monster.charSlot_276]) {
           int difference = damageTrackerPreviousHP[monster.charSlot_276] - hp;
           damageTracker[damageTrackerPreviousCharacter][damageTrackerPreviousAttackType] += difference;
@@ -2400,7 +2438,7 @@ public class DragoonModifier {
           }
         }
 
-        int hp = monster.stats.getStat(CoreMod.HP_STAT.get()).getCurrent();
+        int hp = monster.stats.getStat(HP_STAT.get()).getCurrent();
         if(attack.damage > hp && hp > 0 && hp != damageTrackerPreviousHP[monster.charSlot_276]) {
           damageTracker[player.charSlot_276][4] = attack.damage - hp;
         }
@@ -2416,7 +2454,7 @@ public class DragoonModifier {
     int encounterId = encounterId_800bb0f8;
 
     if(encounterId == 413 || encounterId == 415 || encounterId == 403) {
-      player.stats.getStat(CoreMod.SP_STAT.get()).setCurrent(0);
+      player.stats.getStat(SP_STAT.get()).setCurrent(0);
     }
   }
 
@@ -2427,7 +2465,7 @@ public class DragoonModifier {
         if(state != null) {
           final BattleEntity27c bobj = state.innerStruct_00;
           if(bobj instanceof MonsterBattleEntity) {
-            int hp = bobj.stats.getStat(CoreMod.HP_STAT.get()).getCurrent();
+            int hp = bobj.stats.getStat(HP_STAT.get()).getCurrent();
             ((Battle)currentEngineState_8004dd04).currentEnemyNames_800c69d0[bobj.charSlot_276] = String.valueOf(hp);
           }
         }
@@ -2683,7 +2721,7 @@ public class DragoonModifier {
       if(encounterId == 415) {
         if(attack.attackType.isPhysical()) {
           if(monster.spellId_4e == 33) {
-            player.stats.getStat(CoreMod.MP_STAT.get()).setCurrent(Math.max(0, player.stats.getStat(CoreMod.MP_STAT.get()).getCurrent() - 10));
+            player.stats.getStat(MP_STAT.get()).setCurrent(Math.max(0, player.stats.getStat(MP_STAT.get()).getCurrent() - 10));
           }
         }
       }
@@ -2727,28 +2765,28 @@ public class DragoonModifier {
         } else if(hotkey.contains(InputAction.BUTTON_SHOULDER_LEFT_2) && hotkey.contains(InputAction.DPAD_UP)) { //Dragoon Guard Slot 1
           PlayerBattleEntity player = battleState_8006e398.playerBents_e40[0].innerStruct_00;
           int dragoonTurns = battleState_8006e398.dragoonTurns_294[0];
-          int sp = player.stats.getStat(CoreMod.SP_STAT.get()).getCurrent();
+          int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
           if(player.isDragoon() && player.dlevel_06 >= 6 && dragoonTurns > 1 && sp >= 100) {
             battleState_8006e398.dragoonTurns_294[0] -= 1;
-            player.stats.getStat(CoreMod.SP_STAT.get()).setCurrent(sp - 100);
+            player.stats.getStat(SP_STAT.get()).setCurrent(sp - 100);
             player.guard_54 = 1;
           }
         } else if(hotkey.contains(InputAction.BUTTON_SHOULDER_LEFT_2) && hotkey.contains(InputAction.DPAD_RIGHT)) { //Dragoon Guard Slot 2
           PlayerBattleEntity player = battleState_8006e398.playerBents_e40[1].innerStruct_00;
           int dragoonTurns = battleState_8006e398.dragoonTurns_294[1];
-          int sp = player.stats.getStat(CoreMod.SP_STAT.get()).getCurrent();
+          int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
           if(player.isDragoon() && player.dlevel_06 >= 6 && dragoonTurns > 1 && sp >= 100) {
             battleState_8006e398.dragoonTurns_294[1] -= 1;
-            player.stats.getStat(CoreMod.SP_STAT.get()).setCurrent(sp - 100);
+            player.stats.getStat(SP_STAT.get()).setCurrent(sp - 100);
             player.guard_54 = 1;
           }
         } else if(hotkey.contains(InputAction.BUTTON_SHOULDER_LEFT_2) && hotkey.contains(InputAction.DPAD_LEFT)) { //Dragoon Guard Slot 3
           PlayerBattleEntity player = battleState_8006e398.playerBents_e40[2].innerStruct_00;
           int dragoonTurns = battleState_8006e398.dragoonTurns_294[2];
-          int sp = player.stats.getStat(CoreMod.SP_STAT.get()).getCurrent();
+          int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
           if(player.isDragoon() && player.dlevel_06 >= 6 && dragoonTurns > 1 && sp >= 100) {
             battleState_8006e398.dragoonTurns_294[2] -= 1;
-            player.stats.getStat(CoreMod.SP_STAT.get()).setCurrent(sp - 100);
+            player.stats.getStat(SP_STAT.get()).setCurrent(sp - 100);
             player.guard_54 = 1;
           }
         } else if(hotkey.contains(InputAction.BUTTON_SOUTH) && hotkey.contains(InputAction.BUTTON_SHOULDER_RIGHT_1)) { // Shana Rapid fire
@@ -2781,9 +2819,9 @@ public class DragoonModifier {
             final BattleEntity27c bobj = state.innerStruct_00;
             if(bobj instanceof PlayerBattleEntity player) {
               if((player.charId_272 == 2 || player.charId_272 == 8) && player.charSlot_276 == currentPlayerSlot && !shanaRapidFire[player.charSlot_276] && player.isDragoon() && player.dlevel_06 >= 6) {
-                int mp = player.stats.getStat(CoreMod.MP_STAT.get()).getCurrent();
+                int mp = player.stats.getStat(MP_STAT.get()).getCurrent();
                 if(mp >= 20) {
-                  player.stats.getStat(CoreMod.MP_STAT.get()).setCurrent(mp - 20);
+                  player.stats.getStat(MP_STAT.get()).setCurrent(mp - 20);
                   shanaRapidFire[player.charSlot_276] = true;
                   shanaRapidFireContinue[player.charSlot_276] = true;
                   shanaRapidFireCount[player.charSlot_276] = 0;
@@ -2799,9 +2837,9 @@ public class DragoonModifier {
                         if(bobj instanceof PlayerBattleEntity) {
                             PlayerBattleEntity player = (PlayerBattleEntity) bobj;
                             if((player.charId_272 == 2 || player.charId_272 == 8) && player.charSlot_276 == currentPlayerSlot && player.isDragoon() && player.dlevel_06 >= 7) {
-                                int mp = player.stats.getStat(CoreMod.MP_STAT.get()).getCurrent();
+                                int mp = player.stats.getStat(MP_STAT.get()).getCurrent();
                                 if(mp >= 100) {
-                                    player.stats.getStat(CoreMod.MP_STAT.get()).setCurrent(mp - 100);
+                                    player.stats.getStat(MP_STAT.get()).setCurrent(mp - 100);
                                     previousElement[player.charSlot_276] = player.element;
                                     elementalAttack[player.charSlot_276] = true;
                                     player.element = Element.fromFlag(32);
@@ -2817,16 +2855,16 @@ public class DragoonModifier {
             if(bobj instanceof PlayerBattleEntity) {
               PlayerBattleEntity player = (PlayerBattleEntity) bobj;
               if(player.charId_272 == 6 && player.charSlot_276 == currentPlayerSlot && player.isDragoon() && player.dlevel_06 >= 7) {
-                int mp = player.stats.getStat(CoreMod.MP_STAT.get()).getCurrent();
+                int mp = player.stats.getStat(MP_STAT.get()).getCurrent();
                 if(mp >= 100) {
-                  int maxHP = player.stats.getStat(CoreMod.HP_STAT.get()).getMax();
-                  player.stats.getStat(CoreMod.MP_STAT.get()).setCurrent(mp - 100);
+                  int maxHP = player.stats.getStat(HP_STAT.get()).getMax();
+                  player.stats.getStat(MP_STAT.get()).setCurrent(mp - 100);
                   meruBoost[player.charSlot_276] = true;
                   meruBoostTurns[player.charSlot_276] = 5;
                   meruMDFSave[player.charSlot_276] = player.magicDefence_3a;
                   meruMaxHpSave[player.charSlot_276] = maxHP;
-                  player.stats.getStat(CoreMod.HP_STAT.get()).setMaxRaw(maxHP * 3);
-                  player.stats.getStat(CoreMod.HP_STAT.get()).setCurrent(maxHP * 3);
+                  player.stats.getStat(HP_STAT.get()).setMaxRaw(maxHP * 3);
+                  player.stats.getStat(HP_STAT.get()).setCurrent(maxHP * 3);
                 }
               }
             }
@@ -2965,7 +3003,7 @@ public class DragoonModifier {
       } else if(hotkey.contains(InputAction.BUTTON_NORTH) && hotkey.contains(InputAction.BUTTON_WEST)) {
         if(!swappedEXP) {
           swappedEXP = true;
-          System.out.println("[Dragoon Modifier] Preparing Switch EXP...");
+          System.out.println("[DRAGOON MODIFIER] Preparing Switch EXP...");
           System.arraycopy(gameState_800babc8.charIds_88, 0, swapEXPParty, 0, 3);
         } else {
           swappedEXP = false;
@@ -3006,9 +3044,9 @@ public class DragoonModifier {
           }
 
           if(slot1 >= 0 && slot2 >= 0) {
-            System.out.println("[Dragoon Modifier] EXP Switched.");
+            System.out.println("[DRAGOON MODIFIER] EXP Switched.");
           } else {
-            System.out.println("[Dragoon Modifier] Switch EXP character removed from party.");
+            System.out.println("[DRAGOON MODIFIER] Switch EXP character removed from party.");
           }
         }
       } else if(hotkey.contains(InputAction.BUTTON_EAST) && hotkey.contains(InputAction.BUTTON_CENTER_2)) {
