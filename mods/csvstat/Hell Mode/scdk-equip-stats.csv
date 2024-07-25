@@ -94,7 +94,7 @@ Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status 
 0,16,64,247,0,0,0,0,0,0,0,0,128,50,21,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Thief's Shoes,Increases escape§rate by 50%
 0,16,64,240,0,0,0,0,0,0,0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,5,Leather Boots,
 0,16,64,240,0,0,0,0,0,0,0,0,0,0,20,0,0,0,5,0,0,0,0,0,0,0,0,0,50,Iron Kneepiece,
-0,16,64,240,0,0,0,0,0,0,0,0,0,0,19,0,0,0,5,0,0,0,5,0,0,0,0,0,75,Combat Shoes,Increases escape§chance from physicalattacks by 5%.
+0,16,64,240,0,0,0,0,0,0,0,0,0,0,19,0,0,0,5,0,0,0,5,0,0,0,0,0,75,Combat Shoes,Increases escape§chance from physical§attacks by 5%.
 0,16,64,7,0,0,0,0,0,0,0,0,0,0,19,0,0,0,0,0,0,0,0,0,0,0,0,0,5,Leather Shoes,
 0,16,64,7,0,0,0,0,0,0,0,0,0,0,21,0,0,0,5,0,0,0,0,0,0,0,0,0,50,Soft Boots,
 0,16,64,7,0,0,0,0,0,0,0,0,0,0,21,0,0,0,5,0,0,0,0,5,0,0,0,0,75,Stardust Boots,Increases escape§chance from magical§attacks by 5%.
@@ -129,7 +129,7 @@ Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status 
 0,8,32,247,0,0,0,0,0,0,0,0,0,0,24,0,0,0,0,0,20,20,0,0,0,0,0,0,250,Wargod's Amulet,Increases hit rate§for mag./phys.§attacks by 20%.
 128,8,32,247,0,0,0,0,0,0,0,0,0,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0,250,Talisman,Grants immunity§to instant death.
 0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,250, ,
-0,8,32,247,0,0,0,0,0,0,0,0,8,40,23,0,0,0,0,0,0,0,0,0,40,0,0,0,250,Holy Ankh,30% chance of§reviving from§death.
+0,8,32,247,0,0,0,0,0,0,0,0,8,40,27,0,0,0,0,0,0,0,0,0,40,0,0,0,250,Holy Ankh,30% chance of§reviving from§death.
 0,8,32,7,0,0,0,0,0,0,0,0,0,0,23,20,0,0,0,0,0,0,0,0,0,0,0,0,2500,Dancer's Ring,Raises speed§by 20.
 0,8,32,247,0,0,0,0,255,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,250, ,
 0,8,32,240,0,0,0,0,0,0,0,0,0,0,23,20,0,0,0,0,0,0,0,0,0,0,0,0,2500,Bandit's Ring,Raises speed§by 20.
@@ -196,3 +196,6 @@ Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status 
 0,8,32,247,0,0,0,0,0,0,0,0,0,0,37,0,0,0,0,0,0,0,0,0,0,0,0,0,500,Speed Bottle,Start battle with one§extra turn on first§turn once per battle.
 0,8,32,247,0,0,0,0,0,0,0,0,0,0,33,0,0,0,0,0,0,0,0,0,0,0,0,0,500,Healing Bottle,Recovers 70% HP§when HP is critical§once per battle.
 0,8,32,247,0,0,0,0,0,0,0,0,0,0,34,0,0,0,0,0,0,0,0,0,0,0,0,0,500,Sun Bottle,Recovers 20 MP§when available§once per battle.
+0,16,64,247,0,0,0,0,0,0,0,0,0,0,42,0,0,0,0,0,0,0,0,0,0,0,0,0,250,Protection Shoes,Negates damage up§to 25% Max HP§per battle.
+0,64,64,247,0,0,0,0,0,0,0,0,0,0,42,0,0,0,0,0,0,0,100,100,0,0,0,0,250,Protection Helmet,Negates damage up§to 25% Max HP§per battle.
+0,32,64,247,0,0,0,0,0,0,0,0,0,0,42,0,0,0,0,0,0,0,0,0,0,0,0,0,1000,Protection Armor,Negates damage up§to 50% Max HP§per battle.
