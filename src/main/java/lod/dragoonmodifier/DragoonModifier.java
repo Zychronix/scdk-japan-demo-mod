@@ -121,6 +121,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.EnumSet;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
@@ -181,7 +182,7 @@ public class DragoonModifier {
   public static final List<String[]> dxpNextStats = new ArrayList<>();
   public static final List<String[]> spellStats = new ArrayList<>();
   public static final List<String[]> equipStats = new ArrayList<>();
-  public static final List<String[]> itemStats = new ArrayList<>();
+  public static final Map<RegistryId, String[]> itemStats = new HashMap<>();
   public static final List<String[]> shopItems = new ArrayList<>();
   public static final List<String[]> shopPrices = new ArrayList<>();
   public static final List<String[]> levelCaps = new ArrayList<>();
@@ -885,6 +886,8 @@ public class DragoonModifier {
         usage.add(Item.UsageLocation.MENU);
       }
 
+      final boolean instakill = (target & 0x80) != 0;
+
       usage.add(Item.UsageLocation.BATTLE);
 
       final Item dmItem = new FileBasedItem(
@@ -917,7 +920,8 @@ public class DragoonModifier {
         Integer.parseInt(itemStats.get(i)[8]),
         Integer.parseInt(itemStats.get(i)[9]),
         Integer.parseInt(itemStats.get(i)[10]),
-        Integer.parseInt(itemStats.get(i)[11])
+        Integer.parseInt(itemStats.get(i)[11]),
+        instakill
       );
 
       inventoryItemStats.add(new ItemStats0c(
@@ -949,7 +953,7 @@ public class DragoonModifier {
         Integer.parseInt(itemStats.get(i)[9]),
         Integer.parseInt(itemStats.get(i)[10]),
         Integer.parseInt(itemStats.get(i)[11])
-        ));
+      ));
 
       final Item item = event.register(id("i" + i), dmItem);
       itemIdMap.put(i, item.getRegistryId());
@@ -1011,6 +1015,7 @@ public class DragoonModifier {
     lastSelectedMenuType = event.textType;
   }
 
+/*
   @EventListener public void temporaryItemStats(final TemporaryItemStatsEvent event) {
     if(event.bent instanceof PlayerBattleEntity) {
       if(event.attackType == 5) {
@@ -1024,6 +1029,7 @@ public class DragoonModifier {
       print("Temporary Item Stats Percentage %: " + event.itemStats.percentage_09 + "/type: " + event.attackType + " ID: " + event.itemId);
     }
   }
+*/
 
   @EventListener public void selectedItem(final SelectedItemEvent event) {
     final String item = event.item.getRegistryId().toString().split(":")[1];
@@ -1559,18 +1565,18 @@ public class DragoonModifier {
         if(player.isDragoon()) {
           spGained_800bc950[player.charSlot_276] += 100;
         }
-        
+
         if(bonusItemSP[player.charSlot_276]) {
           bonusItemSP[player.charSlot_276] = false;
           if(player.isDragoon()) {
             player.stats.getStat(SP_STAT.get()).setCurrent(player.stats.getStat(SP_STAT.get()).getCurrent() + 50);
             int newSP = player.stats.getStat(SP_STAT.get()).getCurrent();
             if(player.charSlot_276 == 0) {
-              battleState_8006e398.dragoonTurns_294[0] = newSP / 100;
+              battleState_8006e398.dragoonTurnsRemaining_294[0] = newSP / 100;
             } else if(player.charSlot_276 == 1) {
-              battleState_8006e398.dragoonTurns_294[1] = newSP / 100;
+              battleState_8006e398.dragoonTurnsRemaining_294[1] = newSP / 100;
             } else if(player.charSlot_276 == 2) {
-              battleState_8006e398.dragoonTurns_294[2] = newSP / 100;
+              battleState_8006e398.dragoonTurnsRemaining_294[2] = newSP / 100;
             }
           }
         }
@@ -1898,16 +1904,16 @@ public class DragoonModifier {
         }
 
         if(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString().equals("dragoon_modifier:e169") && player.isDragoon()) { //Ouroboros
-          final int dragoonTurns = player.charSlot_276 == 0 ? battleState_8006e398.dragoonTurns_294[0] : player.charSlot_276 == 1 ? battleState_8006e398.dragoonTurns_294[1] : battleState_8006e398.dragoonTurns_294[2];
+          final int dragoonTurns = player.charSlot_276 == 0 ? battleState_8006e398.dragoonTurnsRemaining_294[0] : player.charSlot_276 == 1 ? battleState_8006e398.dragoonTurnsRemaining_294[1] : battleState_8006e398.dragoonTurnsRemaining_294[2];
           final int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
           if(player.isDragoon() && dragoonTurns >= 2 && sp >= 200) {
             player.stats.getStat(SP_STAT.get()).setCurrent(sp - 100);
             if(player.charSlot_276 == 0) {
-              battleState_8006e398.dragoonTurns_294[0] = player.stats.getStat(SP_STAT.get()).getCurrent() / 100;
+              battleState_8006e398.dragoonTurnsRemaining_294[0] = player.stats.getStat(SP_STAT.get()).getCurrent() / 100;
             } else if(player.charSlot_276 == 1) {
-              battleState_8006e398.dragoonTurns_294[1] = player.stats.getStat(SP_STAT.get()).getCurrent() / 100;
+              battleState_8006e398.dragoonTurnsRemaining_294[1] = player.stats.getStat(SP_STAT.get()).getCurrent() / 100;
             } else if(player.charSlot_276 == 2) {
-              battleState_8006e398.dragoonTurns_294[2] = player.stats.getStat(SP_STAT.get()).getCurrent() / 100;
+              battleState_8006e398.dragoonTurnsRemaining_294[2] = player.stats.getStat(SP_STAT.get()).getCurrent() / 100;
             }
             event.damage *= 2;
             ouroboros[player.charSlot_276] = true;
@@ -1946,7 +1952,7 @@ public class DragoonModifier {
             }
           }
 
-          if(player.itemId_52 > 0) {
+          if(player.item_d4 != null) {
             player.stats.getStat(SP_STAT.get()).setCurrent(player.stats.getStat(SP_STAT.get()).getCurrent() + 100);
           }
         }
@@ -1985,7 +1991,7 @@ public class DragoonModifier {
                 } catch (Exception ignored) {}
 
                 try {
-                  final int damage = event.attacker.item_d4.element_01.adjustDragoonSpaceDamage(event.attackType, event.damage, ringOfElementsElement[i]);
+                  final int damage = event.attacker.item_d4.getAttackElement().adjustDragoonSpaceDamage(event.attackType, event.damage, ringOfElementsElement[i]);
                   if(damage != event.damage) {
                     event.damage = damage;
                   }
@@ -2003,7 +2009,7 @@ public class DragoonModifier {
           } catch (Exception ignored) {}
 
           try {
-            if(event.attacker.item_d4.element_01 == THUNDER_ELEMENT.get() && new Random().nextBoolean()) {
+            if(event.attacker.item_d4.getAttackElement() == THUNDER_ELEMENT.get() && new Random().nextBoolean()) {
               thunderCharge[monster.charSlot_276] = Math.min(10, thunderCharge[monster.charSlot_276] + 1);
             }
           } catch (Exception ignored) {}
@@ -2039,7 +2045,7 @@ public class DragoonModifier {
             } catch (Exception ignored) {}
 
             try {
-              if(Integer.parseInt(itemStats.get(event.attacker.itemId_52)[11]) == 128) {
+              if(Integer.parseInt(itemStats.get(event.attacker.item_d4.getRegistryId())[11]) == 128) {
                 event.damage = 0;
               }
             } catch (Exception ignored) {}
@@ -2047,7 +2053,7 @@ public class DragoonModifier {
         }
 
         if(bonusItemSP[player.charSlot_276]) {
-          player.itemId_52 = 0;
+          player.item_d4 = null;
         }
       }
 
@@ -2105,7 +2111,7 @@ public class DragoonModifier {
           final int armorEquipped = Integer.parseInt(equipID.split(":")[1].substring(1));
 
           try {
-            attackElement = event.attacker.item_d4.element_01;
+            attackElement = event.attacker.item_d4.getAttackElement();
           } catch (Exception ignored) {}
 
           if(attackElement == null) {
@@ -2319,7 +2325,7 @@ public class DragoonModifier {
     final String difficulty = CONFIG.getConfig(DIFFICULTY.get());
 
     if(difficulty.equals("Japan Demo")) {
-      event.returnItem = event.itemId == 250; //TODO in SC this should be registryID
+      event.returnItem = event.item == LodItems.PSYCHE_BOMB_X.get();
     }
   }
 
@@ -2362,31 +2368,18 @@ public class DragoonModifier {
     }
   }
 
+  private boolean isAttackItem(final Item item) {
+    return item == LodItems.BURNING_WAVE.get() || item == LodItems.FROZEN_JET.get() || item == LodItems.DOWN_BURST.get() || item == LodItems.GRAVITY_GRABBER.get() || item == LodItems.SPECTRAL_FLASH.get() || item == LodItems.NIGHT_RAID.get() || item == LodItems.FLASH_HALL.get() || item == LodItems.PSYCHE_BOMB.get() || item == LodItems.PSYCHE_BOMB_X.get();
+  }
+
   public void updateElementalBomb(final AttackEvent event) { //TODO item registries
     if(GameEngine.CONFIG.getConfig(ELEMENTAL_BOMB.get()) == ElementalBomb.ON) {
       if(event.attacker instanceof PlayerBattleEntity player) {
         try {
-          if(player.itemId_52 >= 49 && player.itemId_52 != 57 && event.defender instanceof MonsterBattleEntity monster) {
+          if(this.isAttackItem(player.item_d4) && event.defender instanceof MonsterBattleEntity monster) {
             //for(int i = 0; i < monsterCount_800c6768.get(); i++) {
             if(elementalBombTurns[monster.charSlot_276] == 0) {
-              Element swapTo;
-              if(player.itemId_52 == 50) { //Burning Wave
-                swapTo = Element.fromFlag(0x80);
-              } else if(player.itemId_52 == 51) { //Frozen Jet
-                swapTo = Element.fromFlag(0x1);
-              } else if(player.itemId_52 == 52) { //Down Burst
-                swapTo = Element.fromFlag(0x40);
-              } else if(player.itemId_52 == 53) { //Gravity Grabber
-                swapTo = Element.fromFlag(0x2);
-              } else if(player.itemId_52 == 54) { //Spectral Flash
-                swapTo = Element.fromFlag(0x20);
-              } else if(player.itemId_52 == 55) { //Night Raid
-                swapTo = Element.fromFlag(0x4);
-              } else if(player.itemId_52 == 56) { //Flash Hall
-                swapTo = Element.fromFlag(0x10);
-              } else { //Psyche Bomb
-                swapTo = Element.fromFlag(0x8);
-              }
+              final Element swapTo = player.item_d4.getAttackElement();
               elementalBombPreviousElement[monster.charSlot_276] = monster.getElement();
               elementalBombTurns[monster.charSlot_276] = 5;
               monster.monsterElement_72 = swapTo;
@@ -2403,11 +2396,11 @@ public class DragoonModifier {
     final String difficulty = GameEngine.CONFIG.getConfig(DIFFICULTY.get());
     if(difficulty.equals("Hell Mode") || difficulty.equals("Hard + Hell Bosses")) {
       if(event.attacker instanceof PlayerBattleEntity player && event.defender instanceof MonsterBattleEntity monster) {
-        if((player.charId_272 == 2 || player.charId_272 == 8) && player.itemId_52 > 0) {
+        if((player.charId_272 == 2 || player.charId_272 == 8) && player.item_d4 != null) {
           final int sp = player.getStat(BattleEntityStat.CURRENT_SP);
           spGained_800bc950[player.charSlot_276] += 50;
           player.setStat(BattleEntityStat.CURRENT_SP, sp + 50);
-          player.itemId_52 = 0;
+          player.item_d4 = null;
         }
       }
     }
@@ -2744,16 +2737,16 @@ public class DragoonModifier {
 
     if(engineState_8004dd20 == EngineStateEnum.COMBAT_06) { // Combat
       if(hotkey.contains(InputAction.BUTTON_SHOULDER_LEFT_1) && hotkey.contains(InputAction.DPAD_UP)) { //Exit Dragoon Slot 1
-        if(battleState_8006e398.dragoonTurns_294[0] > 0) {
-          battleState_8006e398.dragoonTurns_294[0] = 1;
+        if(battleState_8006e398.dragoonTurnsRemaining_294[0] > 0) {
+          battleState_8006e398.dragoonTurnsRemaining_294[0] = 1;
         }
       } else if(hotkey.contains(InputAction.BUTTON_SHOULDER_LEFT_1) && hotkey.contains(InputAction.DPAD_RIGHT)) { //Exit Dragoon Slot 2
-        if(battleState_8006e398.dragoonTurns_294[1] > 0) {
-          battleState_8006e398.dragoonTurns_294[1] = 1;
+        if(battleState_8006e398.dragoonTurnsRemaining_294[1] > 0) {
+          battleState_8006e398.dragoonTurnsRemaining_294[1] = 1;
         }
       } else if(hotkey.contains(InputAction.BUTTON_SHOULDER_LEFT_1) && hotkey.contains(InputAction.DPAD_LEFT)) { //Exit Dragoon Slot 3
-        if(battleState_8006e398.dragoonTurns_294[2] > 0) {
-          battleState_8006e398.dragoonTurns_294[2] = 1;
+        if(battleState_8006e398.dragoonTurnsRemaining_294[2] > 0) {
+          battleState_8006e398.dragoonTurnsRemaining_294[2] = 1;
         }
       }
 
@@ -2764,28 +2757,28 @@ public class DragoonModifier {
           }
         } else if(hotkey.contains(InputAction.BUTTON_SHOULDER_LEFT_2) && hotkey.contains(InputAction.DPAD_UP)) { //Dragoon Guard Slot 1
           PlayerBattleEntity player = battleState_8006e398.playerBents_e40[0].innerStruct_00;
-          int dragoonTurns = battleState_8006e398.dragoonTurns_294[0];
+          int dragoonTurns = battleState_8006e398.dragoonTurnsRemaining_294[0];
           int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
           if(player.isDragoon() && player.dlevel_06 >= 6 && dragoonTurns > 1 && sp >= 100) {
-            battleState_8006e398.dragoonTurns_294[0] -= 1;
+            battleState_8006e398.dragoonTurnsRemaining_294[0] -= 1;
             player.stats.getStat(SP_STAT.get()).setCurrent(sp - 100);
             player.guard_54 = 1;
           }
         } else if(hotkey.contains(InputAction.BUTTON_SHOULDER_LEFT_2) && hotkey.contains(InputAction.DPAD_RIGHT)) { //Dragoon Guard Slot 2
           PlayerBattleEntity player = battleState_8006e398.playerBents_e40[1].innerStruct_00;
-          int dragoonTurns = battleState_8006e398.dragoonTurns_294[1];
+          int dragoonTurns = battleState_8006e398.dragoonTurnsRemaining_294[1];
           int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
           if(player.isDragoon() && player.dlevel_06 >= 6 && dragoonTurns > 1 && sp >= 100) {
-            battleState_8006e398.dragoonTurns_294[1] -= 1;
+            battleState_8006e398.dragoonTurnsRemaining_294[1] -= 1;
             player.stats.getStat(SP_STAT.get()).setCurrent(sp - 100);
             player.guard_54 = 1;
           }
         } else if(hotkey.contains(InputAction.BUTTON_SHOULDER_LEFT_2) && hotkey.contains(InputAction.DPAD_LEFT)) { //Dragoon Guard Slot 3
           PlayerBattleEntity player = battleState_8006e398.playerBents_e40[2].innerStruct_00;
-          int dragoonTurns = battleState_8006e398.dragoonTurns_294[2];
+          int dragoonTurns = battleState_8006e398.dragoonTurnsRemaining_294[2];
           int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
           if(player.isDragoon() && player.dlevel_06 >= 6 && dragoonTurns > 1 && sp >= 100) {
-            battleState_8006e398.dragoonTurns_294[2] -= 1;
+            battleState_8006e398.dragoonTurnsRemaining_294[2] -= 1;
             player.stats.getStat(SP_STAT.get()).setCurrent(sp - 100);
             player.guard_54 = 1;
           }
