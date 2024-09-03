@@ -1,401 +1,401 @@
 EXP,Gold,Drop Rate,Item,UK1,UK2,Name
-12,2,8,197,0,0,Mantis
-40,6,8,208,0,0,Scissorhands
-99,10,8,205,0,0,Spinninghead
-168,17,8,211,0,0,Sandworm
-14,3,10,195,0,0,Sea Dragon
-88,11,8,198,0,0,Land Skater
-110,11,8,221,0,0,Beastie Dragon
-216,20,8,204,0,0,Manticore
-4,2,10,193,0,0,Goblin
-180,16,2,37,0,0,Minotaur
-204,18,2,23,0,0,Hyper Skeleton
-150,17,8,204,0,0,Basilisk
-84,10,2,112,0,0,Flabby Troll
-12,4,8,222,0,0,Evil Spider
-40,6,8,217,0,0,Spider Urchin
-18,3,2,153,0,0,Strong Man
-48,7,8,222,0,0,Dragonfly
-20,3,8,195,0,0,Hell Hound
-66,10,8,221,0,0,Death
-18,5,2,41,0,0,Lizard Man
-144,17,8,203,0,0,White Ape
-5,2,10,203,0,0,Assassin Cock
-15,4,20,20,0,0,Merman
-70,6,8,205,0,0,Glare
-3,1,10,203,0,0,Berserk Mouse
-180,20,2,112,0,0,Dragon Soldier
-48,5,8,215,0,0,Earth Shaker
-8,3,8,203,0,0,Vampire Kiwi
-11,2,10,206,0,0,Myconido
-44,8,8,244,0,0,Roc
-108,14,8,203,0,0,Gnome
-132,14,8,200,0,0,Bowling
-110,9,8,214,0,0,Freeze Knight
-13,4,10,119,0,0,Fire Spirit
-400,17,8,248,0,0,Mad Skull
-16,4,10,206,0,0,Run Fast
-112,10,8,206,0,0,Canbria Dayfly
-120,15,8,244,0,0,Wyvern
-4,3,10,197,0,0,Trent
-117,7,8,231,0,0,Spring Hitter
-160,13,8,249,0,0,Guillotine
-143,10,8,221,0,0,Terminator
-0,200,100,211,0,0,OOPARTS
-81,8,8,229,0,0,Fairy
-90,12,2,131,0,0,Puck
-11,3,8,222,0,0,Mole
-8,2,8,203,0,0,Screaming Bat
-130,14,2,148,0,0,Succubus
-132,15,8,215,0,0,Mammoth
-135,14,2,41,0,0,MetalFang
-96,7,8,220,0,0,Windy Weasel
-96,20,8,200,0,0,Wounded Bear
-32,5,8,205,0,0,Erupting Chick
-64,8,8,222,0,0,Flying Rat
-3000,0,10,72,0,0,Rainbow Bird
-20,4,8,193,0,0,Living Statue
-165,8,8,206,0,0,Madman
-120,12,2,117,0,0,Wildman
-17,5,8,202,0,0,Gargoyle
-10,2,8,199,0,0,Crescent Bee
-120,8,10,231,0,0,Jelly
-140,14,8,200,0,0,Spiky Beetle
-180,11,10,205,0,0,Slug
-104,12,8,222,0,0,Witch
-10,3,2,103,0,0,Ugly Balloon
-156,17,8,248,0,0,Maximum Volt
-22,9,2,143,0,0,Crystal Golem
-99,13,2,116,0,0,Rocky Turtle
-17,2,10,197,0,0,Crocodile
-36,7,8,203,0,0,Frilled Lizard
-72,8,2,91,0,0,Magician Bogy
-2000,40,8,245,0,0,Triceratops
-165,18,8,243,0,0,Stern Fish
-88,10,8,225,0,0,Forest Runner
-10,2,10,203,0,0,Magma Fish
-150,13,8,206,0,0,Scud Shark
-63,8,8,203,0,0,Screw Shell
-144,8,8,249,0,0,Potbelly
-187,16,2,7,0,0,Loner Knight
-55,5,2,60,0,0,Berserker
-176,18,2,120,0,0,Professor
-638,28,8,246,0,0,Psyche Druid
-60,4,2,133,0,0,Gangster
-50,6,8,197,0,0,Crafty Thief
-153,13,8,205,0,0,Undead
-60,7,2,0,0,0,Skeleton
-48,4,0,255,0,0,Will-o'-Wisp
-300,0,100,247,0,0,Cursed Jar
-20,8,8,222,0,0,Man Eating Bud
-126,12,15,225,0,0,Cactus
-15,3,8,229,0,0,Mandrake
-77,11,8,211,0,0,Mermaid
-17,3,8,229,0,0,Salamander
-380,17,2,233,0,0,Unicorn
-10,2,10,202,0,0,Orc
-80,12,8,204,0,0,Dark Elf
-100,9,8,205,0,0,Baby Dragon
-192,16,8,212,0,0,Harpy
-162,17,2,100,0,0,Cute Cat
-32,8,2,30,0,0,Arrow Shooter
-14,2,8,205,0,0,Red Hot
-170,10,8,218,0,0,Specter
-30,10,8,209,0,0,Sandora Elite
-24,5,20,203,0,0,Knight of Sandora
-11,2,10,206,0,0,Slime
-16,3,8,205,0,0,Fowl Fighter
-36,4,8,212,0,0,Killer Bird
-14,2,8,206,0,0,Plague Rat
-38,4,8,206,0,0,Stinger
-40,7,2,240,0,0,Piggy
-56,5,8,198,0,0,Sea Piranha
-72,6,8,206,0,0,Toad Stool
-80,7,8,209,0,0,Mega Sea Dragon
-90,13,8,206,0,0,Deadly Spider
-121,7,8,211,0,0,Icicle Ball
-12,2,8,205,0,0,Tricky Bat
-108,10,2,1,0,0,Mr.Bone
-72,6,8,231,0,0,Moss Dresser
-144,8,8,221,0,0,Death Purger
-154,7,8,217,0,0,Scorpion
-304,14,8,243,0,0,Trap Plant
-135,10,8,222,0,0,Aqua King
-128,10,8,206,0,0,Sky Chaser
-456,11,8,244,0,0,Air Combat
-0,0,100,142,0,0,Treasure Jar
-136,8,8,225,0,0,Human Hunter
-198,14,10,222,0,0,Mountain Ape
-360,14,8,247,0,0,Roulette Face
-228,8,8,242,0,0,Swift Dragon
-20,5,2,35,0,0,Hellena Warden
-25,10,50,203,0,0,Sandora Soldier
-14,3,8,203,0,0,Sandora Soldier
-11,4,10,229,0,0,Sandora Soldier
-24,7,2,20,0,0,Senior Warden
-6,3,0,255,0,0,Hellena Warden
-17,3,100,200,0,0,Commander
-1000,0,0,255,0,0,Blue Bird
-0,300,100,88,0,0,Red Bird
-0,100,10,118,0,0,Yellow Bird
-1000,100,100,234,0,0,Lucky Jar
-0,0,0,0,0,0,??? (Terminator ?)
-0,0,0,0,0,0,???
-0,0,0,0,0,0,???
-0,0,0,0,0,0,Madman
-165,8,8,206,0,0,Madman
-165,8,8,206,0,0,Madman
-14,2,8,205,0,0,Red Hot	
-14,2,8,205,0,0,Red Hot
-11,2,10,206,0,0,Madman
-11,2,10,206,0,0,Madman
-13,4,2,119,0,0,Fire Spirit
-13,4,2,119,0,0,Fire Spirit
-170,10,8,218,0,0,Specter
-170,10,8,218,0,0,Specter
-48,4,0,255,0,0,Will-o'-Wisp
-48,4,0,255,0,0,Will-o'-Wisp
-0,0,0,0,0,0,Will-o'-Wisp (No name)
-10,2,10,203,0,0,Magma Fish
-10,2,10,203,0,0,Magma Fish
-0,0,0,0,0,0,Magma Fish (No name)
-17,3,8,229,0,0,Salamander (No name)
-17,3,8,229,0,0,Salamander (No name)
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,N/A
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,0,0,0,Crash
-0,0,0,255,0,0,Merchant
-0,0,0,255,0,0,Master Tasman
-0,0,0,255,0,0,Rose
-20,20,100,195,0,0,Commander
-2,3,100,203,0,0,Knight of Sandora
-200,50,100,249,0,0,Sandora Elite
-0,0,100,203,0,0,Hellena Warden
-0,0,100,203,0,0,Auto Complete
-300,50,100,112,0,0,Fruegel
-2000,200,100,245,0,0,Fruegel
-0,0,0,255,0,0,Rodriguez
-0,0,0,255,0,0,Guftas
-300,50,100,111,0,0,Kongol
-2000,200,30,156,0,0,Kongol
-3000,200,0,255,0,0,Emperor Doel
-0,0,0,255,0,0,Auto Complete
-0,0,0,255,0,0,Lloyd
-12000,300,0,255,0,0,Lloyd
-0,0,0,255,0,0,Auto Complete
-0,0,0,255,0,0,Auto Complete
-0,0,0,255,0,0,Auto Complete
-0,0,8,197,0,0,Crafty Thief
-0,0,100,244,0,0,Feyrbrand
-0,0,0,255,0,0,???
-0,0,0,255,0,0,Auto Complete
-0,0,0,255,0,0,Crash
-7000,250,100,243,0,0,Regole
-0,0,0,255,0,0,Tentacle
-0,0,0,255,0,0,Crash
-0,0,0,255,0,0,Crash
-10000,300,20,150,0,0,Divine Dragon
-0,0,100,245,0,0,Divine Cannon
-0,0,100,248,0,0,Divine Ball
-0,0,0,255,0,0,Crash
-1200,100,30,49,0,0,Greham
-0,0,100,136,0,0,Shirley
-0,0,0,255,0,0,Auto Complete
-0,0,0,255,0,0,Auto Complete
-0,0,0,255,0,0,Crash
-0,0,0,255,0,0,Crash
-6000,200,0,255,0,0,Lenus
-0,0,50,85,0,0,Lenus
-6000,300,100,138,0,0,Damia
-6000,300,100,135,0,0,Syuveil
-6000,300,100,140,0,0,Belzac
-6000,300,100,139,0,0,Kanzas
-2000,150,100,221,0,0,Mappi
-0,0,25,42,0,0,Mappi
-5000,200,25,81,0,0,Gehrich
-0,0,0,255,0,0,Gorgaga
-0,0,0,255,0,0,Serfius
-0,0,0,255,0,0,Danton
-0,0,0,255,0,0,Atlow
-0,0,0,255,0,0,Freeze
-0,0,0,255,0,0,Crash
-600,100,100,203,0,0,Virage(head)
-0,0,100,203,0,0,Virage(body)
-0,0,100,205,0,0,Virage(arm)
-4500,200,100,234,0,0,Virage(head)
-0,0,0,255,0,0,Virage(arm)
-0,0,0,255,0,0,Virage(body)
-0,0,0,255,0,0,Freeze
-0,0,0,255,0,0,Freeze
-4000,200,100,233,0,0,S Virage(head)
-0,0,0,255,0,0,S Virage(body)
-0,0,0,255,0,0,S Virage(arm)
-0,0,0,255,0,0,Crash
-15000,300,0,255,0,0,S Virage(head)
-0,0,0,255,0,0,S Virage(arm)
-0,0,0,255,0,0,S Virage(body)
-0,0,0,255,0,0,Freeze
-0,0,0,255,0,0,Freeze
-1500,100,30,133,0,0,Drake the Bandit
-0,0,0,255,0,0,Auto Complete
-0,0,0,255,0,0,Auto Complete
-0,0,0,255,0,0,Freeze
-2000,100,100,240,0,0,Jiango
-0,0,0,255,0,0,???
-0,0,0,255,0,0,???
-400,50,100,127,0,0,Urobolus
-800,100,100,134,0,0,Fire Bird
-0,0,0,255,0,0,Auto Complete
-9000,300,100,246,0,0,Grand Jewel
-0,0,0,255,0,0,Virage(head)
-0,0,0,255,0,0,Virage(body)
-0,0,0,255,0,0,Virage(arm)
-0,0,0,255,0,0,Kamuy's tree
-6000,200,100,247,0,0,Ghost Commander
-0,0,0,255,0,0,Ghost Knight
-0,0,0,255,0,0,Mazo
-8000,0,100,137,0,0,Kamuy
-20000,10000,100,149,0,0,Faust
-0,0,0,255,0,0,Faust
-11000,250,100,45,0,0,Windigo
-0,0,0,255,0,0,Auto Complete
-0,0,0,255,0,0,Heart
-6000,200,0,255,0,0,Polter Helm
-0,0,100,230,0,0,Polter Armor
-0,0,100,7,0,0,Polter Sword
-8000,400,100,248,0,0,Auto Complete
-6000,300,100,243,0,0,Auto Complete
-4000,200,100,244,0,0,Auto Complete
-0,0,0,255,0,0,Missing (Melbu Texture)
-0,0,0,255,0,0,Missing (Tentacle Texture)
-0,0,0,255,0,0,Lloyd & Melbu (Crash)
-0,0,0,255,0,0,Freeze
-0,0,0,255,0,0,Freeze
-12000,300,0,255,0,0,Vector
-0,0,0,255,0,0,Selebus
-0,0,0,255,0,0,Kubila
-0,0,100,233,0,0,Auto Complete
-12000,300,50,25,0,0,Lavitzs Spirit
-12000,300,100,39,0,0,Last Kraken
-0,0,0,255,0,0,Auto Complete
-0,0,0,255,0,0,Auto Complete
-13000,300,100,233,0,0,Caterpillar
-0,0,100,234,0,0,Auto Complete
-0,0,100,229,0,0,Auto Complete
-6000,0,0,255,0,0,Death Rose
-0,0,0,255,0,0,Auto Complete
-6000,0,0,255,0,0,Claire
-0,0,0,255,0,0,Auto Complete
-6000,0,100,12,0,0,Indora
-0,0,0,255,0,0,Shadow Blade
-0,0,0,255,0,0,Light Sword
-12000,0,0,255,0,0,Michael
-0,0,0,255,0,0,Michael (arm)
-0,0,0,255,0,0,Michael (core)
-6000,0,0,255,0,0,Dark Doel
-6000,0,0,255,0,0,Archangel
-0,0,0,255,0,0,Dragon Spirit
-0,0,0,255,0,0,Dragon Spirit
-0,0,0,255,0,0,Dragon Spirit
-0,0,0,255,0,0,Missing Shana
-20000,400,0,255,0,0,Zieg Feld
-0,0,0,255,0,0,Melbu Frahma (1st)
-0,0,0,255,0,0,Tentacle
-0,0,0,255,0,0,Melbu Frahma (2nd)
-0,0,0,255,0,0,Melbu Frahma (3rd)
-0,0,0,255,0,0,Melbu Frahma (Bomb Star)
-0,0,0,255,0,0,Melbu Frahma (4th)
-0,0,0,255,0,0,Monster
-0,0,0,255,0,0,Tentacle
-0,0,0,255,0,0,Bomb Star (Melbu Frahma 1st)
-0,0,0,255,0,0,Monster
-0,0,0,255,0,0,Tentacle
-0,0,0,255,0,0,Crash
+12,2,8,lod_core:pellet,0,0,Mantis
+40,6,8,lod_core:meteor_fall,0,0,Scissorhands
+99,10,8,lod_core:mind_purifier,0,0,Spinninghead
+168,17,8,lod_core:spirit_potion,0,0,Sandworm
+14,3,10,lod_core:burn_out,0,0,Sea Dragon
+88,11,8,lod_core:spear_frost,0,0,Land Skater
+110,11,8,lod_core:total_vanishing,0,0,Beastie Dragon
+216,20,8,lod_core:depetrifier,0,0,Manticore
+4,2,10,lod_core:detonate_rock,0,0,Goblin
+180,16,2,lod_core:heavy_mace,0,0,Minotaur
+204,18,2,lod_core:spear_of_terror,0,0,Hyper Skeleton
+150,17,8,lod_core:depetrifier,0,0,Basilisk
+84,10,2,lod_core:knight_shield,0,0,Flabby Troll
+12,4,8,lod_core:angel's_prayer,0,0,Evil Spider
+40,6,8,lod_core:poison_needle,0,0,Spider Urchin
+18,3,2,lod_core:fake_power_wrist,0,0,Strong Man
+48,7,8,lod_core:angel's_prayer,0,0,Dragonfly
+20,3,8,lod_core:burn_out,0,0,Hell Hound
+66,10,8,lod_core:total_vanishing,0,0,Death
+18,5,2,lod_core:beast_fang,0,0,Lizard Man
+144,17,8,lod_core:healing_potion,0,0,White Ape
+5,2,10,lod_core:healing_potion,0,0,Assassin Cock
+15,4,20,lod_core:spear,0,0,Merman
+70,6,8,lod_core:mind_purifier,0,0,Glare
+3,1,10,lod_core:healing_potion,0,0,Berserk Mouse
+180,20,2,lod_core:knight_shield,0,0,Dragon Soldier
+48,5,8,lod_core:stunning_hammer,0,0,Earth Shaker
+8,3,8,lod_core:healing_potion,0,0,Vampire Kiwi
+11,2,10,lod_core:body_purifier,0,0,Myconido
+44,8,8,lod_core:down_burst,0,0,Roc
+108,14,8,lod_core:healing_potion,0,0,Gnome
+132,14,8,lod_core:attack_ball,0,0,Bowling
+110,9,8,lod_core:fatal_blizzard,0,0,Freeze Knight
+13,4,10,lod_core:spirit_cloak,0,0,Fire Spirit
+400,17,8,lod_core:flash_hall,0,0,Mad Skull
+16,4,10,lod_core:body_purifier,0,0,Run Fast
+112,10,8,lod_core:body_purifier,0,0,Canbria Dayfly
+120,15,8,lod_core:down_burst,0,0,Wyvern
+4,3,10,lod_core:pellet,0,0,Trent
+117,7,8,lod_core:healing_fog,0,0,Spring Hitter
+160,13,8,lod_core:healing_breeze,0,0,Guillotine
+143,10,8,lod_core:total_vanishing,0,0,Terminator
+0,200,100,lod_core:spirit_potion,0,0,OOPARTS
+81,8,8,lod_core:sun_rhapsody,0,0,Fairy
+90,12,2,lod_core:dancer's_ring,0,0,Puck
+11,3,8,lod_core:angel's_prayer,0,0,Mole
+8,2,8,lod_core:healing_potion,0,0,Screaming Bat
+130,14,2,lod_core:platinum_collar,0,0,Succubus
+132,15,8,lod_core:stunning_hammer,0,0,Mammoth
+135,14,2,lod_core:beast_fang,0,0,MetalFang
+96,7,8,lod_core:rave_twister,0,0,Windy Weasel
+96,20,8,lod_core:attack_ball,0,0,Wounded Bear
+32,5,8,lod_core:mind_purifier,0,0,Erupting Chick
+64,8,8,lod_core:angel's_prayer,0,0,Flying Rat
+3000,0,10,lod_core:rainbow_dress,0,0,Rainbow Bird
+20,4,8,lod_core:detonate_rock,0,0,Living Statue
+165,8,8,lod_core:body_purifier,0,0,Madman
+120,12,2,lod_core:giganto_ring,0,0,Wildman
+17,5,8,lod_core:dark_mist,0,0,Gargoyle
+10,2,8,lod_core:spinning_gale,0,0,Crescent Bee
+120,8,10,lod_core:healing_fog,0,0,Jelly
+140,14,8,lod_core:attack_ball,0,0,Spiky Beetle
+180,11,10,lod_core:mind_purifier,0,0,Slug
+104,12,8,lod_core:angel's_prayer,0,0,Witch
+10,3,2,lod_core:poison_guard,0,0,Ugly Balloon
+156,17,8,lod_core:flash_hall,0,0,Maximum Volt
+22,9,2,lod_core:sapphire_pin,0,0,Crystal Golem
+99,13,2,lod_core:guard_badge,0,0,Rocky Turtle
+17,2,10,lod_core:pellet,0,0,Crocodile
+36,7,8,lod_core:healing_potion,0,0,Frilled Lizard
+72,8,2,lod_core:magical_hat,0,0,Magician Bogy
+2000,40,8,lod_core:gravity_grabber,0,0,Triceratops
+165,18,8,lod_core:frozen_jet,0,0,Stern Fish
+88,10,8,lod_core:recovery_ball,0,0,Forest Runner
+10,2,10,lod_core:healing_potion,0,0,Magma Fish
+150,13,8,lod_core:body_purifier,0,0,Scud Shark
+63,8,8,lod_core:healing_potion,0,0,Screw Shell
+144,8,8,lod_core:healing_breeze,0,0,Potbelly
+187,16,2,lod_core:soul_eater,0,0,Loner Knight
+55,5,2,lod_core:energy_girdle,0,0,Berserker
+176,18,2,lod_core:sage's_cloak,0,0,Professor
+638,28,8,lod_core:spectral_flash,0,0,Psyche Druid
+60,4,2,lod_core:bandit's_ring,0,0,Gangster
+50,6,8,lod_core:pellet,0,0,Crafty Thief
+153,13,8,lod_core:mind_purifier,0,0,Undead
+60,7,2,lod_core:broad_sword,0,0,Skeleton
+48,4,0,Nothing,0,0,Will-o'-Wisp
+300,0,100,lod_core:night_raid,0,0,Cursed Jar
+20,8,8,lod_core:angel's_prayer,0,0,Man Eating Bud
+126,12,15,lod_core:recovery_ball,0,0,Cactus
+15,3,8,lod_core:sun_rhapsody,0,0,Mandrake
+77,11,8,lod_core:spirit_potion,0,0,Mermaid
+17,3,8,lod_core:sun_rhapsody,0,0,Salamander
+380,17,2,lod_core:healing_rain,0,0,Unicorn
+10,2,10,lod_core:dark_mist,0,0,Orc
+80,12,8,lod_core:depetrifier,0,0,Dark Elf
+100,9,8,lod_core:mind_purifier,0,0,Baby Dragon
+192,16,8,lod_core:panic_bell,0,0,Harpy
+162,17,2,lod_core:dancer's_boots,0,0,Cute Cat
+32,8,2,lod_core:bemusing_arrow,0,0,Arrow Shooter
+14,2,8,lod_core:mind_purifier,0,0,Red Hot
+170,10,8,lod_core:midnight_terror,0,0,Specter
+30,10,8,lod_core:gushing_magma,0,0,Sandora Elite
+24,5,20,lod_core:healing_potion,0,0,Knight of Sandora
+11,2,10,lod_core:body_purifier,0,0,Slime
+16,3,8,lod_core:mind_purifier,0,0,Fowl Fighter
+36,4,8,lod_core:panic_bell,0,0,Killer Bird
+14,2,8,lod_core:body_purifier,0,0,Plague Rat
+38,4,8,lod_core:body_purifier,0,0,Stinger
+40,7,2,lod_core:sachet,0,0,Piggy
+56,5,8,lod_core:spear_frost,0,0,Sea Piranha
+72,6,8,lod_core:body_purifier,0,0,Toad Stool
+80,7,8,lod_core:gushing_magma,0,0,Mega Sea Dragon
+90,13,8,lod_core:body_purifier,0,0,Deadly Spider
+121,7,8,lod_core:spirit_potion,0,0,Icicle Ball
+12,2,8,lod_core:mind_purifier,0,0,Tricky Bat
+108,10,2,lod_core:bastard_sword,0,0,Mr.Bone
+72,6,8,lod_core:healing_fog,0,0,Moss Dresser
+144,8,8,lod_core:total_vanishing,0,0,Death Purger
+154,7,8,lod_core:poison_needle,0,0,Scorpion
+304,14,8,lod_core:frozen_jet,0,0,Trap Plant
+135,10,8,lod_core:angel's_prayer,0,0,Aqua King
+128,10,8,lod_core:body_purifier,0,0,Sky Chaser
+456,11,8,lod_core:down_burst,0,0,Air Combat
+0,0,100,lod_core:ruby_ring,0,0,Treasure Jar
+136,8,8,lod_core:recovery_ball,0,0,Human Hunter
+198,14,10,lod_core:angel's_prayer,0,0,Mountain Ape
+360,14,8,lod_core:night_raid,0,0,Roulette Face
+228,8,8,lod_core:burning_wave,0,0,Swift Dragon
+20,5,2,lod_core:morning_star,0,0,Hellena Warden
+25,10,50,lod_core:healing_potion,0,0,Sandora Soldier
+14,3,8,lod_core:healing_potion,0,0,Sandora Soldier
+11,4,10,lod_core:sun_rhapsody,0,0,Sandora Soldier
+24,7,2,lod_core:spear,0,0,Senior Warden
+6,3,0,Nothing,0,0,Hellena Warden
+17,3,100,lod_core:attack_ball,0,0,Commander
+1000,0,0,Nothing,0,0,Blue Bird
+0,300,100,lod_core:phoenix_plume,0,0,Red Bird
+0,100,10,lod_core:elude_cloak,0,0,Yellow Bird
+1000,100,100,lod_core:moon_serenade,0,0,Lucky Jar
+0,0,0,lod_core:broad_sword,0,0,??? (Terminator ?)
+0,0,0,lod_core:broad_sword,0,0,???
+0,0,0,lod_core:broad_sword,0,0,???
+0,0,0,lod_core:broad_sword,0,0,Madman
+165,8,8,lod_core:body_purifier,0,0,Madman
+165,8,8,lod_core:body_purifier,0,0,Madman
+14,2,8,lod_core:mind_purifier,0,0,Red Hot	
+14,2,8,lod_core:mind_purifier,0,0,Red Hot
+11,2,10,lod_core:body_purifier,0,0,Madman
+11,2,10,lod_core:body_purifier,0,0,Madman
+13,4,2,lod_core:spirit_cloak,0,0,Fire Spirit
+13,4,2,lod_core:spirit_cloak,0,0,Fire Spirit
+170,10,8,lod_core:midnight_terror,0,0,Specter
+170,10,8,lod_core:midnight_terror,0,0,Specter
+48,4,0,Nothing,0,0,Will-o'-Wisp
+48,4,0,Nothing,0,0,Will-o'-Wisp
+0,0,0,lod_core:broad_sword,0,0,Will-o'-Wisp (No name)
+10,2,10,lod_core:healing_potion,0,0,Magma Fish
+10,2,10,lod_core:healing_potion,0,0,Magma Fish
+0,0,0,lod_core:broad_sword,0,0,Magma Fish (No name)
+17,3,8,lod_core:sun_rhapsody,0,0,Salamander (No name)
+17,3,8,lod_core:sun_rhapsody,0,0,Salamander (No name)
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,N/A
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,lod_core:broad_sword,0,0,Crash
+0,0,0,Nothing,0,0,Merchant
+0,0,0,Nothing,0,0,Master Tasman
+0,0,0,Nothing,0,0,Rose
+20,20,100,lod_core:burn_out,0,0,Commander
+2,3,100,lod_core:healing_potion,0,0,Knight of Sandora
+200,50,100,lod_core:healing_breeze,0,0,Sandora Elite
+0,0,100,lod_core:healing_potion,0,0,Hellena Warden
+0,0,100,lod_core:healing_potion,0,0,Auto Complete
+300,50,100,lod_core:knight_shield,0,0,Fruegel
+2000,200,100,lod_core:gravity_grabber,0,0,Fruegel
+0,0,0,Nothing,0,0,Rodriguez
+0,0,0,Nothing,0,0,Guftas
+300,50,100,lod_core:power_wrist,0,0,Kongol
+2000,200,30,lod_core:wargod_calling,0,0,Kongol
+3000,200,0,Nothing,0,0,Emperor Doel
+0,0,0,Nothing,0,0,Auto Complete
+0,0,0,Nothing,0,0,Lloyd
+12000,300,0,Nothing,0,0,Lloyd
+0,0,0,Nothing,0,0,Auto Complete
+0,0,0,Nothing,0,0,Auto Complete
+0,0,0,Nothing,0,0,Auto Complete
+0,0,8,lod_core:pellet,0,0,Crafty Thief
+0,0,100,lod_core:down_burst,0,0,Feyrbrand
+0,0,0,Nothing,0,0,???
+0,0,0,Nothing,0,0,Auto Complete
+0,0,0,Nothing,0,0,Crash
+7000,250,100,lod_core:frozen_jet,0,0,Regole
+0,0,0,Nothing,0,0,Tentacle
+0,0,0,Nothing,0,0,Crash
+0,0,0,Nothing,0,0,Crash
+10000,300,20,lod_core:dragon_shield,0,0,Divine Dragon
+0,0,100,lod_core:gravity_grabber,0,0,Divine Cannon
+0,0,100,lod_core:flash_hall,0,0,Divine Ball
+0,0,0,Nothing,0,0,Crash
+1200,100,30,lod_core:plate_mail,0,0,Greham
+0,0,100,lod_core:silver_stone,0,0,Shirley
+0,0,0,Nothing,0,0,Auto Complete
+0,0,0,Nothing,0,0,Auto Complete
+0,0,0,Nothing,0,0,Crash
+0,0,0,Nothing,0,0,Crash
+6000,200,0,Nothing,0,0,Lenus
+0,0,50,lod_core:jeweled_crown,0,0,Lenus
+6000,300,100,lod_core:blue_sea_stone,0,0,Damia
+6000,300,100,lod_core:jade_stone,0,0,Syuveil
+6000,300,100,lod_core:golden_stone,0,0,Belzac
+6000,300,100,lod_core:violet_stone,0,0,Kanzas
+2000,150,100,lod_core:total_vanishing,0,0,Mappi
+0,0,25,lod_core:diamond_claw,0,0,Mappi
+5000,200,25,lod_core:soul_headband,0,0,Gehrich
+0,0,0,Nothing,0,0,Gorgaga
+0,0,0,Nothing,0,0,Serfius
+0,0,0,Nothing,0,0,Danton
+0,0,0,Nothing,0,0,Atlow
+0,0,0,Nothing,0,0,Freeze
+0,0,0,Nothing,0,0,Crash
+600,100,100,lod_core:healing_potion,0,0,Virage(head)
+0,0,100,lod_core:healing_potion,0,0,Virage(body)
+0,0,100,lod_core:mind_purifier,0,0,Virage(arm)
+4500,200,100,lod_core:moon_serenade,0,0,Virage(head)
+0,0,0,Nothing,0,0,Virage(arm)
+0,0,0,Nothing,0,0,Virage(body)
+0,0,0,Nothing,0,0,Freeze
+0,0,0,Nothing,0,0,Freeze
+4000,200,100,lod_core:healing_rain,0,0,S Virage(head)
+0,0,0,Nothing,0,0,S Virage(body)
+0,0,0,Nothing,0,0,S Virage(arm)
+0,0,0,Nothing,0,0,Crash
+15000,300,0,Nothing,0,0,S Virage(head)
+0,0,0,Nothing,0,0,S Virage(arm)
+0,0,0,Nothing,0,0,S Virage(body)
+0,0,0,Nothing,0,0,Freeze
+0,0,0,Nothing,0,0,Freeze
+1500,100,30,lod_core:bandit's_ring,0,0,Drake the Bandit
+0,0,0,Nothing,0,0,Auto Complete
+0,0,0,Nothing,0,0,Auto Complete
+0,0,0,Nothing,0,0,Freeze
+2000,100,100,lod_core:sachet,0,0,Jiango
+0,0,0,Nothing,0,0,???
+0,0,0,Nothing,0,0,???
+400,50,100,lod_core:wargod's_amulet,0,0,Urobolus
+800,100,100,lod_core:red-eye_stone,0,0,Fire Bird
+0,0,0,Nothing,0,0,Auto Complete
+9000,300,100,lod_core:spectral_flash,0,0,Grand Jewel
+0,0,0,Nothing,0,0,Virage(head)
+0,0,0,Nothing,0,0,Virage(body)
+0,0,0,Nothing,0,0,Virage(arm)
+0,0,0,Nothing,0,0,Kamuy's tree
+6000,200,100,lod_core:night_raid,0,0,Ghost Commander
+0,0,0,Nothing,0,0,Ghost Knight
+0,0,0,Nothing,0,0,Mazo
+8000,0,100,lod_core:darkness_stone,0,0,Kamuy
+20000,10000,100,lod_core:phantom_shield,0,0,Faust
+0,0,0,Nothing,0,0,Faust
+11000,250,100,lod_core:brass_knuckle,0,0,Windigo
+0,0,0,Nothing,0,0,Auto Complete
+0,0,0,Nothing,0,0,Heart
+6000,200,0,Nothing,0,0,Polter Helm
+0,0,100,lod_core:smoke_ball,0,0,Polter Armor
+0,0,100,lod_core:soul_eater,0,0,Polter Sword
+8000,400,100,lod_core:flash_hall,0,0,Auto Complete
+6000,300,100,lod_core:frozen_jet,0,0,Auto Complete
+4000,200,100,lod_core:down_burst,0,0,Auto Complete
+0,0,0,Nothing,0,0,Missing (Melbu Texture)
+0,0,0,Nothing,0,0,Missing (Tentacle Texture)
+0,0,0,Nothing,0,0,Lloyd & Melbu (Crash)
+0,0,0,Nothing,0,0,Freeze
+0,0,0,Nothing,0,0,Freeze
+12000,300,0,Nothing,0,0,Vector
+0,0,0,Nothing,0,0,Selebus
+0,0,0,Nothing,0,0,Kubila
+0,0,100,lod_core:healing_rain,0,0,Auto Complete
+12000,300,50,lod_core:halberd,0,0,Lavitzs Spirit
+12000,300,100,lod_core:pretty_hammer,0,0,Last Kraken
+0,0,0,Nothing,0,0,Auto Complete
+0,0,0,Nothing,0,0,Auto Complete
+13000,300,100,lod_core:healing_rain,0,0,Caterpillar
+0,0,100,lod_core:moon_serenade,0,0,Auto Complete
+0,0,100,lod_core:sun_rhapsody,0,0,Auto Complete
+6000,0,0,Nothing,0,0,Death Rose
+0,0,0,Nothing,0,0,Auto Complete
+6000,0,0,Nothing,0,0,Claire
+0,0,0,Nothing,0,0,Auto Complete
+6000,0,100,lod_core:indora's_axe,0,0,Indora
+0,0,0,Nothing,0,0,Shadow Blade
+0,0,0,Nothing,0,0,Light Sword
+12000,0,0,Nothing,0,0,Michael
+0,0,0,Nothing,0,0,Michael (arm)
+0,0,0,Nothing,0,0,Michael (core)
+6000,0,0,Nothing,0,0,Dark Doel
+6000,0,0,Nothing,0,0,Archangel
+0,0,0,Nothing,0,0,Dragon Spirit
+0,0,0,Nothing,0,0,Dragon Spirit
+0,0,0,Nothing,0,0,Dragon Spirit
+0,0,0,Nothing,0,0,Missing Shana
+20000,400,0,Nothing,0,0,Zieg Feld
+0,0,0,Nothing,0,0,Melbu Frahma (1st)
+0,0,0,Nothing,0,0,Tentacle
+0,0,0,Nothing,0,0,Melbu Frahma (2nd)
+0,0,0,Nothing,0,0,Melbu Frahma (3rd)
+0,0,0,Nothing,0,0,Melbu Frahma (Bomb Star)
+0,0,0,Nothing,0,0,Melbu Frahma (4th)
+0,0,0,Nothing,0,0,Monster
+0,0,0,Nothing,0,0,Tentacle
+0,0,0,Nothing,0,0,Bomb Star (Melbu Frahma 1st)
+0,0,0,Nothing,0,0,Monster
+0,0,0,Nothing,0,0,Tentacle
+0,0,0,Nothing,0,0,Crash

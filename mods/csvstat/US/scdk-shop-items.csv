@@ -1,65 +1,65 @@
 Slot1,Slot2,Slot3,Slot4,Slot5,Slot6,Slot7,Slot8,Slot9,Slot10,Slot11,Slot12,Slot13,Slot14,Slot15,Slot16,Name
-1,28,47,63,77,103,106,107,108,112,255,255,255,255,255,255,Bale Weapon
-203,222,205,206,198,208,223,255,255,255,255,255,255,255,255,255,Bale Item
-21,83,89,104,105,106,111,156,149,150,151,157,255,255,255,255,Lohan Weapon
-203,229,222,205,206,199,209,223,255,255,255,255,255,255,255,255,Lohan Item
-2,29,78,94,255,255,255,255,255,255,255,255,255,255,255,255,Kazas Weapon
-203,229,222,202,214,255,255,255,255,255,255,255,255,255,255,255,Kazas Item
-14,48,97,103,104,105,106,107,108,109,111,112,156,255,255,255,Fletz Weapon
-203,249,229,222,205,206,201,216,223,255,255,255,255,255,255,255,Fletz Item
-64,84,255,255,255,255,255,255,255,255,255,255,255,255,255,255,Donau Weapon
-203,229,222,205,206,220,255,255,255,255,255,255,255,255,255,255,Donau Item
-22,41,58,107,109,255,255,255,255,255,255,255,255,255,255,255,Queen Fury Weapon
-203,249,229,222,205,206,201,210,255,255,255,255,255,255,255,255,Queen Fury Item
-3,30,35,49,65,79,255,255,255,255,255,255,255,255,255,255,Fueno Weapon
-203,249,229,222,205,223,195,209,255,255,255,255,255,255,255,255,Fueno Item
-15,80,95,110,115,118,255,255,255,255,255,255,255,255,255,255,Furni Weapon
-231,229,222,204,207,255,255,255,255,255,255,255,255,255,255,255,Furni Item
-9,23,42,54,59,81,85,98,105,108,110,74,255,255,255,255,Deningrand Weapon
-231,249,229,222,204,205,206,194,207,223,255,255,255,255,255,255,Deningrad Item
-36,113,114,119,255,255,255,255,255,255,255,255,255,255,255,255,Forest of Winglies Weapon
-231,229,249,222,205,206,202,216,255,255,255,255,255,255,255,255,Forest of Winglies Item
-24,37,55,60,117,255,255,255,255,255,255,255,255,255,255,255,Vellweb Weapon
-231,249,229,222,205,206,223,255,255,255,255,255,255,255,255,255,Vellweb Item
-5,33,43,99,113,114,118,119,120,255,255,255,255,255,255,255,Ulara Weapon
-231,249,229,222,223,212,215,217,218,200,225,255,255,255,255,255,Ulara Item
-115,116,117,255,255,255,255,255,255,255,255,255,255,255,255,255,Rouge Weapon
-231,249,229,222,205,206,212,255,255,255,255,255,255,255,255,255,Rouge Item
-6,25,38,44,51,52,56,61,67,68,69,113,114,115,116,117,Moon Weapon
-231,249,229,222,204,205,206,212,217,255,255,255,255,255,255,255,Moon Item
-203,222,194,255,255,255,255,255,255,255,255,255,255,255,255,255,Hellena I
-4,10,16,31,50,66,116,255,255,255,255,255,255,255,255,255,Kashua Weapon
-231,249,229,222,206,223,255,255,255,255,255,255,255,255,255,255,Kashua Item
-142,143,146,148,255,255,255,255,255,255,255,255,255,255,255,255,Fletz Jewelry
-203,206,195,223,255,255,255,255,255,255,255,255,255,255,255,255,Forest
-153,154,255,255,255,255,255,255,255,255,255,255,255,255,255,255,Kazas Secret
-203,229,222,205,206,210,197,255,255,255,255,255,255,255,255,255,Volcano Villude
-11,17,51,52,68,69,106,108,110,255,255,255,255,255,255,255,Zenebatow Weapon
-231,229,249,222,204,205,206,223,255,255,255,255,255,255,255,255,Zenebatos Item
-203,229,222,205,218,207,255,255,255,255,255,255,255,255,255,255,Hellena II
-203,229,222,255,255,255,255,255,255,255,255,255,255,255,255,255,Unknown
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,Unused 1
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,Unused 2
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,Unused 3
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,Unused 4
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,Unused 5
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,Unused 6
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
+lod_core:bastard_sword,lod_core:sparkle_arrow,lod_core:scale_armor,lod_core:leather_jacket,lod_core:sallet,lod_core:poison_guard,lod_core:panic_guard,lod_core:stun_guard,lod_core:bravery_amulet,lod_core:knight_shield,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Bale Weapon
+lod_core:healing_potion,lod_core:angel's_prayer,lod_core:mind_purifier,lod_core:body_purifier,lod_core:spear_frost,lod_core:meteor_fall,lod_core:charm_potion,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Bale Item
+lod_core:lance,lod_core:cape,lod_core:legend_casque,lod_core:active_ring,lod_core:protector,lod_core:panic_guard,lod_core:power_wrist,lod_core:wargod_calling,lod_core:phantom_shield,lod_core:dragon_shield,lod_core:angel_scarf,lod_core:ultimate_wargod,Nothing,Nothing,Nothing,Nothing,Lohan Weapon
+lod_core:healing_potion,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:mind_purifier,lod_core:body_purifier,lod_core:spinning_gale,lod_core:gushing_magma,lod_core:charm_potion,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Lohan Item
+lod_core:heat_blade,lod_core:long_bow,lod_core:armlet,lod_core:iron_kneepiece,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Kazas Weapon
+lod_core:healing_potion,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:dark_mist,lod_core:fatal_blizzard,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Kazas Item
+lod_core:shadow_cutter,lod_core:chain_mail,lod_core:soft_boots,lod_core:poison_guard,lod_core:active_ring,lod_core:protector,lod_core:panic_guard,lod_core:stun_guard,lod_core:bravery_amulet,lod_core:magic_ego_bell,lod_core:power_wrist,lod_core:knight_shield,lod_core:wargod_calling,Nothing,Nothing,Nothing,Fletz Weapon
+lod_core:healing_potion,lod_core:healing_breeze,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:mind_purifier,lod_core:body_purifier,lod_core:trans_light,lod_core:black_rain,lod_core:charm_potion,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Fletz Item
+lod_core:silver_vest,lod_core:tiara,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Donau Weapon
+lod_core:healing_potion,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:mind_purifier,lod_core:body_purifier,lod_core:rave_twister,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Donau Item
+lod_core:glaive,lod_core:beast_fang,lod_core:warrior_dress,lod_core:stun_guard,lod_core:magic_ego_bell,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Queen Fury Weapon
+lod_core:healing_potion,lod_core:healing_breeze,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:mind_purifier,lod_core:body_purifier,lod_core:trans_light,lod_core:dancing_ray,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Queen Fury Item
+lod_core:falchion,lod_core:bemusing_arrow,lod_core:morning_star,lod_core:plate_mail,lod_core:sparkle_dress,lod_core:knight_helm,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Fueno Weapon
+lod_core:healing_potion,lod_core:healing_breeze,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:mind_purifier,lod_core:charm_potion,lod_core:burn_out,lod_core:gushing_magma,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Fueno Item
+lod_core:dancing_dagger,lod_core:giganto_helm,lod_core:combat_shoes,lod_core:destone_amulet,lod_core:attack_badge,lod_core:elude_cloak,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Furni Weapon
+lod_core:healing_fog,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:depetrifier,lod_core:thunderbolt,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Furni Item
+lod_core:tomahawk,lod_core:spear_of_terror,lod_core:diamond_claw,lod_core:breast_plate,lod_core:master's_vest,lod_core:soul_headband,lod_core:jeweled_crown,lod_core:stardust_boots,lod_core:protector,lod_core:bravery_amulet,lod_core:destone_amulet,lod_core:armor_of_legend,Nothing,Nothing,Nothing,Nothing,Deningrand Weapon
+lod_core:healing_fog,lod_core:healing_breeze,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:depetrifier,lod_core:mind_purifier,lod_core:body_purifier,lod_core:spark_net,lod_core:thunderbolt,lod_core:charm_potion,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Deningrad Item
+lod_core:war_hammer,lod_core:magical_ring,lod_core:spiritual_ring,lod_core:spirit_cloak,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Forest of Winglies Weapon
+lod_core:healing_fog,lod_core:sun_rhapsody,lod_core:healing_breeze,lod_core:angel's_prayer,lod_core:mind_purifier,lod_core:body_purifier,lod_core:dark_mist,lod_core:black_rain,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Forest of Winglies Item
+lod_core:partisan,lod_core:heavy_mace,lod_core:giganto_armor,lod_core:energy_girdle,lod_core:giganto_ring,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Vellweb Weapon
+lod_core:healing_fog,lod_core:healing_breeze,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:mind_purifier,lod_core:body_purifier,lod_core:charm_potion,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Vellweb Item
+lod_core:fairy_sword,lod_core:arrow_of_force,lod_core:thunder_fist,lod_core:magical_greaves,lod_core:magical_ring,lod_core:spiritual_ring,lod_core:elude_cloak,lod_core:spirit_cloak,lod_core:sage's_cloak,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Ulara Weapon
+lod_core:healing_fog,lod_core:healing_breeze,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:charm_potion,lod_core:panic_bell,lod_core:stunning_hammer,lod_core:poison_needle,lod_core:midnight_terror,lod_core:attack_ball,lod_core:recovery_ball,Nothing,Nothing,Nothing,Nothing,Nothing,Ulara Item
+lod_core:attack_badge,lod_core:guard_badge,lod_core:giganto_ring,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Rouge Weapon
+lod_core:healing_fog,lod_core:healing_breeze,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:mind_purifier,lod_core:body_purifier,lod_core:panic_bell,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Rouge Item
+lod_core:claymore,lod_core:halberd,lod_core:basher,lod_core:destroyer_mace,lod_core:red_dg_armor,lod_core:jade_dg_armor,lod_core:gold_dg_armor,lod_core:violet_dg_armor,lod_core:silver_dg_armor,lod_core:dark_dg_armor,lod_core:blue_dg_armor,lod_core:magical_ring,lod_core:spiritual_ring,lod_core:attack_badge,lod_core:guard_badge,lod_core:giganto_ring,Moon Weapon
+lod_core:healing_fog,lod_core:healing_breeze,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:depetrifier,lod_core:mind_purifier,lod_core:body_purifier,lod_core:panic_bell,lod_core:poison_needle,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Moon Item
+lod_core:healing_potion,lod_core:angel's_prayer,lod_core:spark_net,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Hellena I
+lod_core:mind_crush,lod_core:battle_axe,lod_core:flamberge,lod_core:virulent_arrow,lod_core:saint_armor,lod_core:robe,lod_core:guard_badge,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Kashua Weapon
+lod_core:healing_fog,lod_core:healing_breeze,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:body_purifier,lod_core:charm_potion,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Kashua Item
+lod_core:ruby_ring,lod_core:sapphire_pin,lod_core:emerald_earring,lod_core:platinum_collar,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Fletz Jewelry
+lod_core:healing_potion,lod_core:body_purifier,lod_core:burn_out,lod_core:charm_potion,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Forest
+lod_core:fake_power_wrist,lod_core:fake_shield,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Kazas Secret
+lod_core:healing_potion,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:mind_purifier,lod_core:body_purifier,lod_core:dancing_ray,lod_core:pellet,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Volcano Villude
+lod_core:great_axe,lod_core:gladius,lod_core:red_dg_armor,lod_core:jade_dg_armor,lod_core:dark_dg_armor,lod_core:blue_dg_armor,lod_core:panic_guard,lod_core:bravery_amulet,lod_core:destone_amulet,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Zenebatow Weapon
+lod_core:healing_fog,lod_core:sun_rhapsody,lod_core:healing_breeze,lod_core:angel's_prayer,lod_core:depetrifier,lod_core:mind_purifier,lod_core:body_purifier,lod_core:charm_potion,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Zenebatos Item
+lod_core:healing_potion,lod_core:sun_rhapsody,lod_core:angel's_prayer,lod_core:mind_purifier,lod_core:midnight_terror,lod_core:thunderbolt,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Hellena II
+lod_core:healing_potion,lod_core:sun_rhapsody,lod_core:angel's_prayer,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unknown
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unused 1
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unused 2
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unused 3
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unused 4
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unused 5
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Unused 6
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,
+Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,

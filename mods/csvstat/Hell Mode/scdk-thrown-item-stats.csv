@@ -1,65 +1,66 @@
-Target Type,Element,Damage,Special1,Special2,UK1,Special Amount,Icon,Status,Percentage,UK2,Base Switch,Price,Name,Description,Battle Description,DEFF,Fake Item ID
-76,0,0,0,0,0,0,38,0,0,0,0,2, ,,,4307,0
-78,0,0,0,0,0,0,38,0,0,0,0,5,Detonate Rock,Detonates and§attacks all.,Weak attack for all,4309,1
-76,16,64,0,0,0,0,38,0,0,0,0,5,Spark Net,"Thunder-based,§single-target§(multi).",Thunder S attack,4311,2
-76,128,64,0,0,0,0,38,0,0,0,0,5,Burn Out,"Fire-based,§single-target§(multi).",Fire S attack,4313,3
-0,0,0,0,0,0,0,0,0,0,0,0,1, , ,,4315,4
-76,2,64,0,0,0,0,38,0,0,0,0,5,Pellet,"Earth-based,§single-target§(multi).",Earth S attack,4317,5
-76,1,64,0,0,0,0,38,0,0,0,0,5,Spear Frost,"Water-based,§single-target§(multi).",Water S attack,4319,6
-76,64,64,0,0,0,0,38,0,0,0,0,5,Spinning Gale,"Wind-based,§single-target§(multi).",Wind S attack,4321,7
-76,0,0,0,0,0,0,46,0,0,0,0,50,Attack Ball,Generates a random§attack item.,Random attack item,-1,8
-76,32,64,0,0,0,0,38,0,0,0,0,5,Trans Light,"Light-based,§single-target§(multi).",Light S attack,4325,9
-76,4,64,0,0,0,0,38,0,0,0,0,5,Dark Mist,"Dark-based,§single-target§(multi).",Dark S attack,4327,10
-88,0,0,0,0,0,0,33,0,50,0,128,5,Healing Potion,Recovers half of§maximum HP.,Recovers 50% HP,4385,11
-72,0,0,0,0,0,0,37,1,0,0,8,15,Depetrifier,Dissolves§petrification.,Cures petrification,-1,12
-88,0,0,0,0,0,0,37,78,0,0,8,10,Mind Purifier,"Dispels confusion,§bewitchment, fear,§and dispiriting.","Cures B, C, F, D",-1,13
-88,0,0,0,0,0,0,37,176,0,0,8,5,Body Purifier,"Nullifies poison,§stunning, and§arm blocking.","Cures P, S, A-Block",-1,14
-78,16,0,0,0,0,0,38,0,0,0,0,10,Thunderbolt,"Thunder-based,§targets all§(multi).",Thunder A attack,4337,15
-78,2,0,0,0,0,0,38,0,0,0,0,10,Meteor Fall,"Earth-based,§targets all§(multi).",Earth A attack,4339,16
-78,128,0,0,0,0,0,38,0,0,0,0,10,Gushing Magma,"Fire-based,§targets all§(multi).",Fire A attack,4341,17
-78,32,0,0,0,0,0,38,0,0,0,0,10,Dancing Ray,"Light-based,§targets all§(multi).",Light A attack,4343,18
-72,0,0,0,0,0,0,35,0,100,0,32,10,Spirit Potion,Recovers 100 pts.§of SP.,Recovers 100 SP,4345,19
-76,0,0,0,0,0,0,39,4,0,0,4,10,Panic Bell,Confuses minor§enemies.,Confuses minor enemy,4347,20
-90,0,0,0,0,0,0,0,0,50,0,128,100, ,Rarely found near§Rock Fireflies.§Glows faintly.,Cannot be used in battle,4349,21
-78,1,0,0,0,0,0,38,0,0,0,0,10,Fatal Blizzard,"Water-based,§targets all§(multi).",Water A attack,4351,22
-76,0,0,0,0,0,0,39,16,0,0,4,10,Stunning Hammer,Stuns minor§enemies.,Stuns minor enemy,4353,23
-78,4,0,0,0,0,0,38,0,0,0,0,10,Black Rain,"Dark-based,§targets all§(multi).",Dark A attack,4355,24
-76,0,0,0,0,0,0,39,128,0,0,4,10,Poison Needle,Poisons minor§enemies.,Poisons minor enemy,4357,25
-76,0,0,0,0,0,0,39,8,0,0,4,10,Midnight Terror,Frightens minor§enemies.,Frightens minor enemy,4359,26
-0,0,0,0,0,0,0,0,0,0,0,0,1, , ,,4361,27
-78,64,0,0,0,0,0,38,0,0,0,0,10,Rave Twister,Wind-based§targets all§(multi).,Wind A attack,4363,28
-204,0,0,0,0,0,0,46,0,0,0,0,10,Total Vanishing,Destroys§minor enemies.,Kills minor enemy,4365,29
-8,0,0,0,0,0,0,36,0,50,0,16,15,Angel's Prayer,Revives and§recovers half§of maximum HP.,Revives & Recovers 50% HP,4367,30
-80,0,0,0,0,0,0,45,0,0,0,0,2,Charm Potion,Reduces encounter§risk.,Avoids minor enemy 3x,4369,31
-64,0,0,0,0,0,0,45,0,0,0,0,200,Pandemonium,Minor enemies only§attack target for§3 turns (repeat).,Allow minor enemy attack 3x,4371,32
-64,0,0,0,0,0,0,46,0,0,0,0,50,Recovery Ball,Generates a random§recovery item.,Random recovery item,-1,33
-72,0,0,0,192,0,0,42,0,0,0,0,1, , ,,4375,34
-72,0,0,0,64,0,0,42,0,0,0,0,200,Magic Shield,Nullifies magical§attacks for 3 turns§(repeat).,Magical immunity for 3 turns(rep),4377,35
-72,0,0,0,128,0,0,42,0,0,0,0,200,Material Shield,Nullifies physical§attacks for 3 turns§(repeat).,Physical immunity for 3 turns(rep),4379,36
-88,0,0,0,0,0,0,34,0,100,0,64,50,Sun Rhapsody,Completely§recovers MP.,Recovers 100% MP,4381,37
-72,0,0,0,0,0,0,43,0,0,0,0,200,Smoke Ball,Guaranteed escape§from minor enemies§(repeat).,Escape a minor enemy,4383,38
-88,0,0,0,0,0,0,33,0,100,0,128,15,Healing Fog,Completely§recovers HP.,Recovers 100% HP,4385,39
-76,0,0,0,0,0,0,44,0,0,0,0,200,Magic Sig Stone,Blocks enemy's§move for 3 turns§(repeat).,Blocks next 3 enemy moves (rep),4387,40
-90,0,0,0,0,0,0,33,0,100,0,128,60,Healing Rain,Completely§recovers HP§for all.,Recovers 100% HP for all,4389,41
-90,0,0,0,0,0,0,34,0,100,0,64,100,Moon Serenade,Completely§recovers MP§for all.,Recovers 100% MP for all,4391,42
-72,0,0,240,0,0,50,40,0,0,0,0,200,Power Up,Increases strength§for 3 turns§(repeat).,Increases power for 3 turns(rep),4393,43
-76,0,0,240,0,0,-50,41,0,0,0,0,200,Power Down,Weakens enemy§for 3 turns§(repeat).,Decreases power for 3 turns(rep),4395,44
-72,0,0,0,32,0,0,40,0,0,0,0,200,Speed Up,Doubles speed§for 3 turns§(repeat).,Doubles SPD for 3 turns(rep),4397,45
-76,0,0,0,16,0,0,41,0,0,0,0,200,Speed Down,Halves speed§for 3 turns§(repeat).,Halves SPD for 3 turns(rep),4399,46
-72,0,0,0,0,0,0,46,0,30,0,128,1, , ,,4401,47
-76,0,0,0,0,0,0,46,0,0,0,0,200,Sachet,"Gives off a§subtle, pleasant§aroma.",Gives subtle good aroma,4403,48
-78,8,8,0,0,0,0,38,0,0,0,0,5000,Psyche Bomb,"Non-elemental-§based, targets all§(multi).",Non-Elemental A attack,4405,49
-78,128,16,0,0,0,0,38,0,0,0,0,10,Burning Wave,"Powerful fire-§based attack,§targets all.",Powerful Fire A attack,4407,50
-78,1,16,0,0,0,0,38,0,0,0,0,10,Frozen Jet,"Powerful water-§based attack,§targets all.",Powerful Water A attack,4409,51
-78,64,16,0,0,0,0,38,0,0,0,0,10,Down Burst,"Powerful wind-§based attack,§targets all.",Powerful Wind A attack,4411,52
-78,2,16,0,0,0,0,38,0,0,0,0,10,Gravity Grabber,"Powerful earth-§based attack,§targets all.",Powerful Earth A attack,4413,53
-78,32,16,0,0,0,0,38,0,0,0,0,10,Spectral Flash,"Powerful light-§based attack,§targets all.",Powerful Light A attack,4415,54
-78,4,16,0,0,0,0,38,0,0,0,0,10,Night Raid,"Powerful dark-§based attack,§targets all.",Powerful Dark A attack,4417,55
-78,16,16,0,0,0,0,38,0,0,0,0,10,Flash Hall,"Powerful thunder-§based attack,§targets all.",Powerful Thunder A attack,4419,56
-90,0,0,0,0,0,0,33,0,50,0,128,40,Healing Breeze,Recovers half of§maximum HP for all.,Recovers 50% HP for all,4421,57
-110,8,32,0,0,0,0,38,0,0,0,0,5000,Psyche Bomb X,"Non-elemental-§based, targets all§(multi)(repeat).",Non-Elemental A attack(rep),4423,58
-0,0,0,0,0,0,0,0,0,0,0,0,0, ,,,4425,59
-0,0,0,0,0,0,0,0,0,0,0,0,0, ,,,4427,60
-0,0,0,0,0,0,0,0,0,0,0,0,0, ,,,4429,61
-0,0,0,0,0,0,0,0,0,0,0,0,0, ,,,4431,62
-0,0,0,0,0,0,0,0,0,0,0,0,0,None,,,4433,63
+Target Type,Element,Damage,Power Defence,Power Magic Defence,Power Attack,Power Magic Attack,Power AHIT,Power MHIT,Power AAV,Power MAV,Physical Immunity,Magical Immunity,Speed Up,Speed Down,SP Per Physical Hit,MP Per Physical Hit,SP Per Magical Hit,MP Per Magical Hit,UK1,Icon,Status,Percentage,UK2,Base Switch,Instant Kill,Price,Name,Description,Battle Description,DEFF,Fake Item ID,Registry ID
+76,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,2, ,,,4307,0,lod:_
+78,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,5,Detonate Rock,Detonates and§attacks all.,Weak attack for all,4309,1,lod:detonate_rock
+76,16,64,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,5,Spark Net,"Thunder-based,§single-target§(multi).",Thunder S attack,4311,2,lod:spark_net
+76,128,64,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,5,Burn Out,"Fire-based,§single-target§(multi).",Fire S attack,4313,3,lod:burn_out
+0,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,0,0,0,0,0,false,1, , ,,4315,4,lod:_
+76,2,64,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,5,Pellet,"Earth-based,§single-target§(multi).",Earth S attack,4317,5,lod:pellet
+76,1,64,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,5,Spear Frost,"Water-based,§single-target§(multi).",Water S attack,4319,6,lod:spear_frost
+76,64,64,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,5,Spinning Gale,"Wind-based,§single-target§(multi).",Wind S attack,4321,7,lod:spinning_gale
+76,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,46,0,0,0,0,false,50,Attack Ball,Generates a random§attack item.,Random attack item,-1,8,lod:attack_ball
+76,32,64,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,5,Trans Light,"Light-based,§single-target§(multi).",Light S attack,4325,9,lod:trans_light
+76,4,64,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,5,Dark Mist,"Dark-based,§single-target§(multi).",Dark S attack,4327,10,lod:dark_mist
+88,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,33,0,50,0,128,false,5,Healing Potion,Recovers half of§maximum HP.,Recovers 50% HP,4385,11,lod:healing_potion
+72,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,37,1,0,0,8,false,15,Depetrifier,Dissolves§petrification.,Cures petrification,-1,12,lod:depetrifier
+88,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,37,78,0,0,8,false,10,Mind Purifier,"Dispels confusion,§bewitchment, fear,§and dispiriting.","Cures B, C, F, D",-1,13,lod:mind_purifier
+88,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,37,176,0,0,8,false,5,Body Purifier,"Nullifies poison,§stunning, and§arm blocking.","Cures P, S, A-Block",-1,14,lod:body_purifier
+78,16,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Thunderbolt,"Thunder-based,§targets all§(multi).",Thunder A attack,4337,15,lod:thunderbolt
+78,2,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Meteor Fall,"Earth-based,§targets all§(multi).",Earth A attack,4339,16,lod:meteor_fall
+78,128,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Gushing Magma,"Fire-based,§targets all§(multi).",Fire A attack,4341,17,lod:gushing_magma
+78,32,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Dancing Ray,"Light-based,§targets all§(multi).",Light A attack,4343,18,lod:dancing_ray
+72,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,35,0,100,0,32,false,10,Spirit Potion,Recovers 100 pts.§of SP.,Recovers 100 SP,4345,19,lod:spirit_potion
+76,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,39,4,0,0,4,false,10,Panic Bell,Confuses minor§enemies.,Confuses minor enemy,4347,20,lod:panic_bell
+90,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,0,0,50,0,128,false,1, ,,,-1,21,lod:_
+78,1,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Fatal Blizzard,"Water-based,§targets all§(multi).",Water A attack,4351,22,lod:fatal_blizzard
+76,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,39,16,0,0,4,false,10,Stunning Hammer,Stuns minor§enemies.,Stuns minor enemy,4353,23,lod:stunning_hammer
+78,4,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Black Rain,"Dark-based,§targets all§(multi).",Dark A attack,4355,24,lod:black_rain
+76,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,39,128,0,0,4,false,10,Poison Needle,Poisons minor§enemies.,Poisons minor enemy,4357,25,lod:poison_needle
+76,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,39,8,0,0,4,false,10,Midnight Terror,Frightens minor§enemies.,Frightens minor enemy,4359,26,lod:midnight_terror
+0,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,0,0,0,0,0,false,1, , ,,4361,27,lod:_
+78,64,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Rave Twister,Wind-based§targets all§(multi).,Wind A attack,4363,28,lod:rave_twister
+204,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,46,0,0,0,0,true,10,Total Vanishing,Destroys§minor enemies.,Kills minor enemy,4365,29,lod:total_vanishing
+8,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,36,0,50,0,16,false,15,Angel's Prayer,Revives and§recovers half§of maximum HP.,Revives & Recovers 50% HP,4367,30,lod:angels_prayer
+80,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,45,0,0,0,0,false,2,Charm Potion,Reduces encounter§risk.,Avoids minor enemy 3x,4369,31,lod:charm_potion
+64,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,45,0,0,0,0,false,200,Pandemonium,Minor enemies only§attack target for§3 turns (repeat).,Allow minor enemy attack 3x,4371,32,lod:pandemonium
+64,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,46,0,0,0,0,false,50,Recovery Ball,Generates a random§recovery item.,Random recovery item,-1,33,lod:recovery_ball
+72,0,0,0,0,0,0,0,0,0,0,true,true,0,0,0,0,0,0,0,42,0,0,0,0,false,1, , ,,4375,34,lod:_
+72,0,0,0,0,0,0,0,0,0,0,false,true,0,0,0,0,0,0,0,42,0,0,0,0,false,200,Magic Shield,Nullifies magical§attacks for 3 turns§(repeat).,Magical immunity for 3 turns(rep),4377,35,lod:magic_shield
+72,0,0,0,0,0,0,0,0,0,0,true,false,0,0,0,0,0,0,0,42,0,0,0,0,false,200,Material Shield,Nullifies physical§attacks for 3 turns§(repeat).,Physical immunity for 3 turns(rep),4379,36,lod:material_shield
+88,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,34,0,100,0,64,false,50,Sun Rhapsody,Completely§recovers MP.,Recovers 100% MP,4381,37,lod:sun_rhapsody
+72,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,43,0,0,0,0,false,200,Smoke Ball,Guaranteed escape§from minor enemies§(repeat).,Escape a minor enemy,4383,38,lod:smoke_ball
+88,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,33,0,100,0,128,false,15,Healing Fog,Completely§recovers HP.,Recovers 100% HP,4385,39,lod:healing_fog
+76,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,44,0,0,0,0,false,200,Magic Sig Stone,Blocks enemy's§move for 3 turns§(repeat).,Blocks next 3 enemy moves (rep),4387,40,lod:magic_sig_stone
+90,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,33,0,100,0,128,false,60,Healing Rain,Completely§recovers HP§for all.,Recovers 100% HP for all,4389,41,lod:healing_rain
+90,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,34,0,100,0,64,false,100,Moon Serenade,Completely§recovers MP§for all.,Recovers 100% MP for all,4391,42,lod:moon_serenade
+72,0,0,50,50,50,50,0,0,0,0,false,false,0,0,0,0,0,0,0,40,0,0,0,0,false,200,Power Up,Increases strength§for 3 turns§(repeat).,Increases power for 3 turns(rep),4393,43,lod:power_up
+76,0,0,-50,-50,-50,-50,0,0,0,0,false,false,0,0,0,0,0,0,0,41,0,0,0,0,false,200,Power Down,Weakens enemy§for 3 turns§(repeat).,Decreases power for 3 turns(rep),4395,44,lod:power_down
+72,0,0,0,0,0,0,0,0,0,0,false,false,100,0,0,0,0,0,0,40,0,0,0,0,false,200,Speed Up,Doubles speed§for 3 turns§(repeat).,Doubles SPD for 3 turns(rep),4397,45,lod:speed_up
+76,0,0,0,0,0,0,0,0,0,0,false,false,0,-50,0,0,0,0,0,41,0,0,0,0,false,200,Speed Down,Halves speed§for 3 turns§(repeat).,Halves SPD for 3 turns(rep),4399,46,lod:speed_down
+72,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,46,0,30,0,128,false,1, , ,,4401,47,lod:_
+76,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,46,0,0,0,0,false,200,Sachet,"Gives off a§subtle, pleasant§aroma.",Gives subtle good aroma,4403,48,lod:sachet
+78,8,8,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,5000,Psyche Bomb,"Non-elemental-§based, targets all§(multi).",Non-Elemental A attack,4405,49,lod:psyche_bomb
+78,128,16,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Burning Wave,"Powerful fire-§based attack,§targets all.",Powerful Fire A attack,4407,50,lod:burning_wave
+78,1,16,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Frozen Jet,"Powerful water-§based attack,§targets all.",Powerful Water A attack,4409,51,lod:frozen_jet
+78,64,16,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Down Burst,"Powerful wind-§based attack,§targets all.",Powerful Wind A attack,4411,52,lod:down_burst
+78,2,16,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Gravity Grabber,"Powerful earth-§based attack,§targets all.",Powerful Earth A attack,4413,53,lod:gravity_grabber
+78,32,16,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Spectral Flash,"Powerful light-§based attack,§targets all.",Powerful Light A attack,4415,54,lod:spectral_flash
+78,4,16,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Night Raid,"Powerful dark-§based attack,§targets all.",Powerful Dark A attack,4417,55,lod:night_raid
+78,16,16,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,10,Flash Hall,"Powerful thunder-§based attack,§targets all.",Powerful Thunder A attack,4419,56,lod:flash_hall
+90,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,33,0,50,0,128,false,40,Healing Breeze,Recovers half of§maximum HP for all.,Recovers 50% HP for all,4421,57,lod:healing_breeze
+110,8,32,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,38,0,0,0,0,false,5000,Psyche Bomb X,"Non-elemental-§based, targets all§(multi)(repeat).",Non-Elemental A attack(rep),4423,58,lod:psyche_bomb_x
+0,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,0,0,0,0,0,false,0, ,,,4425,59,lod:_
+0,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,0,0,0,0,0,false,0, ,,,4427,60,lod:_
+0,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,0,0,0,0,0,false,0, ,,,4429,61,lod:_
+0,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,0,0,0,0,0,false,0, ,,,4431,62,lod:_
+0,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,0,0,0,0,0,false,0,None,,,4433,63,lod:none
+90,0,0,0,0,0,0,0,0,0,0,false,false,0,0,0,0,0,0,0,0,0,50,0,128,false,100,Rock Fireflies,Rarely found near§Rock Fireflies.§Glows faintly.,Cannot be used in battle,4349,21,dragoon_modifier:rock_fireflies

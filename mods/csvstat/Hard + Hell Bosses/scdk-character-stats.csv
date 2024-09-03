@@ -1,6 +1,6 @@
 Speed,AT,MAT,DF,MDF,HP,Unused Addition Unlock Level,Name
 0,0,0,0,0,0,255,Dart Lv0
-55,5,5,5,5,55,255,Dart Lv1
+50,2,3,4,4,30,255,Dart Lv1
 50,4,5,5,5,60,255,Dart Lv2
 50,6,7,7,7,90,255,Dart Lv3
 50,8,9,10,9,120,255,Dart Lv4

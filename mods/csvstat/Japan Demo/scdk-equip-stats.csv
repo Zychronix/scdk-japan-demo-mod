@@ -1,194 +1,159 @@
-Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status Resist,UK3,AT,Special 1,Special 2,Special Amount,Icon,SPD,AT,MAT,DF,MDF,A-Hit,M-Hit,A-AV,M-AV,Status Chance,UK4,UK5,On Hit Status,Name,Description
-0,128,128,128,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Broad Sword, 
-0,128,128,128,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Bastard Sword, 
-0,128,128,128,128,0,0,0,0,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Heat Blade,Fire-based attack.
-0,128,128,128,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Falchion, 
-0,128,128,128,0,0,0,0,0,0,34,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,Mind Crush,Confuses Enemy §with given§probability.
-0,128,128,128,0,0,0,0,0,0,39,16,0,50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Fairy Sword,Gives 50% more SP.
-0,128,128,128,0,0,0,0,0,0,49,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Claymore, 
-0,128,128,128,0,0,0,0,0,0,100,0,64,246,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Soul Eater,Powerful but§HP decays  §each turn.
-0,128,128,32,0,0,0,0,0,0,45,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Axe, 
-0,128,128,32,0,0,0,0,0,0,59,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Tomahawk, 
-0,128,128,32,0,0,0,0,0,0,67,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Battle Axe, 
-0,128,128,32,0,0,0,0,0,0,77,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,16,Great Axe,"Stuns enemy, with§a given §probability."
-64,128,128,32,0,0,0,0,0,0,100,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,Indora's Axe,Instantly kills §enemy with given§probability.
-0,128,128,4,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Rapier, 
-0,128,128,4,4,0,0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Shadow Cutter,Darkness-based §attack.
-0,128,128,4,0,0,0,0,0,0,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dancing Dagger, 
-0,128,128,4,0,0,0,0,0,0,27,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,16,Flamberge,"Stuns enemy, with a§given probability."
-64,128,128,4,0,0,0,0,0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,Gladius,Instantly kills §enemy with given§probability.
-4,128,128,4,0,0,0,0,0,0,36,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Dragon Buster, 
-0,128,128,4,0,0,0,0,0,0,33,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,8,Demon Stilleto,Frightens enemy §with a given§probability.
-0,128,128,64,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Spear, 
-0,128,128,64,0,0,0,0,0,0,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Lance, 
-0,128,128,64,0,0,0,0,0,0,37,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Glaive, 
-0,128,128,64,0,0,0,0,0,0,45,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,8,Spear of Terror,Frightens enemy§with a given §probability.
-0,128,128,64,0,0,0,0,0,0,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Partisan, 
-0,128,128,64,0,0,0,0,0,0,73,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Halberd, 
-0,128,128,64,64,0,0,0,0,0,53,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Twister Glaive,Wind-based attack.
-0,128,128,2,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,5,5,0,0,0,0,Short Bow, 
-0,128,128,2,32,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0,0,0,5,5,0,0,0,0,Sparkle Arrow,Light-based attack.
-0,128,128,2,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,5,5,0,0,0,0,Long Bow, 
-0,128,128,2,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,0,5,5,20,0,0,4,Bemusing Arrow,Confuses enemy §with a given §probability.
-0,128,128,2,0,0,0,0,0,0,16,0,0,0,0,0,0,0,0,0,0,0,5,5,20,0,0,128,Virulent Arrow,Poisons enemy§with a given §probability.
-8,128,128,2,0,0,0,0,0,0,18,0,0,0,0,0,0,0,0,0,0,0,5,5,0,0,0,0,Detonate Arrow,Can attack all.
-0,128,128,2,0,0,0,0,0,0,24,16,0,50,0,0,0,0,0,0,0,0,5,5,0,0,0,0,Arrow of Force,Gives 50% more SP.
-0,128,128,1,0,0,0,0,0,0,15,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,Mace, 
-0,128,128,1,0,0,0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,Morning Star, 
-0,128,128,1,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,War Hammer, 
-0,128,128,1,0,0,0,0,0,0,28,0,0,0,0,0,0,0,0,0,0,0,0,5,20,0,0,16,Heavy Mace,"Stuns enemy, with §a given §probability."
-0,128,128,1,0,0,0,0,0,0,37,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,Basher, 
-64,128,128,1,0,0,0,0,0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,5,10,0,0,0,Pretty Hammer,Gives twice as §much SP but not §powerful.
-0,128,128,16,0,0,0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,Iron Knuckle, 
-0,128,128,16,0,0,0,0,0,0,37,0,0,0,0,0,0,0,0,0,0,0,5,0,20,0,0,16,Beast Fang,"Stuns enemy, with§a given §probability."
-0,128,128,16,0,0,0,0,0,0,45,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,Diamond Claw, 
-0,128,128,16,16,0,0,0,0,0,58,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,Thunder Fist,Thunder-based §attack.
-0,128,128,16,0,0,0,0,0,0,73,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,Destroyer Mace,Becomes powerful §inversely to HP.
-64,128,128,16,0,0,0,0,0,0,50,0,0,0,0,0,0,0,0,0,0,0,5,0,10,0,0,0,Brass Knuckle,Instantly kills §enemy with given§probability.
-0,32,64,192,0,0,0,0,0,0,0,0,0,0,10,0,0,0,2,2,0,0,0,0,0,0,0,0,Leather Armor, 
-0,32,64,192,0,0,0,0,0,0,0,0,0,0,10,0,0,0,8,8,0,0,0,0,0,0,0,0,Scale Armor, 
-0,32,64,192,0,0,0,0,0,0,0,0,0,0,10,0,0,0,20,20,0,0,0,0,0,0,0,0,Chain Mail, 
-0,32,64,192,0,0,0,0,0,0,0,0,0,0,10,0,0,0,27,26,0,0,0,0,0,0,0,0,Plate Mail, 
-0,32,64,192,0,0,0,0,0,0,0,8,0,20,10,0,0,0,34,35,0,0,0,0,0,0,0,0,Saint Armor,When physically §attacked SP is §accumulated.
-0,32,64,128,0,0,0,128,0,0,0,0,0,0,10,0,0,0,39,38,0,0,0,0,0,0,0,0,Red DG Armor,Nullifies damage§due to fire-based§attacks.
-0,32,64,64,0,0,0,64,0,0,0,0,0,0,10,0,0,0,52,25,0,0,0,0,0,0,0,0,Jade DG Armor,Nullifies damage§due to wind-based§attacks.
-0,32,64,32,0,0,0,0,0,0,0,0,0,0,10,0,0,0,46,12,0,0,0,0,0,0,0,0,Lion Fur, 
-0,32,64,32,0,0,0,0,0,0,0,0,0,0,10,0,0,0,59,14,0,0,0,0,0,0,0,0,Breast Plate, 
-0,32,64,32,0,0,0,0,0,0,0,8,0,20,10,0,0,0,79,18,0,0,0,0,0,0,0,0,Giganto Armor,When physically §attacked SP is §accumulated.
-0,32,64,32,0,0,0,2,0,0,0,0,0,0,10,0,0,0,95,26,0,0,0,0,0,0,0,0,Gold DG Armor,Nullifies damage§due to earth-§based attacks.
-0,32,64,16,0,0,0,0,0,0,0,0,0,0,10,0,0,0,18,8,0,0,0,0,0,0,0,0,Disciple Vest, 
-0,32,64,16,0,0,0,0,0,0,0,0,0,0,10,0,0,0,32,16,0,0,0,0,0,0,0,0,Warrior Dress, 
-0,32,64,16,0,0,0,0,0,0,0,8,0,20,10,0,0,0,39,19,0,0,0,0,0,0,0,0,Master's Vest,When physically §attacked SP is §accumulated.
-0,32,64,16,0,0,0,0,0,0,0,16,0,20,10,0,0,0,49,24,0,0,0,0,0,0,0,0,Energy Girdle,Gives 50% more SP
-0,32,64,16,0,0,0,16,0,0,0,0,0,0,10,0,0,0,66,33,0,0,0,0,0,0,0,0,Violet DG Armor,Nullifies damage§due to thunder-§based attacks.
-0,32,64,7,0,0,0,0,0,0,0,0,0,0,10,0,0,0,3,5,0,0,0,0,0,0,0,0,Clothes, 
-0,32,64,7,0,0,0,0,0,0,0,0,0,0,10,0,0,0,5,12,0,0,0,0,0,0,0,0,Leather Jacket, 
-0,32,64,7,0,0,0,0,0,0,0,0,0,0,10,0,0,0,13,13,0,0,0,0,0,0,0,0,Silver Vest, 
-0,32,64,7,0,0,0,0,0,0,0,8,0,20,10,0,0,0,17,17,0,0,0,0,0,0,0,0,Sparkle Dress,"When attacked §physically, SP is §accumulated."
-0,32,64,7,0,0,0,0,0,0,0,2,0,20,10,0,0,0,23,23,0,0,0,0,0,0,0,0,Robe,"When attacked §magically, SP is §accumulated."
-0,32,64,2,0,0,0,32,0,0,0,0,0,0,10,0,0,0,26,78,0,0,0,0,0,0,0,0,Silver DG Armor,Nullifies damage§due to light-§based attacks.
-0,32,64,4,0,0,0,4,0,0,0,0,0,0,10,0,0,0,26,38,0,0,0,0,0,0,0,0,Dark DG Armor,Nullifies damage§due to darkness-§based attacks.
-0,32,64,1,0,0,0,1,0,0,0,0,0,0,10,0,0,0,26,52,0,0,0,0,0,0,0,0,Blue DG Armor,Nullifies damage§due to water-§based attack.
-0,32,64,224,0,0,0,0,176,0,0,0,0,0,10,0,0,0,35,35,0,0,0,0,0,0,0,0,Armor of Yore,Avoids §poison/stun/arm§blocking.
-0,32,64,16,0,0,0,0,176,0,0,0,0,0,10,0,0,0,52,26,0,0,0,0,0,0,0,0,Satori Vest,Avoids §poison/stun/arm§blocking.
-0,32,64,7,0,0,0,0,176,0,0,0,0,0,10,0,0,0,27,27,0,0,0,0,0,0,0,0,Rainbow Dress,Avoids §poison/stun/arm§blocking.
-0,32,64,3,0,0,0,0,0,0,0,0,8,50,10,0,0,0,26,26,0,0,0,0,50,0,0,0,Angel Robe,Revives from §death with a §given probability.
-0,32,64,247,0,0,0,0,0,0,0,32,0,0,10,0,0,0,127,127,0,0,0,0,0,0,0,0,Armor of Legend,Greatly reduces §damage from §physical attacks.
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,64,64,240,0,0,0,0,0,0,0,0,0,0,18,0,0,3,0,0,100,100,0,0,0,0,0,0,Bandana, 
-0,64,64,240,0,0,0,0,0,0,0,0,0,0,18,0,0,8,0,0,110,100,0,0,0,0,0,0,Sallet,Increases hit §rate of physical§attacks by 10%.
-0,64,64,240,0,0,0,0,0,0,0,0,0,0,18,0,0,23,0,0,100,100,0,0,0,0,0,0,Armlet, 
-0,64,64,192,0,0,0,0,0,0,0,2,0,20,18,0,0,37,0,0,100,100,0,0,0,0,0,0,Knight Helm,"When magically §attacked, SP is §accumulated."
-0,64,64,32,0,0,0,0,0,0,0,2,0,20,18,0,0,14,0,0,100,100,0,0,0,0,0,0,Giganto Helm,"When magically §attacked, SP is §accumulated."
-0,64,64,16,0,0,0,0,0,0,0,2,0,20,18,0,0,21,0,0,100,100,0,0,0,0,0,0,Soul Headband,"When magically §attacked, SP is §accumulated."
-0,64,64,7,0,0,0,0,0,0,0,0,0,0,18,0,0,5,0,0,100,100,0,0,0,0,0,0,Felt Hat, 
-0,64,64,7,0,0,0,0,0,0,0,0,0,0,18,0,0,17,0,0,100,100,0,0,0,0,0,0,Cape, 
-0,64,64,7,0,0,0,0,0,0,0,0,0,0,18,0,0,29,0,0,100,110,0,0,0,0,0,0,Tiara,Increases hit§rate of magical§attacks by 10%.
-0,64,64,3,0,0,0,0,0,0,0,2,0,20,18,0,0,42,0,0,100,100,0,0,0,0,0,0,Jeweled Crown,"When magically §attacked, SP is §accumulated."
-128,64,64,4,0,0,0,0,0,0,0,0,0,0,18,0,0,36,0,0,100,100,0,0,0,0,0,0,Rose's Hair Band,Avoids instant §death.
-0,64,64,247,0,0,0,0,0,0,0,0,0,0,18,0,0,0,0,0,100,100,0,0,0,0,0,0, , 
-0,64,64,247,0,0,0,0,78,0,0,0,0,0,18,0,0,23,0,0,100,100,0,0,0,0,0,0,Phoenix Plume,"Avoids bewitching,§confusion, fear §and dispiriting."
-0,64,64,247,0,0,0,0,0,0,0,0,4,0,18,0,0,0,0,127,100,100,0,0,0,0,0,0,Legend Casque,Reduces damage§due to magical§attacks.
-0,64,64,240,0,0,0,0,0,0,0,0,2,20,18,0,0,36,0,0,100,100,0,0,0,0,0,0,Dragon Helm,Raises maximum§HP 50%.
-0,64,64,7,0,0,0,0,0,0,0,0,1,50,18,0,0,38,0,0,100,100,0,0,0,0,0,0,Magical Hat,Raises maximum§MP 50%.
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,16,64,240,0,0,0,0,0,0,0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,Leather Boots, 
-0,16,64,240,0,0,0,0,0,0,0,0,0,0,21,0,0,0,0,0,0,0,5,0,0,0,0,0,Iron Kneepiece, 
-0,16,64,240,0,0,0,0,0,0,0,0,0,0,21,0,0,0,0,0,0,0,5,5,0,0,0,0,Combat Shoes,Increases escape§rate from physical§attacks by 5 pts.
-0,16,64,7,0,0,0,0,0,0,0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,Leather Shoes, 
-0,16,64,7,0,0,0,0,0,0,0,0,0,0,21,0,0,0,0,0,0,0,5,0,0,0,0,0,Soft Boots, 
-0,16,64,7,0,0,0,0,0,0,0,0,0,0,21,0,0,0,0,0,0,0,5,5,0,0,0,0,Stardust Boots,Increases escape§rate from magical§attacks by 5 pts.
-0,16,64,240,0,0,0,0,0,0,0,0,0,0,21,5,0,0,0,0,0,0,0,0,0,0,0,0,Magical Greaves,Increases escape§rate of magi/physi§attacks by 5 pts.
-0,16,64,7,0,0,0,0,0,0,0,0,0,0,21,10,0,0,0,0,0,0,0,0,0,0,0,0,Dancer's Boots,Gives 20 pts. §more agility.
-0,16,64,247,0,0,0,0,0,0,0,0,128,50,21,0,0,0,0,0,0,0,0,0,0,0,0,0,Bandit's Shoes,Gives 20 pts.§more agility.
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,8,32,247,0,0,0,0,128,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Poison Guard,Avoids the§abnormal status§poison.
-0,8,32,247,0,0,0,0,64,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Active Ring,Avoids the§abnormal status§dispiriting.
-0,8,32,247,0,0,0,0,32,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Protector,Avoids the§abnormal status§arm blocking.
-0,8,32,247,0,0,0,0,4,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Panic Guard,Avoids the§abnormal status§confusion.
-0,8,32,247,0,0,0,0,16,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Stun Guard,Avoids abnormal §status from§being stunned.
-0,8,32,247,0,0,0,0,8,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Bravery Amulet,Avoids the§abnormal status§fear.
-0,8,32,247,0,0,0,0,2,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Magic Ego Bell,Avoids the §abnormal status§bewitchment.
-0,8,32,247,0,0,0,0,1,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Destone Amulet,Avoids the§abnormal status§petrification.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,5,0,0,0,0,0,0,0,0,0,0,0,Power Wrist,Raises physical §attack ability§slightly.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,5,0,0,0,0,0,0,0,0,0,Knight Shield,Raises physical§defense power§slightly.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,10,0,0,0,0,0,0,0,0,0,0,Magical Ring,Raises magical§attacking power.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,10,0,0,0,0,0,0,0,0,Spiritual Ring,Raises magical§defense power.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,10,10,0,0,0,0,0,0,0,0,0,0,Attack Badge,Raises physical§& magical §attacking power.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,10,10,0,0,0,0,0,0,0,0,Guard Badge,Raises physical§& magical§defense power.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,10,0,10,0,0,0,0,0,0,0,0,0,Giganto Ring,Raises physical §attack & defense §power.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,20,0,0,0,0,0,Elude Cloak,Increases escape§rate from physical§attack by 20 pts.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,20,0,0,0,0,Spirit Cloak,Increases escape§rate from magical§attack by 20 pts.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,20,20,0,0,0,0,Sage's Cloak,Increases A-AV§and M-AV by§by 20 pts.
-0,8,32,247,0,0,0,0,0,0,0,0,2,50,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Physical Ring,Raises maximum§HP 50%.
-0,8,32,247,0,0,0,0,0,0,0,0,1,100,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Amulet,Doubles §maximum MP.
-0,8,32,247,0,0,0,0,0,0,0,16,0,50,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Wargod's Sash,Raises SP 50%.
-0,8,32,247,0,0,0,0,0,0,0,0,16,20,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Spirit Ring,Recovers SP §each turn.
-0,8,32,247,0,0,0,0,0,0,0,0,64,5,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Therapy Ring,Recovers HP  §each turn.
-0,8,32,247,0,0,0,0,0,0,0,0,32,10,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Mage Ring,Recovers MP §each turn.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,20,20,0,0,0,0,0,0,Wargod's Amulet,Increases hit §rate for attacking§all by 20%.
-128,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Talisman,Avoids instant§death.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,8,32,247,0,0,0,0,0,0,0,0,8,50,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Holy Ankh,Revives from §death with a §given probability.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,20,0,0,0,0,0,0,0,0,0,0,0,0,Dancer's Ring,Increases agility§by 20 pts.
-0,8,32,247,0,0,0,0,255,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,8,32,247,0,0,0,0,0,0,0,0,128,50,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Bandit's Ring,Increases agility§by 20 pts.
-0,8,32,247,0,0,128,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Red-Eye Stone,Reduces damage§from fire-based §attack by half.
-0,8,32,247,0,0,64,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Jade Stone,Reduces damage§from wind-based§attack by half.
-0,8,32,247,0,0,32,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Silver Stone,Reduces damage§from light-based§attack by half.
-0,8,32,247,0,0,4,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Darkness Stone,Reduces damage§from darkness-based§attacks by half.
-0,8,32,247,0,0,1,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Blue Sea Stone,Reduces damage§from water-based§attack by half.
-0,8,32,247,0,0,16,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Violet Stone,Reduces damage§from thunder-based§attack by half.
-0,8,32,247,0,0,2,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Golden Stone,Reduces damage§from earth-based§attack by half.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,50,0,0,0,0,0,0,0,0,0,0,0, , 
-0,8,32,247,0,0,0,0,0,0,0,2,0,20,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Ruby Ring,When damaged by§magic SP is §accumulated.
-0,8,32,247,0,0,0,0,0,0,0,1,0,10,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Sapphire Pin,When damaged by§magic MP is §accumulated.
-0,8,32,247,0,0,0,0,255,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Rainbow Earring,Avoids all§abnormal status.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,8,32,247,0,0,0,0,0,0,0,8,0,20,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Emerald Earring,When physically§damaged SP is§accumulated.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,8,32,247,0,0,0,0,0,0,0,4,0,10,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Platinum Collar,When physically§damaged MP is§accumulated.
-0,8,32,247,0,0,0,0,0,0,0,32,4,0,23,0,0,0,127,0,0,0,0,0,0,0,0,0,Phantom Shield,Reduces damage§from all attacks §by half.
-0,8,32,247,0,0,0,0,0,0,0,32,0,0,23,0,0,0,127,0,0,0,0,0,0,0,0,0,Dragon Shield,Reduces physical§damage by half.
-0,8,32,247,0,0,0,0,0,0,0,0,4,0,23,0,0,0,0,127,0,0,0,0,0,0,0,0,Angel Scarf,Reduces damage§from magic§by half.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Bracelet, 
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,4,0,0,0,0,0,0,0,0,0,0,0,Fake Power Wrist,May slightly§increase physical §attack power.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,4,0,0,0,0,0,0,0,0,0,Fake Shield,May slightly§increase physical§defense power.
-0,8,32,247,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,8,32,245,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,Wargod Calling,Automatic Addition:§Half Damage and SP.
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Ultimate Wargod,Makes Addition§completely§successful.
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, , 
-0,0,0,0,0,0,0,0,15,0,0,0,33,0,0,0,78,0,0,0,153,0,0,0,8,1,0,0, , 
+Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status Resist,UK3,AT,MP Per Physical Hit,SP Per Physical Hit,MP Per Magical Hat,SP Per Magical Hat,HP Multiplier,MP Multiplier,SP Multiplier,Magical Resistance,Physical Resistance,Magical Immunity,Physical Immunity,Revive,HP Regen,MP Regen,SP Regen,Escape Bonus,Icon,SPD,AT,MAT,DF,MDF,A-Hit,M-Hit,A-AV,M-AV,Status Chance,UK4,UK5,On Hit Status,Price,Name,Description,Registry ID
+0,128,128,128,0,0,0,0,0,0,2,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,Broad Sword, ,lod:broad_sword
+0,128,128,128,0,0,0,0,0,0,7,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,30,Bastard Sword, ,lod:bastard_sword
+0,128,128,128,128,0,0,0,0,0,18,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,75,Heat Blade,Fire-based attack.,lod:heat_blade
+0,128,128,128,0,0,0,0,0,0,26,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,125,Falchion, ,lod:falchion
+0,128,128,128,0,0,0,0,0,0,34,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,175,Mind Crush,Confuses Enemy §with given§probability.,lod:mind_crush
+0,128,128,128,0,0,0,0,0,0,39,0,0,0,0,0,0,50,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,200,Fairy Sword,Gives 50% more SP.,lod:fairy_sword
+0,128,128,128,0,0,0,0,0,0,49,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,Claymore, ,lod:claymore
+0,128,128,128,0,0,0,0,0,0,100,0,0,0,0,0,0,0,false,false,false,false,0,246,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,225,Soul Eater,Powerful but§HP decays  §each turn.,lod:soul_eater
+0,128,128,32,0,0,0,0,0,0,45,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Axe, ,lod:axe
+0,128,128,32,0,0,0,0,0,0,59,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,150,Tomahawk, ,lod:tomahawk
+0,128,128,32,0,0,0,0,0,0,67,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,175,Battle Axe, ,lod:battle_axe
+0,128,128,32,0,0,0,0,0,0,77,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,16,200,Great Axe,"Stuns enemy, with§a given §probability.",lod:great_axe
+64,128,128,32,0,0,0,0,0,0,100,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,250,Indora's Axe,Instantly kills §enemy with given§probability.,lod:indoras_axe
+0,128,128,4,0,0,0,0,0,0,13,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,30,Rapier, ,lod:rapier
+0,128,128,4,4,0,0,0,0,0,21,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Shadow Cutter,Darkness-based §attack.,lod:shadow_cutter
+0,128,128,4,0,0,0,0,0,0,25,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,150,Dancing Dagger, ,lod:dancing_dagger
+0,128,128,4,0,0,0,0,0,0,27,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,16,175,Flamberge,"Stuns enemy, with a§given probability.",lod:flamberge
+64,128,128,4,0,0,0,0,0,0,29,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,200,Gladius,Instantly kills §enemy with given§probability.,lod:gladius
+4,128,128,4,0,0,0,0,0,0,36,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,Dragon Buster, ,lod:dragon_buster
+0,128,128,4,0,0,0,0,0,0,33,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,8,225,Demon Stilleto,Frightens enemy §with a given§probability.,lod:demon_stilleto
+0,128,128,64,0,0,0,0,0,0,4,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,Spear, ,lod:spear
+0,128,128,64,0,0,0,0,0,0,19,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50,Lance, ,lod:lance
+0,128,128,64,0,0,0,0,0,0,37,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,125,Glaive, ,lod:glaive
+0,128,128,64,0,0,0,0,0,0,45,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,8,150,Spear of Terror,Frightens enemy§with a given §probability.,lod:spear_of_terror
+0,128,128,64,0,0,0,0,0,0,56,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,200,Partisan, ,lod:partisan
+0,128,128,64,0,0,0,0,0,0,73,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,Halberd, ,lod:halberd
+0,128,128,64,64,0,0,0,0,0,53,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,200,Twister Glaive,Wind-based attack.,lod:twister_glaive
+0,128,128,2,0,0,0,0,0,0,2,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,0,0,0,0,10,Short Bow, ,lod:short_bow
+0,128,128,2,32,0,0,0,0,0,6,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,0,0,0,0,30,Sparkle Arrow,Light-based attack.,lod:sparkle_arrow
+0,128,128,2,0,0,0,0,0,0,10,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,0,0,0,0,75,Long Bow, ,lod:long_bow
+0,128,128,2,0,0,0,0,0,0,13,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,20,0,0,4,125,Bemusing Arrow,Confuses enemy §with a given §probability.,lod:bemusing_arrow
+0,128,128,2,0,0,0,0,0,0,16,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,20,0,0,128,175,Virulent Arrow,Poisons enemy§with a given §probability.,lod:virulent_arrow
+8,128,128,2,0,0,0,0,0,0,18,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,0,0,0,0,200,Detonate Arrow,Can attack all.,lod:detonate_arrow
+0,128,128,2,0,0,0,0,0,0,24,0,0,0,0,0,0,50,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,0,0,0,0,250,Arrow of Force,Gives 50% more SP.,lod:arrow_of_force
+0,128,128,1,0,0,0,0,0,0,15,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,100,Mace, ,lod:mace
+0,128,128,1,0,0,0,0,0,0,20,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,125,Morning Star, ,lod:morning_star
+0,128,128,1,0,0,0,0,0,0,23,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,150,War Hammer, ,lod:war_hammer
+0,128,128,1,0,0,0,0,0,0,28,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,20,0,0,16,200,Heavy Mace,"Stuns enemy, with §a given §probability.",lod:heavy_mace
+0,128,128,1,0,0,0,0,0,0,37,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,250,Basher, ,lod:basher
+64,128,128,1,0,0,0,0,0,0,29,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,10,0,0,0,200,Pretty Hammer,Gives twice as §much SP but not §powerful.,lod:pretty_hammer
+0,128,128,16,0,0,0,0,0,0,20,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,50,Iron Knuckle, ,lod:iron_knuckle
+0,128,128,16,0,0,0,0,0,0,37,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,20,0,0,16,125,Beast Fang,"Stuns enemy, with§a given §probability.",lod:beast_fang
+0,128,128,16,0,0,0,0,0,0,45,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,150,Diamond Claw, ,lod:diamond_claw
+0,128,128,16,16,0,0,0,0,0,58,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,225,Thunder Fist,Thunder-based §attack.,lod:thunder_fist
+0,128,128,16,0,0,0,0,0,0,73,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,250,Destroyer Mace,Becomes powerful §inversely to HP.,lod:destroyer_mace
+64,128,128,16,0,0,0,0,0,0,50,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,10,0,0,0,175,Brass Knuckle,Instantly kills §enemy with given§probability.,lod:brass_knuckle
+0,32,64,192,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,2,2,0,0,0,0,0,0,0,0,10,Leather Armor, ,lod:leather_armor
+0,32,64,192,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,8,8,0,0,0,0,0,0,0,0,25,Scale Armor, ,lod:scale_armor
+0,32,64,192,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,20,20,0,0,0,0,0,0,0,0,75,Chain Mail, ,lod:chain_mail
+0,32,64,192,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,27,26,0,0,0,0,0,0,0,0,100,Plate Mail, ,lod:plate_mail
+0,32,64,192,0,0,0,0,0,0,0,0,20,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,34,35,0,0,0,0,0,0,0,0,150,Saint Armor,When physically §attacked SP is §accumulated.,lod:saint_armor
+0,32,64,128,0,0,0,128,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,39,38,0,0,0,0,0,0,0,0,200,Red DG Armor,Nullifies damage§due to fire-based§attacks.,lod:red_dg_armor
+0,32,64,64,0,0,0,64,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,52,25,0,0,0,0,0,0,0,0,200,Jade DG Armor,Nullifies damage§due to wind-based§attacks.,lod:jade_dg_armor
+0,32,64,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,46,12,0,0,0,0,0,0,0,0,75,Lion Fur, ,lod:lion_fur
+0,32,64,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,59,14,0,0,0,0,0,0,0,0,125,Breast Plate, ,lod:breast_plate
+0,32,64,32,0,0,0,0,0,0,0,0,20,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,79,18,0,0,0,0,0,0,0,0,200,Giganto Armor,When physically §attacked SP is §accumulated.,lod:giganto_armor
+0,32,64,32,0,0,0,2,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,95,26,0,0,0,0,0,0,0,0,250,Gold DG Armor,Nullifies damage§due to earth-§based attacks.,lod:gold_dg_armor
+0,32,64,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,18,8,0,0,0,0,0,0,0,0,30,Disciple Vest, ,lod:disciple_vest
+0,32,64,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,32,16,0,0,0,0,0,0,0,0,75,Warrior Dress, ,lod:warrior_dress
+0,32,64,16,0,0,0,0,0,0,0,0,20,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,39,19,0,0,0,0,0,0,0,0,125,Master's Vest,When physically §attacked SP is §accumulated.,lod:masters_vest
+0,32,64,16,0,0,0,0,0,0,0,0,0,0,0,0,0,20,false,false,false,false,0,0,0,0,0,10,0,0,0,49,24,0,0,0,0,0,0,0,0,150,Energy Girdle,Gives 50% more SP,lod:energy_girdle
+0,32,64,16,0,0,0,16,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,66,33,0,0,0,0,0,0,0,0,250,Violet DG Armor,Nullifies damage§due to thunder-§based attacks.,lod:violet_dg_armor
+0,32,64,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,3,5,0,0,0,0,0,0,0,0,10,Clothes, ,lod:clothes
+0,32,64,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,5,12,0,0,0,0,0,0,0,0,25,Leather Jacket, ,lod:leather_jacket
+0,32,64,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,13,13,0,0,0,0,0,0,0,0,75,Silver Vest, ,lod:silver_vest
+0,32,64,7,0,0,0,0,0,0,0,0,20,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,17,17,0,0,0,0,0,0,0,0,100,Sparkle Dress,"When attacked §physically, SP is §accumulated.",lod:sparkle_dress
+0,32,64,7,0,0,0,0,0,0,0,0,0,0,20,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,23,23,0,0,0,0,0,0,0,0,150,Robe,"When attacked §magically, SP is §accumulated.",lod:robe
+0,32,64,2,0,0,0,32,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,26,78,0,0,0,0,0,0,0,0,200,Silver DG Armor,Nullifies damage§due to light-§based attacks.,lod:silver_dg_armor
+0,32,64,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,26,38,0,0,0,0,0,0,0,0,200,Dark DG Armor,Nullifies damage§due to darkness-§based attacks.,lod:dark_dg_armor
+0,32,64,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,26,52,0,0,0,0,0,0,0,0,200,Blue DG Armor,Nullifies damage§due to water-§based attack.,lod:blue_dg_armor
+0,32,64,224,0,0,0,0,176,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,35,35,0,0,0,0,0,0,0,0,150,Armor of Yore,Avoids §poison/stun/arm§blocking.,lod:armor_of_yore
+0,32,64,16,0,0,0,0,176,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,52,26,0,0,0,0,0,0,0,0,200,Satori Vest,Avoids §poison/stun/arm§blocking.,lod:satori_vest
+0,32,64,7,0,0,0,0,176,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,10,0,0,0,27,27,0,0,0,0,0,0,0,0,150,Rainbow Dress,Avoids §poison/stun/arm§blocking.,lod:rainbow_dress
+0,32,64,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,50,0,0,0,0,10,0,0,0,26,26,0,0,0,0,50,0,0,0,200,Angel Robe,Revives from §death with a §given probability.,lod:angel_robe
+0,32,64,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,true,false,false,0,0,0,0,0,10,0,0,0,127,127,0,0,0,0,0,0,0,0,5000,Armor of Legend,Greatly reduces §damage from §physical attacks.,lod:armor_of_legend
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1, , ,lod:_
+0,64,64,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,3,0,0,100,100,0,0,0,0,0,0,5,Bandana, ,lod:bandana
+0,64,64,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,8,0,0,110,100,0,0,0,0,0,0,20,Sallet,Increases hit §rate of physical§attacks by 10%.,lod:sallet
+0,64,64,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,23,0,0,100,100,0,0,0,0,0,0,50,Armlet, ,lod:armlet
+0,64,64,192,0,0,0,0,0,0,0,0,0,0,20,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,37,0,0,100,100,0,0,0,0,0,0,75,Knight Helm,"When magically §attacked, SP is §accumulated.",lod:knight_helm
+0,64,64,32,0,0,0,0,0,0,0,0,0,0,20,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,14,0,0,100,100,0,0,0,0,0,0,100,Giganto Helm,"When magically §attacked, SP is §accumulated.",lod:giganto_helm
+0,64,64,16,0,0,0,0,0,0,0,0,0,0,20,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,21,0,0,100,100,0,0,0,0,0,0,100,Soul Headband,"When magically §attacked, SP is §accumulated.",lod:soul_headband
+0,64,64,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,5,0,0,100,100,0,0,0,0,0,0,5,Felt Hat, ,lod:felt_hat
+0,64,64,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,17,0,0,100,100,0,0,0,0,0,0,30,Cape, ,lod:cape
+0,64,64,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,29,0,0,100,110,0,0,0,0,0,0,75,Tiara,Increases hit§rate of magical§attacks by 10%.,lod:tiara
+0,64,64,3,0,0,0,0,0,0,0,0,0,0,20,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,42,0,0,100,100,0,0,0,0,0,0,100,Jeweled Crown,"When magically §attacked, SP is §accumulated.",lod:jeweled_crown
+128,64,64,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,36,0,0,100,100,0,0,0,0,0,0,125,Rose's Hair Band,Avoids instant §death.,lod:roses_hair_band
+0,64,64,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,0,0,0,100,100,0,0,0,0,0,0,1, , ,lod:_
+0,64,64,247,0,0,0,0,78,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,23,0,0,100,100,0,0,0,0,0,0,150,Phoenix Plume,"Avoids bewitching,§confusion, fear §and dispiriting.",lod:phoenix_plume
+0,64,64,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true,false,false,false,0,0,0,0,0,18,0,0,0,0,127,100,100,0,0,0,0,0,0,5000,Legend Casque,Reduces damage§due to magical§attacks.,lod:legend_casque
+0,64,64,240,0,0,0,0,0,0,0,0,0,0,0,20,0,0,false,false,false,false,0,0,0,0,0,18,0,0,36,0,0,100,100,0,0,0,0,0,0,125,Dragon Helm,Raises maximum§HP 50%.,lod:dragon_helm
+0,64,64,7,0,0,0,0,0,0,0,0,0,0,0,0,50,0,false,false,false,false,0,0,0,0,0,18,0,0,38,0,0,100,100,0,0,0,0,0,0,150,Magical Hat,Raises maximum§MP 50%.,lod:magical_hat
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1, , ,lod:thiefs_shoes
+0,16,64,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,5,Leather Boots, ,lod:leather_boots
+0,16,64,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,21,0,0,0,0,0,0,0,5,0,0,0,0,0,50,Iron Kneepiece, ,lod:iron_kneepiece
+0,16,64,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,21,0,0,0,0,0,0,0,5,5,0,0,0,0,75,Combat Shoes,Increases escape§rate from physical§attacks by 5 pts.,lod:combat_shoes
+0,16,64,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,5,Leather Shoes, ,lod:leather_shoes
+0,16,64,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,21,0,0,0,0,0,0,0,5,0,0,0,0,0,50,Soft Boots, ,lod:soft_boots
+0,16,64,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,21,0,0,0,0,0,0,0,5,5,0,0,0,0,75,Stardust Boots,Increases escape§rate from magical§attacks by 5 pts.,lod:stardust_boots
+0,16,64,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,21,5,0,0,0,0,0,0,0,0,0,0,0,0,150,Magical Greaves,Increases escape§rate of magi/physi§attacks by 5 pts.,lod:magical_greaves
+0,16,64,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,21,10,0,0,0,0,0,0,0,0,0,0,0,0,200,Dancer's Boots,Gives 20 pts. §more agility.,lod:dancers_boots
+0,16,64,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,50,21,0,0,0,0,0,0,0,0,0,0,0,0,0,150,Bandit's Shoes,Gives 20 pts.§more agility.,lod:bandits_shoes
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1, , ,lod:sages_shield
+0,8,32,247,0,0,0,0,128,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Poison Guard,Avoids the§abnormal status§poison.,lod:poison_guard
+0,8,32,247,0,0,0,0,64,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Active Ring,Avoids the§abnormal status§dispiriting.,lod:active_ring
+0,8,32,247,0,0,0,0,32,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Protector,Avoids the§abnormal status§arm blocking.,lod:protector
+0,8,32,247,0,0,0,0,4,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,150,Panic Guard,Avoids the§abnormal status§confusion.,lod:panic_guard
+0,8,32,247,0,0,0,0,16,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,100,Stun Guard,Avoids abnormal §status from§being stunned.,lod:stun_guard
+0,8,32,247,0,0,0,0,8,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,150,Bravery Amulet,Avoids the§abnormal status§fear.,lod:bravery_amulet
+0,8,32,247,0,0,0,0,2,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,150,Magic Ego Bell,Avoids the §abnormal status§bewitchment.,lod:magic_ego_bell
+0,8,32,247,0,0,0,0,1,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,200,Destone Amulet,Avoids the§abnormal status§petrification.,lod:destone_amulet
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,5,0,0,0,0,0,0,0,0,0,0,0,100,Power Wrist,Raises physical §attack ability§slightly.,lod:power_wrist
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,5,0,0,0,0,0,0,0,0,0,100,Knight Shield,Raises physical§defense power§slightly.,lod:knight_shield
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,10,0,0,0,0,0,0,0,0,0,0,200,Magical Ring,Raises magical§attacking power.,lod:magical_ring
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,10,0,0,0,0,0,0,0,0,200,Spiritual Ring,Raises magical§defense power.,lod:spiritual_ring
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,10,10,0,0,0,0,0,0,0,0,0,0,300,Attack Badge,Raises physical§& magical §attacking power.,lod:attack_badge
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,10,10,0,0,0,0,0,0,0,0,300,Guard Badge,Raises physical§& magical§defense power.,lod:guard_badge
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,10,0,10,0,0,0,0,0,0,0,0,0,300,Giganto Ring,Raises physical §attack & defense §power.,lod:giganto_ring
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,20,0,0,0,0,0,300,Elude Cloak,Increases escape§rate from physical§attack by 20 pts.,lod:elude_cloak
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,20,0,0,0,0,300,Spirit Cloak,Increases escape§rate from magical§attack by 20 pts.,lod:spirit_cloak
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,20,20,0,0,0,0,300,Sage's Cloak,Increases A-AV§and M-AV by§by 20 pts.,lod:sage's_cloak
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,50,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Physical Ring,Raises maximum§HP 50%.,lod:physical_ring
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,100,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Amulet,Doubles §maximum MP.,lod:amulet
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,50,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Wargod's Sash,Raises SP 50%.,lod:wargods_sash
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,20,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Spirit Ring,Recovers SP §each turn.,lod:spirit_ring
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,5,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Therapy Ring,Recovers HP  §each turn.,lod:therapy_ring
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,10,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Mage Ring,Recovers MP §each turn.,lod:mage_ring
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,20,20,0,0,0,0,0,0,1,Wargod's Amulet,Increases hit §rate for attacking§all by 20%.,lod:wargods_amulet
+128,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Talisman,Avoids instant§death.,lod:talisman
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1, , ,lod:_
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,50,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Holy Ankh,Revives from §death with a §given probability.,lod:holy_ankh
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,20,0,0,0,0,0,0,0,0,0,0,0,0,1,Dancer's Ring,Increases agility§by 20 pts.,lod:dancers_ring
+0,8,32,247,0,0,0,0,255,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1, , ,lod:_
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,50,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Bandit's Ring,Increases agility§by 20 pts.,lod:bandits_ring
+0,8,32,247,0,0,128,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Red-Eye Stone,Reduces damage§from fire-based §attack by half.,lod:red-eye_stone
+0,8,32,247,0,0,64,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Jade Stone,Reduces damage§from wind-based§attack by half.,lod:jade_stone
+0,8,32,247,0,0,32,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Silver Stone,Reduces damage§from light-based§attack by half.,lod:silver_stone
+0,8,32,247,0,0,4,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Darkness Stone,Reduces damage§from darkness-based§attacks by half.,lod:darkness_stone
+0,8,32,247,0,0,1,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Blue Sea Stone,Reduces damage§from water-based§attack by half.,lod:blue_sea_stone
+0,8,32,247,0,0,16,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Violet Stone,Reduces damage§from thunder-based§attack by half.,lod:violet_stone
+0,8,32,247,0,0,2,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Golden Stone,Reduces damage§from earth-based§attack by half.,lod:golden_stone
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,50,0,0,0,0,0,0,0,0,0,0,0,1, , ,lod:_
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,20,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,150,Ruby Ring,When damaged by§magic SP is §accumulated.,lod:ruby_ring
+0,8,32,247,0,0,0,0,0,0,0,0,0,10,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,500,Sapphire Pin,When damaged by§magic MP is §accumulated.,lod:sapphire_pin
+0,8,32,247,0,0,0,0,255,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Rainbow Earring,Avoids all§abnormal status.,lod:rainbow_earring
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1, , ,lod:_
+0,8,32,247,0,0,0,0,0,0,0,0,20,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,150,Emerald Earring,When physically§damaged SP is§accumulated.,lod:emerald_earring
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1, , ,lod:_
+0,8,32,247,0,0,0,0,0,0,0,10,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,500,Platinum Collar,When physically§damaged MP is§accumulated.,lod:platinum_collar
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true,true,false,false,0,0,0,0,0,23,0,0,0,127,0,0,0,0,0,0,0,0,0,5000,Phantom Shield,Reduces damage§from all attacks §by half.,lod:phantom_shield
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,true,false,false,0,0,0,0,0,23,0,0,0,127,0,0,0,0,0,0,0,0,0,1,Dragon Shield,Reduces physical§damage by half.,lod:dragon_shield
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true,false,false,false,0,0,0,0,0,23,0,0,0,0,127,0,0,0,0,0,0,0,0,1,Angel Scarf,Reduces damage§from magic§by half.,lod:angel_scarf
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Bracelet, ,lod:bracelet
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,4,0,0,0,0,0,0,0,0,0,0,0,75,Fake Power Wrist,May slightly§increase physical §attack power.,lod:fake_power_wrist
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,4,0,0,0,0,0,0,0,0,0,75,Fake Shield,May slightly§increase physical§defense power.,lod:fake_shield
+0,8,32,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,75, , ,lod:_
+0,8,32,245,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,0,0,500,Wargod Calling,Automatic Addition:§Half Damage and SP.,lod:wargod_calling
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Ultimate Wargod,Makes Addition§completely§successful.,lod:ultimate_wargod

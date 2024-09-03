@@ -1,6 +1,6 @@
 ID,HP,MP,AT,MAT,SPD,DF,MDF,A-AV,M-AV,SPECIAL,UK,Element,Element Null,Status Resist,Target Arrow X,Target Arrow Y,Target Arrow Z,UK,UK,UK,UK,UK,UK,UK,EXP,Gold,Item,Drop Chance,Name
 131,15300,0,144,144,60,100,100,0,0,0,0,128,0,99,2,12,0,8,5,2,1,9,0,0,0,0,Nothing,0,Sandora Soldier
-135,64000,0,176,144,70,120,80,0,0,128,0,4,0,99,0,14,0,8,5,2,0,11,0,0,0,700,e158,100,Commander
+135,64000,0,176,144,70,120,80,0,0,128,0,4,0,99,0,14,0,8,5,2,0,11,0,0,0,700,dragoon_modifier:sabre,100,Commander
 261,63000,0,200,120,50,100,80,0,0,144,0,2,0,239,255,19,0,8,5,3,3,13,0,0,0,700,Nothing,0,Fruegel
 259,6000,0,105,105,50,100,100,0,0,0,0,128,0,255,0,11,0,8,5,2,255,9,0,0,0,0,Nothing,0,Hellena Warden
 260,10000,0,120,200,50,100,100,0,0,128,0,128,0,255,2,13,1,8,5,2,1,9,0,0,0,0,Nothing,0,Senior Warden

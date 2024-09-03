@@ -73,7 +73,7 @@ Price,Name
 250,Satori Vest
 250,Rainbow Dress
 250,Angel Robe
-5000,Armor of Legend
+30000,Armor of Legend
 1, 
 5,Bandana
 20,Sallet
@@ -88,8 +88,8 @@ Price,Name
 125,Rose's Hair Band
 1, 
 300,Phoenix Plume
-5000,Legend Casque
-250,Dragon Helm
+30000,Legend Casque
+5000,Dragon Helm
 250,Magical Hat
 1, 
 5,Leather Boots
@@ -99,8 +99,8 @@ Price,Name
 50,Soft Boots
 75,Stardust Boots
 150,Magical Greaves
-250,Dancer's Boots
-150,Bandit's Shoes
+1875,Dancer's Boots
+1875,Bandit's Shoes
 1, 
 100,Poison Guard
 100,Active Ring
@@ -130,9 +130,9 @@ Price,Name
 250,Talisman
 250, 
 250,Holy Ankh
-250,Dancer's Ring
+2500,Dancer's Ring
 250, 
-250,Bandit's Ring
+2500,Bandit's Ring
 250,Red-Eye Stone
 250,Jade Stone
 250,Silver Stone
@@ -157,40 +157,40 @@ Price,Name
 25, 
 500,Wargod Calling
 5000,Ultimate Wargod
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
-1, 
+200,Sabre
+1500,Lava Blade
+1500,Stone Axe
+1500,Spectral Arrow
+1500,Void Estoc
+1500,Hydro Hammer
+4000,Attack Horn
+4000,Defense Horn
+5000,Spirit Eater
+5000,Giant Axe
+5000,Dragon Beater
+5000,Ouroboros
+5000,Elemental Arrow
+5000,Magic Hammer
+5000,Overcharge Glove
+20000,Crystal Armor
+20000,Crystal Hat
+20000,Crystal Boots
+20000,Crystal Ring
+5000,Ring of Reversal
+5000,Ring of Healing
+5000,Ring of Power
+5000,Ring of Magic
+5000,Ring of Defense
+5000,Ring of Block
+5000,Ring of Shielding
+5000,Ring of Elements
+5000,The One Ring
+5000,Lloyd's Boots
+5000,Divine DG Armor
+5000,Halo of Balance
+12500,Firebrand
+5000,Super Spirit Ring
+5000,Winged Shoes
 2, 
 5,Detonate Rock
 5,Spark Net
@@ -212,7 +212,7 @@ Price,Name
 10,Dancing Ray
 10,Spirit Potion
 10,Panic Bell
-1, 
+100, 
 10,Fatal Blizzard
 10,Stunning Hammer
 10,Black Rain
@@ -228,7 +228,7 @@ Price,Name
 1, 
 200,Magic Shield
 200,Material Shield
-25,Sun Rhapsody
+50,Sun Rhapsody
 200,Smoke Ball
 15,Healing Fog
 200,Magic Sig Stone
@@ -240,7 +240,7 @@ Price,Name
 200,Speed Down
 1, 
 200,Sachet
-10,Psyche Bomb
+5000,Psyche Bomb
 10,Burning Wave
 10,Frozen Jet
 10,Down Burst
@@ -248,9 +248,10 @@ Price,Name
 10,Spectral Flash
 10,Night Raid
 10,Flash Hall
-25,Healing Breeze
-200,Psyche Bomb X
+40,Healing Breeze
+5000,Psyche Bomb X
 0, 
 0, 
 0, 
 0, 
+0,
