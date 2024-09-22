@@ -315,7 +315,7 @@ public class DragoonModifier {
     return new RegistryId(MOD_ID, entryId);
   }
   public RegistryId idCore(final String entryId) {
-    return new RegistryId("lod_core", entryId);
+    return new RegistryId("lod", entryId);
   }
 
   public void print(final String text) { if(DEBUG_MODE) System.out.println("[DRAGOON MODIFIER] " + text); }
@@ -394,12 +394,12 @@ public class DragoonModifier {
     if(submapCut_80052c30 == 676 && gameState_800babc8.charData_32c[0].level_12 == 1) {
       if("Hell Mode".equals(difficulty) || "Hard + Hell Bosses".equals(difficulty)) {
         event.gameState.gold_94 = 200;
+        event.gameState.items_2e9.add(REGISTRIES.items.getEntry("lod:spark_net").get());
+        event.gameState.items_2e9.add(REGISTRIES.items.getEntry("lod:healing_potion").get());
+        event.gameState.items_2e9.add(REGISTRIES.items.getEntry("lod:healing_potion").get());
       } else {
         event.gameState.gold_94 = 20;
       }
-      event.gameState.items_2e9.add(REGISTRIES.items.getEntry("lod:spark_net").get());
-      event.gameState.items_2e9.add(REGISTRIES.items.getEntry("lod:healing_potion").get());
-      event.gameState.items_2e9.add(REGISTRIES.items.getEntry("lod:healing_potion").get());
     } else if(submapCut_80052c30 == 10) {
       if(("Hell Mode".equals(difficulty) || "Hard + Hell Bosses".equals(difficulty)) && gameState_800babc8.charData_32c[0].level_12 == 1) {
         gameState_800babc8.goods_19c[0] ^= 1;
@@ -708,7 +708,8 @@ public class DragoonModifier {
                 Integer.parseInt(equip[40]) //On Hit Status
               );
 
-              if(equip[44].startsWith("lod_core")) {
+
+              if(equip[44].startsWith("lod")) {
                 if(file.getName().equals(GameEngine.CONFIG.getConfig(DIFFICULTY.get()))) {
                   if(equip[44].split(":")[1].length() >= 3) {
                     registryEquipment.put(this.idCore(equip[44].split(":")[1]), dmEquip);
@@ -737,8 +738,8 @@ public class DragoonModifier {
       }
     }
 
-    for(final RegistryId eq : REGISTRIES.equipment) {
-      print("Equip Registry: " + eq.entryId());
+    for(final var entry : registryEquipment.entrySet()) {
+      print("Equip Registry: " + entry.getKey());
     }
   }
 
@@ -808,7 +809,7 @@ public class DragoonModifier {
                 Boolean.parseBoolean(item[25])
               );
 
-              if(item[32].startsWith("lod_core")) {
+              if(item[32].startsWith("lod")) {
                 if(file.getName().equals(GameEngine.CONFIG.getConfig(DIFFICULTY.get()))) {
                   if(item[32].split(":")[1].length() >= 3) {
                     registryItems.put(this.idCore(item[32].split(":")[1]), dmItem);
@@ -837,8 +838,8 @@ public class DragoonModifier {
       }
     }
 
-    for(final RegistryId it : REGISTRIES.items) {
-      print("Item Registry: " + it.entryId());
+    for(final var entry : registryItems.entrySet()) {
+      this.print("Item Registry: " + entry.getKey());
     }
   }
 
@@ -862,19 +863,19 @@ public class DragoonModifier {
   }
 
   @EventListener public void giveItem(final GiveItemEvent event) {
-    event.override = true;
-    event.item = REGISTRIES.items.getEntry("dragoon_modifier:i" + LodMod.idItemMap.get(event.item.getRegistryId())).get();
+    /*event.override = true; // TODO: Make sure this works for lod and dra_mod
+    event.item = REGISTRIES.items.getEntry("dragoon_modifier:i" + LodMod.idItemMap.get(event.item.getRegistryId())).get();*/
   }
 
   @EventListener public void takeItem(final GiveEquipmentEvent event) {
-    event.override = true;
-    event.equip = REGISTRIES.equipment.getEntry("dragoon_modifier:e" + LodMod.idEquipmentMap.get(event.equip.getRegistryId())).get();
+    /*event.override = true; // TODO: Make sure this works for lod and dra_mod
+    event.equip = REGISTRIES.equipment.getEntry("dragoon_modifier:e" + LodMod.idEquipmentMap.get(event.equip.getRegistryId())).get(); */
   }
   //endregion
 
   //region Inventory Battle
   @EventListener public void itemId(final ItemIdEvent event) {
-    if(event.registryId.toString().contains("dragoon_modifier")) {
+    /*if(event.registryId.toString().contains("dragoon_modifier")) { // TODO: Custom items test for later
       final String item = event.registryId.toString().split(":")[1];
       event.itemId = Integer.parseInt(item.substring(1));
       final int fakeItemId = Integer.parseInt(itemStats.get(event.itemId)[17]);
@@ -883,7 +884,7 @@ public class DragoonModifier {
       selectedFakeItemId = fakeItemId;
     } else {
       selectedItemId = -1;
-    }
+    }*/
   }
 
   @EventListener public void battleDescription(final BattleDescriptionEvent event) {
@@ -1014,16 +1015,20 @@ public class DragoonModifier {
       final int exp = Integer.parseInt(monstersRewardsStats.get(enemyId)[0]);
       event.xp = ArrayUtils.contains(this.bossEncounters, encounterId_800bb0f8) ? (int) (exp * 1.5) : exp;
       event.gold = Integer.parseInt(monstersRewardsStats.get(enemyId)[1]);
-      if(!item.startsWith("N")) { //TODO monster rewards
-        //event.add(new CombatantStruct1a8.ItemDrop(Integer.parseInt(monstersRewardsStats.get(enemyId)[2]), item.startsWith("e") ? REGISTRIES.equipment.getEntry(equipmentIdMap.get(Integer.parseInt(item.substring(1)))).get() : REGISTRIES.items.getEntry(itemIdMap.get(Integer.parseInt(item.substring(1)))).get()));
+      if(!item.startsWith("N")) {
+        final RegistryId drop = item.startsWith("lod") ? this.idCore(item.split(":")[1]) : this.id(item.split(":")[1]);
+        System.out.println("ADD DROP HERE: " + item);
+        System.out.println("EQUIP?: " + registryEquipment.get(drop) == null);
+        System.out.println("ITEM?: " + registryItems.get(drop) == null);
+        event.add(new CombatantStruct1a8.ItemDrop(Integer.parseInt(monstersRewardsStats.get(enemyId)[2]), registryEquipment.get(drop) == null ? registryItems.get(drop) : registryEquipment.get(drop)));
       }
       if(this.faustBattle && event.enemyId == 344) {
         event.clear();
         event.xp = 30000;
         event.gold = 250;
         if(Integer.parseInt(GameEngine.CONFIG.getConfig(FAUST_DEFEATED.get())) == 39) {
-          event.add(new CombatantStruct1a8.ItemDrop(100, REGISTRIES.equipment.getEntry("dragoon_modifier:e74").get()));
-          event.add(new CombatantStruct1a8.ItemDrop(100, REGISTRIES.equipment.getEntry("dragoon_modifier:e89").get()));
+          event.add(new CombatantStruct1a8.ItemDrop(100, REGISTRIES.equipment.getEntry("lod:armor_of_legend").get()));
+          event.add(new CombatantStruct1a8.ItemDrop(100, REGISTRIES.equipment.getEntry("lod:legend_casque").get()));
         }
       }
     }
@@ -1096,37 +1101,37 @@ public class DragoonModifier {
             player.stats.getStat(SPEED_STAT.get()).setRaw(stats.bodySpeed_69 + (int) Math.round(stats.equipmentSpeed_86 / 2d));
           }
 
-          if("dragoon_modifier:e149".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) { //Phantom Shield
+          if("lod:phantom_shield".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
             player.defence_38 = (int) Math.round(player.defence_38 * 0.6d);
             player.magicDefence_3a = (int) Math.round(player.magicDefence_3a * 0.6d);
           }
 
-          if("dragoon_modifier:e150".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) { // Dragon Shield
+          if("lod:dragon_shield".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
             player.defence_38 = (int) Math.round(player.defence_38 * 0.6d);
           }
 
-          if("dragoon_modifier:e151".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) { // Angel Scarf
+          if("lod:angel_scarf".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
             player.magicDefence_3a = (int) Math.round(player.magicDefence_3a * 0.6d);
           }
 
-          if("dragoon_modifier:e130".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString()) && "dragoon_modifier:e73".equals(player.equipment_11e.get(EquipmentSlot.ARMOUR).getRegistryId().toString())) { //Holy Ahnk + Angel Robe
+          if("lod:holy_ankh".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString()) && "lod:angel_robe".equals(player.equipment_11e.get(EquipmentSlot.ARMOUR).getRegistryId().toString())) {
             player.revive_13a -= 20;
           }
 
           int crystalItems = 0;
-          if("dragoon_modifier:e173".equals(player.equipment_11e.get(EquipmentSlot.ARMOUR).getRegistryId().toString())) { //Crystal Armor
+          if("dragoon_modifier:crystal_armor".equals(player.equipment_11e.get(EquipmentSlot.ARMOUR).getRegistryId().toString())) {
             crystalItems++;
           }
 
-          if("dragoon_modifier:e174".equals(player.equipment_11e.get(EquipmentSlot.HELMET).getRegistryId().toString())) { //Crystal Hat
+          if("dragoon_modifier:crystal_hat".equals(player.equipment_11e.get(EquipmentSlot.HELMET).getRegistryId().toString())) {
             crystalItems++;
           }
 
-          if("dragoon_modifier:e175".equals(player.equipment_11e.get(EquipmentSlot.BOOTS).getRegistryId().toString())) { //Crystal Boots
+          if("dragoon_modifier:crystal_boots".equals(player.equipment_11e.get(EquipmentSlot.BOOTS).getRegistryId().toString())) {
             crystalItems++;
           }
 
-          if("dragoon_modifier:e176".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) { //Crystal Ring
+          if("dragoon_modifier:crystal_ring".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
             crystalItems++;
           }
 
@@ -1180,7 +1185,7 @@ public class DragoonModifier {
             }
           }
 
-          if("dragoon_modifier:e177".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) { //Ring of Reversal
+          if("dragoon_modifier:ring_of_reversal".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
             final int df = player.defence_38;
             final int mdf = player.magicDefence_3a;
             player.magicDefence_3a = df;
@@ -1193,30 +1198,30 @@ public class DragoonModifier {
             }
           }
 
-          if("dragoon_modifier:e185".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) { //The One Ring
+          if("dragoon_modifier:the_one_ring".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
             player.stats.getStat(HP_STAT.get()).setCurrent(1);
             player.stats.getStat(HP_STAT.get()).setMaxRaw(1);
             player.attackAvoid_40 = 80;
             player.magicAvoid_42 = 80;
           }
 
-          if("dragoon_modifier:e187".equals(player.equipment_11e.get(EquipmentSlot.ARMOUR).getRegistryId().toString())) { //Divine DG Armor
+          if("dragoon_modifier:divine_dg_armor".equals(player.equipment_11e.get(EquipmentSlot.ARMOUR).getRegistryId().toString())) {
             player.spPerPhysicalHit_12a += 10;
             player.spPerMagicalHit_12e += 10;
           }
 
-          if("dragoon_modifier:e188".equals(player.equipment_11e.get(EquipmentSlot.HELMET).getRegistryId().toString())) { //Halo of Balance
+          if("dragoon_modifier:halo_of_balance".equals(player.equipment_11e.get(EquipmentSlot.HELMET).getRegistryId().toString())) {
             player.stats.getStat(HP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(HP_STAT.get()).getMax() * 1.3d));
             player.stats.getStat(MP_STAT.get()).setMaxRaw((int) Math.round(player.stats.getStat(MP_STAT.get()).getMax() * 1.3d));
           }
 
-          if("dragoon_modifier:e189".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) { //Firebrand
+          if("dragoon_modifier:firebrand".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) {
             player.equipmentAttackElements_1c.clear();
             player.equipmentAttackElements_1c.add(DIVINE_ELEMENT.get());
             player.equipmentAttackElements_1c.add(FIRE_ELEMENT.get());
           }
 
-          if("dragoon_modifier:e190".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) { //Super Spirit Ring
+          if("dragoon_modifier:super_spirit_ring".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
             player.spMultiplier_128 = -100;
           }
 
@@ -1245,35 +1250,35 @@ public class DragoonModifier {
                 Integer.parseInt(spellStats.get(flowerStorm)[11]));
             }
 
-            if("dragoon_modifier:e192".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) { //Protection Shield
+            if("dragoon_modifier:protection_shield".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
               this.protectionShield[player.charSlot_276] += player.stats.getStat(HP_STAT.get()).getMax() / 2;
             }
 
-            if("dragoon_modifier:e197".equals(player.equipment_11e.get(EquipmentSlot.BOOTS).getRegistryId().toString())) { //Protection Shoes
+            if("dragoon_modifier:protection_shoes".equals(player.equipment_11e.get(EquipmentSlot.BOOTS).getRegistryId().toString())) {
               this.protectionShield[player.charSlot_276] += player.stats.getStat(HP_STAT.get()).getMax() / 4;
             }
 
-            if("dragoon_modifier:e198".equals(player.equipment_11e.get(EquipmentSlot.HELMET).getRegistryId().toString())) { //Protection Helmet
+            if("dragoon_modifier:protection_helmet".equals(player.equipment_11e.get(EquipmentSlot.HELMET).getRegistryId().toString())) {
               this.protectionShield[player.charSlot_276] += player.stats.getStat(HP_STAT.get()).getMax() / 4;
             }
 
-            if("dragoon_modifier:e198".equals(player.equipment_11e.get(EquipmentSlot.ARMOUR).getRegistryId().toString())) { //Protection Armor
+            if("dragoon_modifier:protection_armor".equals(player.equipment_11e.get(EquipmentSlot.ARMOUR).getRegistryId().toString())) {
               this.protectionShield[player.charSlot_276] += player.stats.getStat(HP_STAT.get()).getMax();
             }
 
-            if("dragoon_modifier:e193".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
+            if("dragoon_modifier:spirit_bottle".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
               this.spiritBottle[player.charSlot_276] = true;
             }
 
-            if("dragoon_modifier:e194".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
+            if("dragoon_modifier:speed_bottle".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
               this.speedBottle[player.charSlot_276] = true;
             }
 
-            if("dragoon_modifier:e195".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
+            if("dragoon_modifier:healing_bottle".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
               this.healingBottle[player.charSlot_276] = true;
             }
 
-            if("dragoon_modifier:e196".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
+            if("dragoon_modifier:sun_bottle".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
               this.sunBottle[player.charSlot_276] = true;
             }
 
@@ -1338,12 +1343,12 @@ public class DragoonModifier {
     for(int i = 0; i < battleState_8006e398.getAllBentCount(); i++) {
       final ScriptState<? extends BattleEntity27c> state = battleState_8006e398.allBents_e0c[i];
       final BattleEntity27c bobj = state.innerStruct_00;
-      if(bobj instanceof final PlayerBattleEntity player) {
-        this.damageTrackerEquips[player.charSlot_276][0] = Integer.parseInt(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString().split(":")[1].substring(1));
-        this.damageTrackerEquips[player.charSlot_276][1] = Integer.parseInt(player.equipment_11e.get(EquipmentSlot.HELMET).getRegistryId().toString().split(":")[1].substring(1));
-        this.damageTrackerEquips[player.charSlot_276][2] = Integer.parseInt(player.equipment_11e.get(EquipmentSlot.ARMOUR).getRegistryId().toString().split(":")[1].substring(1));
-        this.damageTrackerEquips[player.charSlot_276][3] = Integer.parseInt(player.equipment_11e.get(EquipmentSlot.BOOTS).getRegistryId().toString().split(":")[1].substring(1));
-        this.damageTrackerEquips[player.charSlot_276][4] = Integer.parseInt(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString().split(":")[1].substring(1));
+      if(bobj instanceof final PlayerBattleEntity player) { //TODO damage tracker registries
+        /*this.damageTrackerEquips[player.charSlot_276][0] = Integer.parseInt(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString().split(":")[1]);
+        this.damageTrackerEquips[player.charSlot_276][1] = Integer.parseInt(player.equipment_11e.get(EquipmentSlot.HELMET).getRegistryId().toString().split(":")[1]);
+        this.damageTrackerEquips[player.charSlot_276][2] = Integer.parseInt(player.equipment_11e.get(EquipmentSlot.ARMOUR).getRegistryId().toString().split(":")[1]);
+        this.damageTrackerEquips[player.charSlot_276][3] = Integer.parseInt(player.equipment_11e.get(EquipmentSlot.BOOTS).getRegistryId().toString().split(":")[1]);
+        this.damageTrackerEquips[player.charSlot_276][4] = Integer.parseInt(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString().split(":")[1]);*/
       }
     }
 
@@ -1463,7 +1468,7 @@ public class DragoonModifier {
           }
         }
 
-        if("dragoon_modifier:e166".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) { //Spirit Eater
+        if("dragoon_modifier:spirit_eater".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) {
           final int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
           if(!player.isDragoon() && sp != player.stats.getStat(SP_STAT.get()).getMax()) {
             player.stats.getStat(SP_STAT.get()).setCurrent(sp - 20);
@@ -1476,7 +1481,7 @@ public class DragoonModifier {
           this.ouroboros[player.charSlot_276] = false;
         }
 
-        if("dragoon_modifier:e184".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) { //Ring of Elements
+        if("dragoon_modifier:ring_of_elements".equals(player.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) {
           if(((Battle)currentEngineState_8004dd04).dragoonSpaceElement_800c6b64 == player.element) {
             this.ringOfElements[player.charSlot_276]++;
             this.ringOfElementsElement[player.charSlot_276] = ((Battle)currentEngineState_8004dd04).dragoonSpaceElement_800c6b64;
@@ -1509,14 +1514,14 @@ public class DragoonModifier {
 
       if(event.bent instanceof final PlayerBattleEntity player) {
         this.currentPlayerSlot = player.charSlot_276;
-        if("dragoon_modifier:e74".equals(player.equipment_11e.get(EquipmentSlot.ARMOUR).getRegistryId().toString())) {
+        if("lod:armor_of_legend".equals(player.equipment_11e.get(EquipmentSlot.ARMOUR).getRegistryId().toString())) {
           this.armorOfLegendTurns += 1;
           if(this.armorOfLegendTurns <= 40) {
             player.defence_38 += 1;
           }
         }
 
-        if("dragoon_modifier:e89".equals(player.equipment_11e.get(EquipmentSlot.HELMET).getRegistryId().toString())) {
+        if("lod:legend_casque".equals(player.equipment_11e.get(EquipmentSlot.HELMET).getRegistryId().toString())) {
           this.legendCasqueTurns += 1;
           if(this.legendCasqueTurns <= 40) {
             player.magicDefence_3a += 1;
@@ -1650,7 +1655,7 @@ public class DragoonModifier {
             }
           } else {
             if(player.element == Element.fromFlag(0x80) && ((Battle)currentEngineState_8004dd04).dragoonSpaceElement_800c6b64 == Element.fromFlag(0x8)) { //Divine Dart special physical boost
-              if("dragoon_modifier:e189".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) { //Firebrand
+              if("dragoon_modifier:firebrand".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) {
                 event.damage *= 1.1; //TODO this doesn't seem right
               } else {
                 event.damage *= 1.5;
@@ -1663,7 +1668,7 @@ public class DragoonModifier {
           final int level = player.level_04;
           if(event.attackType.isPhysical() && (player.charId_272 == 2 || player.charId_272 == 8)) { //Shana AT Boost
             double boost = 1;
-            if("dragoon_modifier:e32".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) {
+            if("lod:detonate_arrow".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) {
               boost = 1.4;
             } else if(level >= 28) {
               boost = 2.15;
@@ -1771,13 +1776,13 @@ public class DragoonModifier {
           }
         }
 
-        if("dragoon_modifier:e167".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString()) && event.attackType.isPhysical()) { //Giant Axe
+        if("dragoon_modifier:giant_axe".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString()) && event.attackType.isPhysical()) {
           if(new Random().nextInt(0, 99) < 20) {
             player.guard_54 = 1;
           }
         }
 
-        if("dragoon_modifier:e168".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString()) && event.attackType.isPhysical()) { //Dragon Beater
+        if("dragoon_modifier:dragon_beater".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString()) && event.attackType.isPhysical()) {
           final int heal = (int) Math.round(event.damage * 0.01d);
           final int hp = player.stats.getStat(HP_STAT.get()).getCurrent();
           final int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
@@ -1785,7 +1790,7 @@ public class DragoonModifier {
           player.stats.getStat(SP_STAT.get()).setCurrent(sp + Math.min(100, heal));
         }
 
-        if("dragoon_modifier:e169".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString()) && player.isDragoon()) { //Ouroboros
+        if("dragoon_modifier:ouroboros".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString()) && player.isDragoon()) {
           final int dragoonTurns = player.charSlot_276 == 0 ? battleState_8006e398.dragoonTurnsRemaining_294[0] : player.charSlot_276 == 1 ? battleState_8006e398.dragoonTurnsRemaining_294[1] : battleState_8006e398.dragoonTurnsRemaining_294[2];
           final int sp = player.stats.getStat(SP_STAT.get()).getCurrent();
           if(player.isDragoon() && dragoonTurns >= 2 && sp >= 200) {
@@ -1802,7 +1807,7 @@ public class DragoonModifier {
           }
         }
 
-        if("dragoon_modifier:e170".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) { //Elemental Arrow
+        if("dragoon_modifier:elemental_arrow".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) { //Elemental Arrow
           if(event.defender instanceof final MonsterBattleEntity monster && event.attackType.isPhysical()) {
             final ArrayList<Element> elementsCalculated = new ArrayList<>();
             for(final Element elementArrowsElement : this.elementArrowsElements) {
@@ -1830,7 +1835,7 @@ public class DragoonModifier {
             }
 
             if(new Random().nextInt(0, 99) < 40 && gameState_800babc8.items_2e9.size() < CONFIG.getConfig(CoreMod.INVENTORY_SIZE_CONFIG.get())) {
-              Scus94491BpeSegment_8002.giveItem(REGISTRIES.items.getEntry("dragoon_modifier:i9").get());
+              Scus94491BpeSegment_8002.giveItem(REGISTRIES.items.getEntry("lod:trans_light").get());
             }
           }
 
@@ -1839,14 +1844,14 @@ public class DragoonModifier {
           }
         }
 
-        if("dragoon_modifier:e171".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) { //Magic Hammer
+        if("dragoon_modifier:magic_hammer".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) {
           if(event.attackType.isPhysical()) {
             event.damage = 0;
           }
           player.stats.getStat(MP_STAT.get()).setCurrent(player.stats.getStat(MP_STAT.get()).getCurrent() + 8);
         }
 
-        if("dragoon_modifier:e172".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) { //Overcharge Glove
+        if("dragoon_modifier:overcharge_glove".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) {
           if(event.defender instanceof final MonsterBattleEntity monster) {
             if(monster.getElement() == THUNDER_ELEMENT.get()) {
               event.damage *= 3;
@@ -1944,7 +1949,7 @@ public class DragoonModifier {
              */
 
       if(event.defender instanceof final PlayerBattleEntity defender) {
-        if("dragoon_modifier:e183".equals(defender.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) { //Ring of Shielding
+        if("dragoon_modifier:ring_of_shielding".equals(defender.equipment_11e.get(EquipmentSlot.ACCESSORY).getRegistryId().toString())) { //Ring of Shielding
           final int hp = defender.stats.getStat(HP_STAT.get()).getCurrent();
           if((hp - event.damage) <= 0 && new Random().nextInt(0, 99) < 35) {
             //defender.stats.getStat(null).addMod(LodMod.id("material_shield"), LodMod.UNARY_STAT_MOD_TYPE.get().make(new UnaryStatModConfig().percent(100).turns(5)));
@@ -2503,8 +2508,8 @@ public class DragoonModifier {
         pw.printf("===========================================================================================================%n");
         pw.printf("| Name     | Weapon           | Helmet           | Armor            | Shoes            | Accessory        |%n");
         pw.printf("-----------------------------------------------------------------------------------------------------------%n");
-        for(int i = 0; i < this.damageTrackerEquips.length; i++) {
-          pw.printf("| %-8s | %-16s | %-16s | %-16s | %-16s | %-16s |%n", charNames[gameState_800babc8.charIds_88[i]], equipStats.get(this.damageTrackerEquips[i][0])[29], equipStats.get(this.damageTrackerEquips[i][1])[29], equipStats.get(this.damageTrackerEquips[i][2])[29], equipStats.get(this.damageTrackerEquips[i][3])[29], equipStats.get(this.damageTrackerEquips[i][4])[29]);
+        for(int i = 0; i < this.damageTrackerEquips.length; i++) { //TODO damage tracker registries
+          //pw.printf("| %-8s | %-16s | %-16s | %-16s | %-16s | %-16s |%n", charNames[gameState_800babc8.charIds_88[i]], equipStats.get(this.damageTrackerEquips[i][0])[29], equipStats.get(this.damageTrackerEquips[i][1])[29], equipStats.get(this.damageTrackerEquips[i][2])[29], equipStats.get(this.damageTrackerEquips[i][3])[29], equipStats.get(this.damageTrackerEquips[i][4])[29]);
         }
         pw.printf("===========================================================================================================%n%n");
         for(final String s : this.damageTrackerLog) {
@@ -2768,10 +2773,10 @@ public class DragoonModifier {
             gameState_800babc8.charData_32c[i].dlevel_13 = 1;
             gameState_800babc8.charData_32c[i].level_12 = 1;
             gameState_800babc8.charData_32c[i].xp_00 = 0;
-            gameState_800babc8.charData_32c[i].equipment_14.put(EquipmentSlot.WEAPON, REGISTRIES.equipment.getEntry("dragoon_modifier:e0").get());
-            gameState_800babc8.charData_32c[i].equipment_14.put(EquipmentSlot.HELMET, REGISTRIES.equipment.getEntry("dragoon_modifier:e76").get());
-            gameState_800babc8.charData_32c[i].equipment_14.put(EquipmentSlot.ARMOUR, REGISTRIES.equipment.getEntry("dragoon_modifier:e46").get());
-            gameState_800babc8.charData_32c[i].equipment_14.put(EquipmentSlot.BOOTS, REGISTRIES.equipment.getEntry("dragoon_modifier:e93").get());
+            gameState_800babc8.charData_32c[i].equipment_14.put(EquipmentSlot.WEAPON, REGISTRIES.equipment.getEntry("lod:broad_sword").get());
+            gameState_800babc8.charData_32c[i].equipment_14.put(EquipmentSlot.HELMET, REGISTRIES.equipment.getEntry("lod:bandana").get());
+            gameState_800babc8.charData_32c[i].equipment_14.put(EquipmentSlot.ARMOUR, REGISTRIES.equipment.getEntry("lod:leather_armor").get());
+            gameState_800babc8.charData_32c[i].equipment_14.put(EquipmentSlot.BOOTS, REGISTRIES.equipment.getEntry("lod:leather_boots").get());
           }
           gameState_800babc8.goods_19c[0] ^= 1 << 0;
           gameState_800babc8.goods_19c[0] ^= 1 << 1;
