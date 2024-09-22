@@ -1,166 +1,166 @@
 EXP,Gold,Drop Rate,Item,UK1,UK2,Name
-16,6,20,lod_core:burn_out,0,0,Mantis
-128,22,10,lod_core:meteor_fall,0,0,Scissorhands
-480,34,15,lod_core:mind_purifier,0,0,Spinninghead
-1152,35,10,lod_core:sun_rhapsody,0,0,Sandworm
-28,8,10,lod_core:healing_potion,0,0,Sea Dragon
-504,34,10,lod_core:healing_fog,0,0,Land Skater
-576,39,10,lod_core:speed_up,0,0,Beastie Dragon
-1632,57,10,lod_core:angel's_prayer,0,0,Manticore
-3,3,10,lod_core:smoke_ball,0,0,Goblin
-1232,46,15,lod_core:mind_purifier,0,0,Minotaur
-1536,60,10,lod_core:midnight_terror,0,0,Hyper Skeleton
-1144,50,10,lod_core:angel's_prayer,0,0,Basilisk
-288,33,10,lod_core:midnight_terror,0,0,Flabby Troll
-21,9,10,lod_core:angel's_prayer,0,0,Evil Spider
-160,24,10,lod_core:panic_bell,0,0,Spider Urchin
-72,15,10,lod_core:healing_potion,0,0,Strong Man
-176,26,10,lod_core:magic_sig_stone,0,0,Dragonfly
-89,18,10,lod_core:sun_rhapsody,0,0,Hell Hound
-240,30,10,lod_core:mind_purifier,0,0,Death
-57,14,20,lod_core:healing_potion,0,0,Lizard Man
-720,44,10,lod_core:rave_twister,0,0,White Ape
-2,4,50,lod_core:healing_potion,0,0,Assassin Cock
-35,11,20,lod_core:angel's_prayer,0,0,Merman
-216,30,10,lod_core:mind_purifier,0,0,Glare
-1,1,20,lod_core:healing_potion,0,0,Berserk Mouse
-1248,54,10,lod_core:healing_fog,0,0,Dragon Soldier
-140,19,10,lod_core:healing_potion,0,0,Earth Shaker
-11,3,20,lod_core:healing_potion,0,0,Vampire Kiwi
-25,6,10,lod_core:body_purifier,0,0,Myconido
-192,28,10,lod_core:down_burst,0,0,Roc
-440,40,10,lod_core:thunderbolt,0,0,Gnome
-864,48,5,lod_core:magic_sig_stone,0,0,Bowling
-448,38,10,lod_core:gushing_magma,0,0,Freeze Knight
-44,10,10,lod_core:spear_frost,0,0,Fire Spirit
-1584,64,10,lod_core:mind_purifier,0,0,Mad Skull
-48,13,15,lod_core:body_purifier,0,0,Run Fast
-768,44,15,lod_core:body_purifier,0,0,Canbria Dayfly
-528,43,10,lod_core:gravity_grabber,0,0,Wyvern
-4,2,30,lod_core:burn_out,0,0,Trent
-880,33,10,lod_core:healing_fog,0,0,Spring Hitter
-1200,38,10,lod_core:panic_bell,0,0,Guillotine
-800,37,10,lod_core:stunning_hammer,0,0,Terminator
-100,100,100,lod_core:spirit_potion,0,0,OOPARTS
-320,30,10,lod_core:healing_fog,0,0,Fairy
-400,37,10,lod_core:power_down,0,0,Puck
-15,5,10,lod_core:angel's_prayer,0,0,Mole
-14,5,10,lod_core:healing_potion,0,0,Screaming Bat
-720,46,10,lod_core:black_rain,0,0,Succubus
-672,46,15,lod_core:body_purifier,0,0,Mammoth
-832,41,10,lod_core:spectral_flash,0,0,MetalFang
-576,32,10,lod_core:healing_fog,0,0,Windy Weasel
-384,38,15,lod_core:healing_fog,0,0,Wounded Bear
-128,19,10,lod_core:healing_potion,0,0,Erupting Chick
-256,25,10,lod_core:angel's_prayer,0,0,Flying Rat
+16,6,20,lod:burn_out,0,0,Mantis
+128,22,10,lod:meteor_fall,0,0,Scissorhands
+480,34,15,lod:mind_purifier,0,0,Spinninghead
+1152,35,10,lod:sun_rhapsody,0,0,Sandworm
+28,8,10,lod:healing_potion,0,0,Sea Dragon
+504,34,10,lod:healing_fog,0,0,Land Skater
+576,39,10,lod:speed_up,0,0,Beastie Dragon
+1632,57,10,lod:angels_prayer,0,0,Manticore
+3,3,10,lod:smoke_ball,0,0,Goblin
+1232,46,15,lod:mind_purifier,0,0,Minotaur
+1536,60,10,lod:midnight_terror,0,0,Hyper Skeleton
+1144,50,10,lod:angels_prayer,0,0,Basilisk
+288,33,10,lod:midnight_terror,0,0,Flabby Troll
+21,9,10,lod:angels_prayer,0,0,Evil Spider
+160,24,10,lod:panic_bell,0,0,Spider Urchin
+72,15,10,lod:healing_potion,0,0,Strong Man
+176,26,10,lod:magic_sig_stone,0,0,Dragonfly
+89,18,10,lod:sun_rhapsody,0,0,Hell Hound
+240,30,10,lod:mind_purifier,0,0,Death
+57,14,20,lod:healing_potion,0,0,Lizard Man
+720,44,10,lod:rave_twister,0,0,White Ape
+2,4,50,lod:healing_potion,0,0,Assassin Cock
+35,11,20,lod:angels_prayer,0,0,Merman
+216,30,10,lod:mind_purifier,0,0,Glare
+1,1,20,lod:healing_potion,0,0,Berserk Mouse
+1248,54,10,lod:healing_fog,0,0,Dragon Soldier
+140,19,10,lod:healing_potion,0,0,Earth Shaker
+11,3,20,lod:healing_potion,0,0,Vampire Kiwi
+25,6,10,lod:body_purifier,0,0,Myconido
+192,28,10,lod:down_burst,0,0,Roc
+440,40,10,lod:thunderbolt,0,0,Gnome
+864,48,5,lod:magic_sig_stone,0,0,Bowling
+448,38,10,lod:gushing_magma,0,0,Freeze Knight
+44,10,10,lod:spear_frost,0,0,Fire Spirit
+1584,64,10,lod:mind_purifier,0,0,Mad Skull
+48,13,15,lod:body_purifier,0,0,Run Fast
+768,44,15,lod:body_purifier,0,0,Canbria Dayfly
+528,43,10,lod:gravity_grabber,0,0,Wyvern
+4,2,30,lod:burn_out,0,0,Trent
+880,33,10,lod:healing_fog,0,0,Spring Hitter
+1200,38,10,lod:panic_bell,0,0,Guillotine
+800,37,10,lod:stunning_hammer,0,0,Terminator
+100,100,100,lod:spirit_potion,0,0,OOPARTS
+320,30,10,lod:healing_fog,0,0,Fairy
+400,37,10,lod:power_down,0,0,Puck
+15,5,10,lod:angels_prayer,0,0,Mole
+14,5,10,lod:healing_potion,0,0,Screaming Bat
+720,46,10,lod:black_rain,0,0,Succubus
+672,46,15,lod:body_purifier,0,0,Mammoth
+832,41,10,lod:spectral_flash,0,0,MetalFang
+576,32,10,lod:healing_fog,0,0,Windy Weasel
+384,38,15,lod:healing_fog,0,0,Wounded Bear
+128,19,10,lod:healing_potion,0,0,Erupting Chick
+256,25,10,lod:angels_prayer,0,0,Flying Rat
 5000,0,0,Nothing,0,0,Rainbow Bird
-79,16,5,lod_core:attack_ball,0,0,Living Statue
-936,36,15,lod_core:body_purifier,0,0,Madman
-792,40,10,lod_core:poison_needle,0,0,Wildman
-64,13,10,lod_core:dark_mist,0,0,Gargoyle
-12,4,10,lod_core:burn_out,0,0,Crescent Bee
-896,36,10,lod_core:healing_fog,0,0,Jelly
-1056,52,10,lod_core:angel's_prayer,0,0,Spiky Beetle
-1360,46,10,lod_core:night_raid,0,0,Slug
-640,42,10,lod_core:total_vanishing,0,0,Witch
-16,7,20,lod_core:sun_rhapsody,0,0,Ugly Balloon
-960,50,10,lod_core:flash_hall,0,0,Maximum Volt
-86,18,30,lod_core:healing_potion,0,0,Crystal Golem
-616,41,10,lod_core:speed_down,0,0,Rocky Turtle
-38,13,10,lod_core:pellet,0,0,Crocodile
-102,24,10,lod_core:sun_rhapsody,0,0,Frilled Lizard
-220,33,10,lod_core:dancing_ray,0,0,Magician Bogy
-2016,32,10,lod_core:body_purifier,0,0,Triceratops
-1344,54,10,lod_core:frozen_jet,0,0,Stern Fish
-288,35,10,lod_core:recovery_ball,0,0,Forest Runner
-32,8,10,lod_core:healing_potion,0,0,Magma Fish
-1120,50,10,lod_core:body_purifier,0,0,Scud Shark
-240,27,5,lod_core:magic_shield,0,0,Screw Shell
-1088,41,10,lod_core:total_vanishing,0,0,Potbelly
-1408,55,10,lod_core:angel's_prayer,0,0,Loner Knight
-198,23,10,lod_core:sun_rhapsody,0,0,Berserker
-1440,58,10,lod_core:mind_purifier,0,0,Professor
-1872,75,10,lod_core:psyche_bomb,0,0,Psyche Druid
-216,20,10,lod_core:healing_potion,0,0,Gangster
-162,28,10,lod_core:smoke_ball,0,0,Crafty Thief
-1152,50,10,lod_core:mind_purifier,0,0,Undead
-180,25,10,lod_core:healing_potion,0,0,Skeleton
-160,22,10,lod_core:smoke_ball,0,0,Will-o'-Wisp
-3,0,100,lod_core:sun_rhapsody,0,0,Cursed Jar
-52,16,10,lod_core:power_up,0,0,Man Eating Bud
-960,48,10,lod_core:healing_breeze,0,0,Cactus
-43,11,10,lod_core:pandemonium,0,0,Mandrake
-264,36,10,lod_core:power_down,0,0,Mermaid
-48,12,10,lod_core:sun_rhapsody,0,0,Salamander
-1728,70,10,lod_core:healing_fog,0,0,Unicorn
-18,8,10,lod_core:burn_out,0,0,Orc
-320,32,10,lod_core:detonate_rock,0,0,Dark Elf
-384,32,15,lod_core:mind_purifier,0,0,Baby Dragon
-1320,53,10,lod_core:healing_breeze,0,0,Harpy
-1224,62,10,lod_core:mind_purifier,0,0,Cute Cat
-153,26,10,lod_core:power_up,0,0,Arrow Shooter
-36,14,20,lod_core:mind_purifier,0,0,Red Hot
-1024,45,10,lod_core:healing_fog,0,0,Specter
-134,100,10,lod_core:poison_needle,0,0,Sandora Elite
-112,22,15,lod_core:healing_potion,0,0,Knight of Sandora
-19,6,20,lod_core:body_purifier,0,0,Slime
-75,14,10,lod_core:trans_light,0,0,Fowl Fighter
-144,21,10,lod_core:mind_purifier,0,0,Killer Bird
-57,12,20,lod_core:body_purifier,0,0,Plague Rat
-115,17,10,lod_core:body_purifier,0,0,Stinger
-144,31,10,lod_core:stunning_hammer,0,0,Piggy
-192,24,10,lod_core:healing_potion,0,0,Sea Piranha
-360,27,15,lod_core:body_purifier,0,0,Toad Stool
-432,28,10,lod_core:fatal_blizzard,0,0,Mega Sea Dragon
-480,36,15,lod_core:body_purifier,0,0,Deadly Spider
-560,30,5,lod_core:magic_shield,0,0,Icicle Ball
-38,10,15,lod_core:mind_purifier,0,0,Tricky Bat
-648,36,10,lod_core:sun_rhapsody,0,0,Mr.Bone
-352,28,5,lod_core:material_shield,0,0,Moss Dresser
-1080,43,10,lod_core:total_vanishing,0,0,Death Purger
-864,39,10,lod_core:material_shield,0,0,Scorpion
-1008,37,10,lod_core:spirit_potion,0,0,Trap Plant
-1008,41,10,lod_core:power_up,0,0,Aqua King
-960,48,10,lod_core:body_purifier,0,0,Sky Chaser
-1296,59,10,lod_core:material_shield,0,0,Air Combat
-1,0,100,lod_core:healing_rain,0,0,Treasure Jar
-1280,40,5,lod_core:recovery_ball,0,0,Human Hunter
-1496,52,10,lod_core:healing_breeze,0,0,Mountain Ape
-1152,48,10,lod_core:magic_shield,0,0,Roulette Face
-864,43,10,lod_core:burning_wave,0,0,Swift Dragon
-84,18,15,lod_core:healing_potion,0,0,Hellena Warden
-25,10,100,lod_core:healing_potion,0,0,Sandora Soldier
-35,8,10,lod_core:healing_potion,0,0,Sandora Soldier
-25,7,10,lod_core:sun_rhapsody,0,0,Sandora Soldier
-92,21,10,lod_core:sun_rhapsody,0,0,Senior Warden
+79,16,5,lod:attack_ball,0,0,Living Statue
+936,36,15,lod:body_purifier,0,0,Madman
+792,40,10,lod:poison_needle,0,0,Wildman
+64,13,10,lod:dark_mist,0,0,Gargoyle
+12,4,10,lod:burn_out,0,0,Crescent Bee
+896,36,10,lod:healing_fog,0,0,Jelly
+1056,52,10,lod:angels_prayer,0,0,Spiky Beetle
+1360,46,10,lod:night_raid,0,0,Slug
+640,42,10,lod:total_vanishing,0,0,Witch
+16,7,20,lod:sun_rhapsody,0,0,Ugly Balloon
+960,50,10,lod:flash_hall,0,0,Maximum Volt
+86,18,30,lod:healing_potion,0,0,Crystal Golem
+616,41,10,lod:speed_down,0,0,Rocky Turtle
+38,13,10,lod:pellet,0,0,Crocodile
+102,24,10,lod:sun_rhapsody,0,0,Frilled Lizard
+220,33,10,lod:dancing_ray,0,0,Magician Bogy
+2016,32,10,lod:body_purifier,0,0,Triceratops
+1344,54,10,lod:frozen_jet,0,0,Stern Fish
+288,35,10,lod:recovery_ball,0,0,Forest Runner
+32,8,10,lod:healing_potion,0,0,Magma Fish
+1120,50,10,lod:body_purifier,0,0,Scud Shark
+240,27,5,lod:magic_shield,0,0,Screw Shell
+1088,41,10,lod:total_vanishing,0,0,Potbelly
+1408,55,10,lod:angels_prayer,0,0,Loner Knight
+198,23,10,lod:sun_rhapsody,0,0,Berserker
+1440,58,10,lod:mind_purifier,0,0,Professor
+1872,75,10,lod:psyche_bomb,0,0,Psyche Druid
+216,20,10,lod:healing_potion,0,0,Gangster
+162,28,10,lod:smoke_ball,0,0,Crafty Thief
+1152,50,10,lod:mind_purifier,0,0,Undead
+180,25,10,lod:healing_potion,0,0,Skeleton
+160,22,10,lod:smoke_ball,0,0,Will-o'-Wisp
+3,0,100,lod:sun_rhapsody,0,0,Cursed Jar
+52,16,10,lod:power_up,0,0,Man Eating Bud
+960,48,10,lod:healing_breeze,0,0,Cactus
+43,11,10,lod:pandemonium,0,0,Mandrake
+264,36,10,lod:power_down,0,0,Mermaid
+48,12,10,lod:sun_rhapsody,0,0,Salamander
+1728,70,10,lod:healing_fog,0,0,Unicorn
+18,8,10,lod:burn_out,0,0,Orc
+320,32,10,lod:detonate_rock,0,0,Dark Elf
+384,32,15,lod:mind_purifier,0,0,Baby Dragon
+1320,53,10,lod:healing_breeze,0,0,Harpy
+1224,62,10,lod:mind_purifier,0,0,Cute Cat
+153,26,10,lod:power_up,0,0,Arrow Shooter
+36,14,20,lod:mind_purifier,0,0,Red Hot
+1024,45,10,lod:healing_fog,0,0,Specter
+134,100,10,lod:poison_needle,0,0,Sandora Elite
+112,22,15,lod:healing_potion,0,0,Knight of Sandora
+19,6,20,lod:body_purifier,0,0,Slime
+75,14,10,lod:trans_light,0,0,Fowl Fighter
+144,21,10,lod:mind_purifier,0,0,Killer Bird
+57,12,20,lod:body_purifier,0,0,Plague Rat
+115,17,10,lod:body_purifier,0,0,Stinger
+144,31,10,lod:stunning_hammer,0,0,Piggy
+192,24,10,lod:healing_potion,0,0,Sea Piranha
+360,27,15,lod:body_purifier,0,0,Toad Stool
+432,28,10,lod:fatal_blizzard,0,0,Mega Sea Dragon
+480,36,15,lod:body_purifier,0,0,Deadly Spider
+560,30,5,lod:magic_shield,0,0,Icicle Ball
+38,10,15,lod:mind_purifier,0,0,Tricky Bat
+648,36,10,lod:sun_rhapsody,0,0,Mr.Bone
+352,28,5,lod:material_shield,0,0,Moss Dresser
+1080,43,10,lod:total_vanishing,0,0,Death Purger
+864,39,10,lod:material_shield,0,0,Scorpion
+1008,37,10,lod:spirit_potion,0,0,Trap Plant
+1008,41,10,lod:power_up,0,0,Aqua King
+960,48,10,lod:body_purifier,0,0,Sky Chaser
+1296,59,10,lod:material_shield,0,0,Air Combat
+1,0,100,lod:healing_rain,0,0,Treasure Jar
+1280,40,5,lod:recovery_ball,0,0,Human Hunter
+1496,52,10,lod:healing_breeze,0,0,Mountain Ape
+1152,48,10,lod:magic_shield,0,0,Roulette Face
+864,43,10,lod:burning_wave,0,0,Swift Dragon
+84,18,15,lod:healing_potion,0,0,Hellena Warden
+25,10,100,lod:healing_potion,0,0,Sandora Soldier
+35,8,10,lod:healing_potion,0,0,Sandora Soldier
+25,7,10,lod:sun_rhapsody,0,0,Sandora Soldier
+92,21,10,lod:sun_rhapsody,0,0,Senior Warden
 5,3,0,Nothing,0,0,Hellena Warden
-38,50,100,lod_core:attack_ball,0,0,Commander
+38,50,100,lod:attack_ball,0,0,Commander
 1000,0,0,Nothing,0,0,Blue Bird
 1,1000,0,Nothing,0,0,Red Bird
 1,100,0,Nothing,0,0,Yellow Bird
-1,0,100,lod_core:moon_serenade,0,0,Lucky Jar
+1,0,100,lod:moon_serenade,0,0,Lucky Jar
 0,0,0,Nothing,0,0,??? (Terminator ?)
 0,0,0,Nothing,0,0,???
 0,0,0,Nothing,0,0,???
 0,0,0,Nothing,0,0,Madman
-936,36,15,lod_core:body_purifier,0,0,Madman
-936,36,15,lod_core:body_purifier,0,0,Madman
-36,14,20,lod_core:mind_purifier,0,0,Red Hot
-36,14,20,lod_core:mind_purifier,0,0,Red Hot
-19,6,20,lod_core:body_purifier,0,0,Madman
-19,6,20,lod_core:body_purifier,0,0,Madman
-44,10,20,lod_core:spear_frost,0,0,Fire Spirit
-44,10,20,lod_core:spear_frost,0,0,Fire Spirit
-1024,45,10,lod_core:healing_fog,0,0,Specter
-1024,45,10,lod_core:healing_fog,0,0,Specter
-160,22,10,lod_core:smoke_ball,0,0,Will-o'-Wisp
-160,22,10,lod_core:smoke_ball,0,0,Will-o'-Wisp
+936,36,15,lod:body_purifier,0,0,Madman
+936,36,15,lod:body_purifier,0,0,Madman
+36,14,20,lod:mind_purifier,0,0,Red Hot
+36,14,20,lod:mind_purifier,0,0,Red Hot
+19,6,20,lod:body_purifier,0,0,Madman
+19,6,20,lod:body_purifier,0,0,Madman
+44,10,20,lod:spear_frost,0,0,Fire Spirit
+44,10,20,lod:spear_frost,0,0,Fire Spirit
+1024,45,10,lod:healing_fog,0,0,Specter
+1024,45,10,lod:healing_fog,0,0,Specter
+160,22,10,lod:smoke_ball,0,0,Will-o'-Wisp
+160,22,10,lod:smoke_ball,0,0,Will-o'-Wisp
 0,0,0,Nothing,0,0,Will-o'-Wisp (No name)
-32,8,10,lod_core:healing_potion,0,0,Magma Fish
-32,8,10,lod_core:healing_potion,0,0,Magma Fish
+32,8,10,lod:healing_potion,0,0,Magma Fish
+32,8,10,lod:healing_potion,0,0,Magma Fish
 0,0,0,Nothing,0,0,Magma Fish (No name)
-48,12,10,lod_core:sun_rhapsody,0,0,Salamander (No name)
-48,12,10,lod_core:sun_rhapsody,0,0,Salamander (No name)
+48,12,10,lod:sun_rhapsody,0,0,Salamander (No name)
+48,12,10,lod:sun_rhapsody,0,0,Salamander (No name)
 0,0,0,Nothing,0,0,Crash
 0,0,0,Nothing,0,0,Crash
 0,0,0,Nothing,0,0,N/A
@@ -255,105 +255,105 @@ EXP,Gold,Drop Rate,Item,UK1,UK2,Name
 0,0,0,Nothing,0,0,Merchant
 0,0,0,Nothing,0,0,Master Tasman
 0,0,0,Nothing,0,0,Rose
-20,20,50,lod_core:burn_out,0,0,Commander
-2,10,100,lod_core:healing_potion,0,0,Knight of Sandora
+20,20,50,lod:burn_out,0,0,Commander
+2,10,100,lod:healing_potion,0,0,Knight of Sandora
 200,100,0,Nothing,0,0,Sandora Elite
-0,0,100,lod_core:healing_potion,0,0,Hellena Warden
-0,0,100,lod_core:healing_potion,0,0,Auto Complete
-300,150,100,lod_core:knight_shield,0,0,Fruegel
-1500,300,100,lod_core:power_up,0,0,Fruegel
-200,100,100,lod_core:power_down,0,0,Rodriguez
-300,100,100,lod_core:spirit_potion,0,0,Guftas
-400,150,100,lod_core:power_wrist,0,0,Kongol
-2000,300,100,lod_core:meteor_fall,0,0,Kongol
-3000,400,100,lod_core:bravery_amulet,0,0,Emperor Doel
+0,0,100,lod:healing_potion,0,0,Hellena Warden
+0,0,100,lod:healing_potion,0,0,Auto Complete
+300,150,100,lod:knight_shield,0,0,Fruegel
+1500,300,100,lod:power_up,0,0,Fruegel
+200,100,100,lod:power_down,0,0,Rodriguez
+300,100,100,lod:spirit_potion,0,0,Guftas
+400,150,100,lod:power_wrist,0,0,Kongol
+2000,300,100,lod:meteor_fall,0,0,Kongol
+3000,400,100,lod:bravery_amulet,0,0,Emperor Doel
 0,0,0,Nothing,0,0,Auto Complete
 0,0,0,Nothing,0,0,Lloyd
-9000,1000,100,lod_core:brass_knuckle,0,0,Lloyd
+9000,1000,100,lod:brass_knuckle,0,0,Lloyd
 0,0,0,Nothing,0,0,Auto Complete
 0,0,0,Nothing,0,0,Auto Complete
-0,0,100,lod_core:healing_potion,0,0,Auto Complete
-162,30,10,lod_core:smoke_ball,0,0,Crafty Thief
-500,200,100,lod_core:healing_potion,0,0,Feyrbrand
+0,0,100,lod:healing_potion,0,0,Auto Complete
+162,30,10,lod:smoke_ball,0,0,Crafty Thief
+500,200,100,lod:healing_potion,0,0,Feyrbrand
 0,0,0,Nothing,0,0,???
 0,0,0,Nothing,0,0,Auto Complete
 0,0,0,Nothing,0,0,Crash
-8000,1000,100,lod_core:healing_fog,0,0,Regole
+8000,1000,100,lod:healing_fog,0,0,Regole
 0,0,0,Nothing,0,0,Tentacle
 0,0,0,Nothing,0,0,Crash
 0,0,0,Nothing,0,0,Crash
-7000,1500,100,lod_core:frozen_jet,0,0,Divine Dragon
-0,0,100,lod_core:gravity_grabber,0,0,Divine Cannon
-0,0,100,lod_core:flash_hall,0,0,Divine Ball
+7000,1500,100,lod:frozen_jet,0,0,Divine Dragon
+0,0,100,lod:gravity_grabber,0,0,Divine Cannon
+0,0,100,lod:flash_hall,0,0,Divine Ball
 0,0,0,Nothing,0,0,Crash
-500,200,100,lod_core:down_burst,0,0,Greham
-1500,300,100,lod_core:recovery_ball,0,0,Shirley
-0,0,100,lod_core:trans_light,0,0,Auto Complete
-0,0,100,lod_core:healing_potion,0,0,Auto Complete
+500,200,100,lod:down_burst,0,0,Greham
+1500,300,100,lod:recovery_ball,0,0,Shirley
+0,0,100,lod:trans_light,0,0,Auto Complete
+0,0,100,lod:healing_potion,0,0,Auto Complete
 0,0,0,Nothing,0,0,Crash
 0,0,0,Nothing,0,0,Crash
-3000,500,100,lod_core:speed_up,0,0,Lenus
-0,0,100,lod_core:frozen_jet,0,0,Lenus
-2000,200,100,lod_core:blue_sea_stone,0,0,Damia
-2000,200,100,lod_core:jade_stone,0,0,Syuveil
-2000,200,100,lod_core:golden_stone,0,0,Belzac
-2000,250,100,lod_core:violet_stone,0,0,Kanzas
-400,200,100,lod_core:healing_potion,0,0,Mappi
-1000,200,100,lod_core:healing_potion,0,0,Mappi
-2000,200,100,lod_core:gravity_grabber,0,0,Gehrich
+3000,500,100,lod:speed_up,0,0,Lenus
+0,0,100,lod:frozen_jet,0,0,Lenus
+2000,200,100,lod:blue_sea_stone,0,0,Damia
+2000,200,100,lod:jade_stone,0,0,Syuveil
+2000,200,100,lod:golden_stone,0,0,Belzac
+2000,250,100,lod:violet_stone,0,0,Kanzas
+400,200,100,lod:healing_potion,0,0,Mappi
+1000,200,100,lod:healing_potion,0,0,Mappi
+2000,200,100,lod:gravity_grabber,0,0,Gehrich
 0,0,0,Nothing,0,0,Gorgaga
 0,0,0,Nothing,0,0,Serfius
 0,0,0,Nothing,0,0,Danton
 0,0,0,Nothing,0,0,Atlow
 0,0,0,Nothing,0,0,Freeze
 0,0,0,Nothing,0,0,Crash
-600,150,100,lod_core:healing_potion,0,0,Virage(head)
-0,0,100,lod_core:healing_potion,0,0,Virage(body)
-0,0,100,lod_core:mind_purifier,0,0,Virage(arm)
-2400,300,100,lod_core:sun_rhapsody,0,0,Virage(head)
-0,0,100,lod_core:healing_potion,0,0,Virage(arm)
-0,0,100,lod_core:mind_purifier,0,0,Virage(body)
+600,150,100,lod:healing_potion,0,0,Virage(head)
+0,0,100,lod:healing_potion,0,0,Virage(body)
+0,0,100,lod:mind_purifier,0,0,Virage(arm)
+2400,300,100,lod:sun_rhapsody,0,0,Virage(head)
+0,0,100,lod:healing_potion,0,0,Virage(arm)
+0,0,100,lod:mind_purifier,0,0,Virage(body)
 0,0,0,Nothing,0,0,Freeze
 0,0,0,Nothing,0,0,Freeze
-6000,600,100,lod_core:healing_rain,0,0,S Virage(head)
-0,0,50,lod_core:healing_rain,0,0,S Virage(body)
-0,0,50,lod_core:healing_rain,0,0,S Virage(arm)
+6000,600,100,lod:healing_rain,0,0,S Virage(head)
+0,0,50,lod:healing_rain,0,0,S Virage(body)
+0,0,50,lod:healing_rain,0,0,S Virage(arm)
 0,0,0,Nothing,0,0,Crash
-30000,1500,100,lod_core:healing_rain,0,0,S Virage(head)
-0,0,100,lod_core:healing_rain,0,0,S Virage(arm)
-0,0,100,lod_core:moon_serenade,0,0,S Virage(body)
+30000,1500,100,lod:healing_rain,0,0,S Virage(head)
+0,0,100,lod:healing_rain,0,0,S Virage(arm)
+0,0,100,lod:moon_serenade,0,0,S Virage(body)
 0,0,0,Nothing,0,0,Freeze
 0,0,0,Nothing,0,0,Freeze
-1200,300,100,lod_core:total_vanishing,0,0,Drake the Bandit
-0,0,100,lod_core:sun_rhapsody,0,0,Auto Complete
-0,0,100,lod_core:healing_potion,0,0,Auto Complete
+1200,300,100,lod:total_vanishing,0,0,Drake the Bandit
+0,0,100,lod:sun_rhapsody,0,0,Auto Complete
+0,0,100,lod:healing_potion,0,0,Auto Complete
 0,0,0,Nothing,0,0,Freeze
-800,300,100,lod_core:mind_purifier,0,0,Jiango
+800,300,100,lod:mind_purifier,0,0,Jiango
 0,0,0,Nothing,0,0,???
 0,0,0,Nothing,0,0,???
 500,200,0,Nothing,0,0,Urobolus
-800,150,100,lod_core:red-eye_stone,0,0,Fire Bird
+800,150,100,lod:red-eye_stone,0,0,Fire Bird
 0,0,0,Nothing,0,0,Auto Complete
-6000,1000,100,lod_core:spectral_flash,0,0,Grand Jewel
+6000,1000,100,lod:spectral_flash,0,0,Grand Jewel
 0,0,0,Nothing,0,0,Virage(head)
 0,0,0,Nothing,0,0,Virage(body)
 0,0,0,Nothing,0,0,Virage(arm)
-0,0,0,Nothing,0,0,Kamuy's tree
-6000,600,100,lod_core:night_raid,0,0,Ghost Commander
+0,0,0,Nothing,0,0,Kamuys tree
+6000,600,100,lod:night_raid,0,0,Ghost Commander
 0,0,0,Nothing,0,0,Ghost Knight
 0,0,0,Nothing,0,0,Mazo
-5000,600,100,lod_core:darkness_stone,0,0,Kamuy
-10000,10000,100,lod_core:phantom_shield,0,0,Faust
+5000,600,100,lod:darkness_stone,0,0,Kamuy
+10000,10000,100,lod:phantom_shield,0,0,Faust
 0,0,0,Nothing,0,0,Faust
-8000,1000,100,lod_core:burning_wave,0,0,Windigo
-0,0,100,lod_core:healing_fog,0,0,Auto Complete
-0,0,100,lod_core:healing_fog,0,0,Heart
+8000,1000,100,lod:burning_wave,0,0,Windigo
+0,0,100,lod:healing_fog,0,0,Auto Complete
+0,0,100,lod:healing_fog,0,0,Heart
 6000,900,0,Nothing,0,0,Polter Helm
 0,0,0,Nothing,0,0,Polter Armor
-0,0,100,lod_core:demon_stilleto,0,0,Polter Sword
-10000,100,100,lod_core:flash_hall,0,0,Auto Complete
-10000,100,100,lod_core:frozen_jet,0,0,Auto Complete
-10000,100,100,lod_core:down_burst,0,0,Auto Complete
+0,0,100,lod:demon_stilleto,0,0,Polter Sword
+10000,100,100,lod:flash_hall,0,0,Auto Complete
+10000,100,100,lod:frozen_jet,0,0,Auto Complete
+10000,100,100,lod:down_burst,0,0,Auto Complete
 0,0,0,Nothing,0,0,Missing (Melbu Texture)
 0,0,0,Nothing,0,0,Missing (Tentacle Texture)
 0,0,0,Nothing,0,0,Lloyd & Melbu (Crash)
@@ -362,19 +362,19 @@ EXP,Gold,Drop Rate,Item,UK1,UK2,Name
 6000,400,0,Nothing,0,0,Vector
 6000,400,0,Nothing,0,0,Selebus
 6000,400,0,Nothing,0,0,Kubila
-20000,1200,100,lod_core:soul_eater,0,0,Auto Complete
+20000,1200,100,lod:soul_eater,0,0,Auto Complete
 0,0,0,Nothing,0,0,Lavitzs Spirit
-16000,1000,100,lod_core:pretty_hammer,0,0,Last Kraken
+16000,1000,100,lod:pretty_hammer,0,0,Last Kraken
 1000,100,0,Nothing,0,0,Auto Complete
 0,0,0,Nothing,0,0,Auto Complete
-7000,500,100,lod_core:healing_fog,0,0,Caterpillar
-7000,500,100,lod_core:healing_potion,0,0,Auto Complete
-7000,500,100,lod_core:healing_rain,0,0,Auto Complete
+7000,500,100,lod:healing_fog,0,0,Caterpillar
+7000,500,100,lod:healing_potion,0,0,Auto Complete
+7000,500,100,lod:healing_rain,0,0,Auto Complete
 10000,500,0,Nothing,0,0,Death Rose
 0,0,0,Nothing,0,0,Auto Complete
 10000,500,0,Nothing,0,0,Claire
 0,0,0,Nothing,0,0,Auto Complete
-10000,500,100,lod_core:indora's_axe,0,0,Indora
+10000,500,100,lod:indoras_axe,0,0,Indora
 0,0,0,Nothing,0,0,Shadow Blade
 0,0,0,Nothing,0,0,Light Sword
 10000,500,0,Nothing,0,0,Michael
