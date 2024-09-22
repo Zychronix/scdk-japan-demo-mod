@@ -54,6 +54,7 @@ import legend.game.modding.events.config.ConfigLoadedEvent;
 import legend.game.modding.events.gamestate.NewGameEvent;
 import legend.game.modding.events.input.InputPressedEvent;
 import legend.game.modding.events.input.InputReleasedEvent;
+import legend.game.modding.events.inventory.EquipmentStatsEvent;
 import legend.game.modding.events.inventory.GiveEquipmentEvent;
 import legend.game.modding.events.inventory.GiveItemEvent;
 import legend.game.modding.events.inventory.RepeatItemReturnEvent;
@@ -516,6 +517,15 @@ public class DragoonModifier {
       this.print("MOD loaded. Config swapped." + equipStats.size());
     }).start();
   }
+
+  public Equipment getEquipFromRegistry(final RegistryId id) {
+    for(final var entry : registryEquipment.entrySet()) {
+      if(entry.getKey().toString().equals(id.toString())) {
+        return entry.getValue();
+      }
+    }
+    return null;
+  }
   //endregion
 
   //region Additions
@@ -870,6 +880,55 @@ public class DragoonModifier {
   @EventListener public void takeItem(final GiveEquipmentEvent event) {
     /*event.override = true; // TODO: Make sure this works for lod and dra_mod
     event.equip = REGISTRIES.equipment.getEntry("dragoon_modifier:e" + LodMod.idEquipmentMap.get(event.equip.getRegistryId())).get(); */
+  }
+
+  @EventListener public void equipStats(final EquipmentStatsEvent event) {
+    final Equipment update = getEquipFromRegistry(event.equipment.getRegistryId());
+    if(update != null) {
+      event.flags_00 = update.flags_00;
+      event.slot = update.slot;
+      event._02 = update._02;
+      event.equipableFlags_03 = update.equipableFlags_03;
+      event.attackElement_04 = update.attackElement_04;
+      event._05 = update._05;
+      event.elementalResistance_06 = update.elementalResistance_06;
+      event.elementalImmunity_07 = update.elementalImmunity_07;
+      event.statusResist_08 = update.statusResist_08;
+      event._09 = update._09;
+      event.attack1_0a = update.attack1_0a;
+      event.mpPerPhysicalHit = update.mpPerPhysicalHit;
+      event.spPerPhysicalHit = update.spPerPhysicalHit;
+      event.mpPerMagicalHit = update.mpPerMagicalHit;
+      event.spPerMagicalHit = update.spPerMagicalHit;
+      event.hpMultiplier = update.hpMultiplier;
+      event.mpMultiplier = update.mpMultiplier;
+      event.spMultiplier = update.spMultiplier;
+      event.magicalResistance = update.magicalResistance;
+      event.physicalResistance = update.physicalResistance;
+      event.magicalImmunity = update.magicalImmunity;
+      event.physicalImmunity = update.physicalImmunity;
+      event.revive = update.revive;
+      event.hpRegen = update.hpRegen;
+      event.mpRegen = update.mpRegen;
+      event.spRegen = update.spRegen;
+      event.escapeBonus = update.escapeBonus;
+      event.icon_0e = update.icon_0e;
+      event.speed_0f = update.speed_0f;
+      event.attack2_10 = update.attack2_10;
+      event.magicAttack_11 = update.magicAttack_11;
+      event.defence_12 = update.defence_12;
+      event.magicDefence_13 = update.magicDefence_13;
+      event.attackHit_14 = update.attackHit_14;
+      event.magicHit_15 = update.magicHit_15;
+      event.attackAvoid_16 = update.attackAvoid_16;
+      event.magicAvoid_17 = update.magicAvoid_17;
+      event.onHitStatusChance_18 = update.onHitStatusChance_18;
+      event._19 = update._19;
+      event._1a = update._1a;
+      event.onHitStatus_1b = update.onHitStatus_1b;
+    } else {
+      print("NULL EQUIPMENT FOUND DOES NOT EXIST IN DRAMOD REGISTRY: " + event.equipment.getRegistryId());
+    }
   }
   //endregion
 
