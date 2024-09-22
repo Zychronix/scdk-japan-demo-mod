@@ -77,7 +77,7 @@ Flag,Type,UK1,Who Equips,Element,UK2,Elemental Resistance,Elemental Null,Status 
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1, ,,lod:_
 0,64,64,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,3,0,0,100,100,0,0,0,0,0,0,5,Bandana,,lod:bandana
 0,64,64,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,8,0,0,110,100,0,0,0,0,0,0,20,Sallet,Increases hit§chance of physical§attacks by 10%.,lod:sallet
-0,64,64,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,23,0,5,100,100,0,0,0,0,0,0,50,armet,,lod:armet
+0,64,64,240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,23,0,5,100,100,0,0,0,0,0,0,50,Armet,,lod:armet
 0,64,64,192,0,0,0,0,0,0,0,0,0,0,20,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,37,5,0,100,100,0,0,0,0,0,0,75,Knight Helm,Gain 20 SP when§magically attacked.,lod:knight_helm
 0,64,64,32,0,0,0,0,0,0,0,0,0,0,20,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,14,10,5,100,100,0,0,0,0,0,0,100,Giganto Helm,Gain 20 SP when§magically attacked.,lod:giganto_helm
 0,64,64,16,0,0,0,0,0,0,0,0,0,0,20,0,0,0,false,false,false,false,0,0,0,0,0,18,0,0,25,5,5,100,100,0,0,0,0,0,0,100,Soul Headband,Gain 20 SP when§magically attacked.,lod:soul_headband
