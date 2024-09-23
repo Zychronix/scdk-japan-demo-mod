@@ -99,7 +99,6 @@ import org.legendofdragoon.modloader.Mod;
 import org.legendofdragoon.modloader.events.EventListener;
 import org.legendofdragoon.modloader.registries.DuplicateRegistryIdException;
 import org.legendofdragoon.modloader.registries.Registrar;
-import org.legendofdragoon.modloader.registries.Registry;
 import org.legendofdragoon.modloader.registries.RegistryDelegate;
 import org.legendofdragoon.modloader.registries.RegistryId;
 
@@ -526,6 +525,15 @@ public class DragoonModifier {
     }
     return null;
   }
+
+  public Item getItemFromRegistry(final RegistryId id) {
+    for(final var entry : registryItems.entrySet()) {
+      if(entry.getKey().toString().equals(id.toString())) {
+        return entry.getValue();
+      }
+    }
+    return null;
+  }
   //endregion
 
   //region Additions
@@ -883,7 +891,7 @@ public class DragoonModifier {
   }
 
   @EventListener public void equipStats(final EquipmentStatsEvent event) {
-    final Equipment update = getEquipFromRegistry(event.equipment.getRegistryId());
+    final Equipment update = this.getEquipFromRegistry(event.equipment.getRegistryId());
     if(update != null) {
       event.flags_00 = update.flags_00;
       event.slot = update.slot;
@@ -1062,9 +1070,14 @@ public class DragoonModifier {
 
           event.xp = Integer.parseInt(ultimateData.get(i)[25]);
           event.gold = Integer.parseInt(ultimateData.get(i)[26]);
-          if(!item.startsWith("N")) {
-            final RegistryId drop = this.id(ultimateData.get(i)[29].split(":")[1]);
-            event.add(new CombatantStruct1a8.ItemDrop(Integer.parseInt(ultimateData.get(i)[28]), registryEquipment.get(drop) == null ? registryItems.get(drop) : registryEquipment.get(drop)));
+          if(!item.startsWith("lod:_") && !item.startsWith("lod:None")) {
+            try {
+              event.add(new CombatantStruct1a8.ItemDrop(Integer.parseInt(monstersRewardsStats.get(enemyId)[2]), REGISTRIES.equipment.getEntry(item).get()));
+            } catch(final Exception ignored) {}
+
+            try {
+              event.add(new CombatantStruct1a8.ItemDrop(Integer.parseInt(monstersRewardsStats.get(enemyId)[2]), REGISTRIES.items.getEntry(item).get()));
+            } catch(final Exception ignored) {}
           }
           break;
         }
@@ -1074,12 +1087,14 @@ public class DragoonModifier {
       final int exp = Integer.parseInt(monstersRewardsStats.get(enemyId)[0]);
       event.xp = ArrayUtils.contains(this.bossEncounters, encounterId_800bb0f8) ? (int) (exp * 1.5) : exp;
       event.gold = Integer.parseInt(monstersRewardsStats.get(enemyId)[1]);
-      if(!item.startsWith("N")) {
-        final RegistryId drop = item.startsWith("lod") ? this.idCore(item.split(":")[1]) : this.id(item.split(":")[1]);
-        System.out.println("ADD DROP HERE: " + item);
-        System.out.println("EQUIP?: " + registryEquipment.get(drop) == null);
-        System.out.println("ITEM?: " + registryItems.get(drop) == null);
-        event.add(new CombatantStruct1a8.ItemDrop(Integer.parseInt(monstersRewardsStats.get(enemyId)[2]), registryEquipment.get(drop) == null ? registryItems.get(drop) : registryEquipment.get(drop)));
+      if(!item.startsWith("lod:_") && !item.startsWith("lod:None")) {
+        try {
+          event.add(new CombatantStruct1a8.ItemDrop(Integer.parseInt(monstersRewardsStats.get(enemyId)[2]), REGISTRIES.equipment.getEntry(item).get()));
+        } catch(final Exception ignored) {}
+
+        try {
+          event.add(new CombatantStruct1a8.ItemDrop(Integer.parseInt(monstersRewardsStats.get(enemyId)[2]), REGISTRIES.items.getEntry(item).get()));
+        } catch(final Exception ignored) {}
       }
       if(this.faustBattle && event.enemyId == 344) {
         event.clear();
