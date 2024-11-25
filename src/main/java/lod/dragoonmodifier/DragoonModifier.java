@@ -114,7 +114,6 @@ import lod.dragoonmodifier.configs.UltimateBossConfig;
 import lod.dragoonmodifier.configs.UltimateBossDefeatedConfig;
 import lod.dragoonmodifier.events.DifficultyChangedEvent;
 import lod.dragoonmodifier.events.HellModeAdjustmentEvent;
-import lod.dragoonmodifier.items.MenuHealingItem;
 import lod.dragoonmodifier.values.DamageTracker;
 import lod.dragoonmodifier.values.ElementalBomb;
 import lod.dragoonmodifier.values.EnrageMode;
@@ -915,10 +914,6 @@ public class DragoonModifier {
                         case "PsycheBombXItem":
                           DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new PsycheBombXItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Element.fromFlag(Integer.parseInt(item[1])).get(), Integer.parseInt(item[22])));
                           registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new PsycheBombXItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Element.fromFlag(Integer.parseInt(item[1])).get(), Integer.parseInt(item[22])));
-                          break;
-                        case "MenuHealingItem":
-                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new MenuHealingItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
-                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new MenuHealingItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
                           break;
                         default:
                           throw new Exception("Invalid item type found: " + item[30]);
