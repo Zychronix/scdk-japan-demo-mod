@@ -34,9 +34,12 @@ dependencies {
   implementation("legend:lod:snapshot") // Uncomment to use mavenLocal version of LoD engine (also comment out next line)
 //  implementation("com.github.Legend-of-Dragoon-Modding:Legend-of-Dragoon-Java:main-SNAPSHOT")
   implementation("com.opencsv:opencsv:5.7.1")
+  implementation("org.fusesource.jansi:jansi:2.3.2")
+  implementation("org.apache.logging.log4j:log4j-api:2.14.1")
+  implementation("org.apache.logging.log4j:log4j-core:2.17.1")
+  implementation("com.google.code.findbugs:jsr305:3.0.2")
   api("org.legendofdragoon:mod-loader:3.0.4")
   api("org.legendofdragoon:script-recompiler:0.5.5")
-  api("org.fusesource.jansi:2.3.2")
 }
 
 sourceSets {

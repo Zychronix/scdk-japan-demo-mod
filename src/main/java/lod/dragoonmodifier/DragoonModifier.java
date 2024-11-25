@@ -3,6 +3,7 @@ package lod.dragoonmodifier;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 import legend.core.GameEngine;
+import legend.core.QueuedModelStandard;
 import legend.core.gte.MV;
 import legend.game.EngineStateEnum;
 import legend.game.Scus94491BpeSegment_8002;
@@ -30,10 +31,10 @@ import legend.game.inventory.Item;
 import legend.game.inventory.ItemRegistryEvent;
 import legend.game.inventory.SpellRegistryEvent;
 import legend.game.inventory.WhichMenu;
+import legend.game.inventory.screens.ShopScreen;
 import legend.game.inventory.screens.TextColour;
 import legend.game.modding.coremod.CoreMod;
 import legend.game.modding.events.battle.AttackSpGainEvent;
-import legend.game.modding.events.battle.BattleDescriptionEvent;
 import legend.game.modding.events.battle.BattleEndedEvent;
 import legend.game.modding.events.battle.BattleEntityTurnEvent;
 import legend.game.modding.events.battle.BattleStartedEvent;
@@ -61,6 +62,8 @@ import legend.game.modding.events.inventory.RepeatItemReturnEvent;
 import legend.game.modding.events.inventory.ShopEquipmentEvent;
 import legend.game.modding.events.inventory.ShopItemEvent;
 import legend.game.modding.events.inventory.ShopTypeEvent;
+import legend.game.modding.events.screen.EquipMenuEntryIconEvent;
+import legend.game.modding.events.screen.ItemMenuEntryIconEvent;
 import legend.game.modding.events.submap.SubmapWarpEvent;
 import legend.game.saves.ConfigEntry;
 import legend.game.saves.ConfigRegistryEvent;
@@ -70,7 +73,6 @@ import legend.game.submap.SubmapObject210;
 import legend.game.submap.SubmapState;
 import legend.game.types.ActiveStatsa0;
 import legend.game.types.EquipmentSlot;
-import legend.game.types.InventoryMenuState;
 import legend.game.types.LevelStuff08;
 import legend.game.types.MagicStuff08;
 import legend.game.types.SpellStats0c;
@@ -78,7 +80,29 @@ import legend.game.wmap.WMap;
 import legend.game.wmap.WmapState;
 import legend.lodmod.LodItems;
 import legend.lodmod.LodMod;
-import legend.lodmod.items.FileBasedItem;
+import legend.lodmod.items.AngelsPrayerItem;
+import legend.lodmod.items.AttackBallItem;
+import legend.lodmod.items.AttackItem;
+import legend.lodmod.items.BodyPurifierItem;
+import legend.lodmod.items.BuffItem;
+import legend.lodmod.items.CauseStatusItem;
+import legend.lodmod.items.CharmPotionItem;
+import legend.lodmod.items.DepetrifierItem;
+import legend.lodmod.items.HealingBreezeItem;
+import legend.lodmod.items.HealingFogItem;
+import legend.lodmod.items.HealingPotionItem;
+import legend.lodmod.items.HealingRainItem;
+import legend.lodmod.items.MindPurifierItem;
+import legend.lodmod.items.MoonSerenadeItem;
+import legend.lodmod.items.PandemoniumItem;
+import legend.lodmod.items.PsycheBombXItem;
+import legend.lodmod.items.RecoveryBallItem;
+import legend.lodmod.items.ShieldItem;
+import legend.lodmod.items.SignetStoneItem;
+import legend.lodmod.items.SmokeBallItem;
+import legend.lodmod.items.SpiritPotionItem;
+import legend.lodmod.items.SunRhapsodyItem;
+import legend.lodmod.items.TotalVanishingItem;
 import lod.dragoonmodifier.configs.DamageTrackerConfig;
 import lod.dragoonmodifier.configs.DifficultyEntryConfig;
 import lod.dragoonmodifier.configs.ElementalBombConfig;
@@ -90,6 +114,7 @@ import lod.dragoonmodifier.configs.UltimateBossConfig;
 import lod.dragoonmodifier.configs.UltimateBossDefeatedConfig;
 import lod.dragoonmodifier.events.DifficultyChangedEvent;
 import lod.dragoonmodifier.events.HellModeAdjustmentEvent;
+import lod.dragoonmodifier.items.MenuHealingItem;
 import lod.dragoonmodifier.values.DamageTracker;
 import lod.dragoonmodifier.values.ElementalBomb;
 import lod.dragoonmodifier.values.EnrageMode;
@@ -112,7 +137,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -125,6 +149,7 @@ import static legend.core.GameEngine.CONFIG;
 import static legend.core.GameEngine.REGISTRIES;
 import static legend.core.GameEngine.RENDERER;
 import static legend.game.SItem.getXpToNextLevel;
+import static legend.game.Scus94491BpeSegment_8002.initMenu;
 import static legend.game.Scus94491BpeSegment_8004.currentEngineState_8004dd04;
 import static legend.game.Scus94491BpeSegment_8004.engineState_8004dd20;
 import static legend.game.Scus94491BpeSegment_8005.submapCut_80052c30;
@@ -261,9 +286,12 @@ public class DragoonModifier {
   public static final RegistryDelegate<ElementalBombConfig> ELEMENTAL_BOMB = DRAMOD_CONFIG_REGISTRAR.register("elemental_bomb", ElementalBombConfig::new);
   public static final RegistryDelegate<DamageTrackerConfig> DAMAGE_TRACKER = DRAMOD_CONFIG_REGISTRAR.register("damage_tracker", DamageTrackerConfig::new);
 
+  public static final Registrar<Item, ItemRegistryEvent> DRAMOD_ITEM_REGISTRAR = new Registrar<>(GameEngine.REGISTRIES.items, MOD_ID);
+
   public final int[] bossEncounters = {
     384, //Commander
     386, //Fruegel I
+
     414, //Urobolus
     385, //Sandora Elite
     388, //Kongol I
@@ -525,10 +553,27 @@ public class DragoonModifier {
     }
     return null;
   }
+  public Equipment getEquipFromRegistry(final String id) {
+    for(final var entry : registryEquipment.entrySet()) {
+      if(entry.getKey().toString().equals(id)) {
+        return entry.getValue();
+      }
+    }
+    return null;
+  }
 
   public Item getItemFromRegistry(final RegistryId id) {
     for(final var entry : registryItems.entrySet()) {
       if(entry.getKey().toString().equals(id.toString())) {
+        return entry.getValue();
+      }
+    }
+    return null;
+  }
+
+  public Item getItemFromRegistry(final String id) {
+    for(final var entry : registryItems.entrySet()) {
+      if(entry.getKey().toString().equals(id)) {
         return entry.getValue();
       }
     }
@@ -678,8 +723,8 @@ public class DragoonModifier {
               final ElementSet elementalResistance = new ElementSet();
               final ElementSet elementalImmunity = new ElementSet();
 
-              elementalResistance.add(Element.fromFlag(Integer.parseInt(equip[6])));
-              elementalImmunity.add(Element.fromFlag(Integer.parseInt(equip[7])));
+              elementalResistance.add(Element.fromFlag(Integer.parseInt(equip[6])).get());
+              elementalImmunity.add(Element.fromFlag(Integer.parseInt(equip[7])).get());
 
               final Equipment dmEquip = new Equipment(
                 Integer.parseInt(equip[41]), //Price
@@ -687,7 +732,7 @@ public class DragoonModifier {
                 Integer.parseInt(equip[1]), //type
                 Integer.parseInt(equip[2]), //_02
                 Integer.parseInt(equip[3]), //equipable
-                Element.fromFlag(Integer.parseInt(equip[4])), //Element
+                Element.fromFlag(Integer.parseInt(equip[4])).get(), //Element
                 Integer.parseInt(equip[5]), //_05
                 elementalResistance, //elementalResistance
                 elementalImmunity, //elementalImmunity
@@ -726,27 +771,19 @@ public class DragoonModifier {
                 Integer.parseInt(equip[40]) //On Hit Status
               );
 
-
-              if(equip[44].startsWith("lod")) {
-                if(file.getName().equals(GameEngine.CONFIG.getConfig(DIFFICULTY.get()))) {
-                  if(equip[44].split(":")[1].length() >= 3) {
-                    registryEquipment.put(this.idCore(equip[44].split(":")[1]), dmEquip);
-                  }
+              if(file.getName().equals(GameEngine.CONFIG.getConfig(DIFFICULTY.get()))) {
+                if(equip[44].split(":")[1].length() >= 3) {
+                  registryEquipment.put(equip[44].startsWith("lod") ? (this.idCore(equip[44].split(":")[1])) : (this.id(equip[44].split(":")[1])), dmEquip);
                 }
-              } else {
-                if(file.getName().equals(GameEngine.CONFIG.getConfig(DIFFICULTY.get()))) {
-                  if(equip[44].split(":")[1].length() >= 3) {
-                    registryEquipment.put(this.id(equip[44].split(":")[1]), dmEquip);
-                  }
-                }
-
-                if(event != null && equip[44].split(":")[1].length() >= 3) {
+                if(event != null && !equip[44].startsWith("lod") && equip[44].split(":")[1].length() >= 3) {
                   try {
                     event.register(this.id(equip[44].split(":")[1]), dmEquip);
-                  } catch(final DuplicateRegistryIdException ignored) {}
+                  } catch(final DuplicateRegistryIdException ignored) {
+                  }
                 }
               }
             }
+
 
             this.print("Registered " + registryEquipment.size() + " equips.");
           } catch (final IOException | CsvException e) {
@@ -757,7 +794,7 @@ public class DragoonModifier {
     }
 
     for(final var entry : registryEquipment.entrySet()) {
-      print("Equip Registry: " + entry.getKey());
+      this.print("Equip Registry: " + entry.getKey());
     }
   }
 
@@ -775,78 +812,126 @@ public class DragoonModifier {
             list.removeFirst();
 
             for(final String[] item : list) {
-              //this.print("Registering: " + file.getName() + '/' + item[32]);
-              final int target = Integer.parseInt(item[0]);
-              final Set<Item.TargetType> targets = EnumSet.noneOf(Item.TargetType.class);
-              final Set<Item.UsageLocation> usage = EnumSet.noneOf(Item.UsageLocation.class);
-
-              if((target & 0x2) != 0) {
-                targets.add(Item.TargetType.ALL);
-              }
-
-              if((target & 0x4) != 0) {
-                targets.add(Item.TargetType.ENEMIES);
-              } else {
-                targets.add(Item.TargetType.ALLIES);
-              }
-
-              if((target & 0x10) != 0) {
-                usage.add(Item.UsageLocation.MENU);
-              }
-
-              usage.add(Item.UsageLocation.BATTLE);
-
-              final Item dmItem = new FileBasedItem(
-                Integer.parseInt(item[26]),
-                targets,
-                usage,
-                Element.fromFlag(Integer.parseInt(item[1])),
-                Integer.parseInt(item[2]),
-                Integer.parseInt(item[3]),
-                Integer.parseInt(item[4]),
-                Integer.parseInt(item[5]),
-                Integer.parseInt(item[6]),
-                Integer.parseInt(item[7]),
-                Integer.parseInt(item[8]),
-                Integer.parseInt(item[9]),
-                Integer.parseInt(item[10]),
-                Boolean.parseBoolean(item[11]),
-                Boolean.parseBoolean(item[12]),
-                Integer.parseInt(item[13]),
-                Integer.parseInt(item[14]),
-                Integer.parseInt(item[15]),
-                Integer.parseInt(item[16]),
-                Integer.parseInt(item[17]),
-                Integer.parseInt(item[18]),
-                Integer.parseInt(item[19]),
-                Integer.parseInt(item[20]),
-                Integer.parseInt(item[21]),
-                Integer.parseInt(item[22]),
-                Integer.parseInt(item[23]),
-                Integer.parseInt(item[24]),
-                Boolean.parseBoolean(item[25])
-              );
-
-              if(item[32].startsWith("lod")) {
-                if(file.getName().equals(GameEngine.CONFIG.getConfig(DIFFICULTY.get()))) {
-                  if(item[32].split(":")[1].length() >= 3) {
-                    registryItems.put(this.idCore(item[32].split(":")[1]), dmItem);
-                  }
-                }
-              } else {
-                if(file.getName().equals(GameEngine.CONFIG.getConfig(DIFFICULTY.get()))) {
-                  if(item[32].split(":")[1].length() >= 3) {
-                    registryItems.put(this.id(item[32].split(":")[1]), dmItem);
-                  }
-                }
-
-                if(event != null && item[32].split(":")[1].length() >= 3) {
+              if(file.getName().equals(GameEngine.CONFIG.getConfig(DIFFICULTY.get()))) {
+                if(item[35].split(":")[1].length() >= 3) {
                   try {
-                    event.register(this.id(item[32].split(":")[1]), dmItem);
-                  } catch(final DuplicateRegistryIdException ignored) {}
+                    final boolean targetAll = (Integer.parseInt(item[0]) & 0x2) != 0;
+                    final Item.TargetType targetType = ((Integer.parseInt(item[0]) & 0x4) != 0) ? Item.TargetType.ENEMIES : Item.TargetType.ALLIES;
+
+                    if(item[35].split(":")[1].length() >= 3) {
+                      switch(item[30]) {
+                        case "AttackItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new AttackItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Element.fromFlag(Integer.parseInt(item[1])).get(), Integer.parseInt(item[2])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new AttackItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Element.fromFlag(Integer.parseInt(item[1])).get(), Integer.parseInt(item[2])));
+                          break;
+                        case "AttackBallItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new AttackBallItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new AttackBallItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          break;
+                        case "HealingPotionItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new HealingPotionItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new HealingPotionItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          break;
+                        case "DepetrifierItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new DepetrifierItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), Integer.parseInt(item[21])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new DepetrifierItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), Integer.parseInt(item[21])));
+                          break;
+                        case "MindPurifierItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new MindPurifierItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), Integer.parseInt(item[21])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new MindPurifierItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), Integer.parseInt(item[21])));
+                          break;
+                        case "BodyPurifierItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new BodyPurifierItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), Integer.parseInt(item[21])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new BodyPurifierItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), Integer.parseInt(item[21])));
+                          break;
+                        case "SpiritPotionItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new SpiritPotionItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new SpiritPotionItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          break;
+                        case "CauseStatusItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new CauseStatusItem(Integer.parseInt(item[33]), Integer.parseInt(item[20]), Integer.parseInt(item[26]), Integer.parseInt(item[22])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new CauseStatusItem(Integer.parseInt(item[33]), Integer.parseInt(item[20]), Integer.parseInt(item[26]), Integer.parseInt(item[22])));
+                          break;
+                        case "TotalVanishingItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new TotalVanishingItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new TotalVanishingItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          break;
+                        case "AngelsPrayerItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new AngelsPrayerItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new AngelsPrayerItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          break;
+                        case "CharmPotionItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new CharmPotionItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new CharmPotionItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          break;
+                        case "PandemoniumItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new PandemoniumItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new PandemoniumItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          break;
+                        case "RecoveryBallItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new RecoveryBallItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new RecoveryBallItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          break;
+                        case "ShieldItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new ShieldItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), Integer.parseInt(item[34]), Boolean.parseBoolean(item[11]), Boolean.parseBoolean(item[12])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new ShieldItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), Integer.parseInt(item[34]), Boolean.parseBoolean(item[11]), Boolean.parseBoolean(item[12])));
+                          break;
+                        case "SunRhapsodyItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new SunRhapsodyItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new SunRhapsodyItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          break;
+                        case "SmokeBallItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new SmokeBallItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new SmokeBallItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          break;
+                        case "HealingFogItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new HealingFogItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new HealingFogItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          break;
+                        case "SignetStoneItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new SignetStoneItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new SignetStoneItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          break;
+                        case "HealingRainItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new HealingRainItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new HealingRainItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          break;
+                        case "MoonSerenadeItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new MoonSerenadeItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new MoonSerenadeItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          break;
+                        case "BuffItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new BuffItem(Integer.parseInt(item[34]), Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetType, Integer.parseInt(item[3]), Integer.parseInt(item[4]), Integer.parseInt(item[5]), Integer.parseInt(item[6]), Integer.parseInt(item[7]), Integer.parseInt(item[8]), Integer.parseInt(item[9]), Integer.parseInt(item[10]), Boolean.parseBoolean(item[11]), Boolean.parseBoolean(item[12]), Integer.parseInt(item[13]), Integer.parseInt(item[14]), Integer.parseInt(item[15]), Integer.parseInt(item[16]), Integer.parseInt(item[17]), Integer.parseInt(item[18])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new BuffItem(Integer.parseInt(item[34]), Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetType, Integer.parseInt(item[3]), Integer.parseInt(item[4]), Integer.parseInt(item[5]), Integer.parseInt(item[6]), Integer.parseInt(item[7]), Integer.parseInt(item[8]), Integer.parseInt(item[9]), Integer.parseInt(item[10]), Boolean.parseBoolean(item[11]), Boolean.parseBoolean(item[12]), Integer.parseInt(item[13]), Integer.parseInt(item[14]), Integer.parseInt(item[15]), Integer.parseInt(item[16]), Integer.parseInt(item[17]), Integer.parseInt(item[18])));
+                          break;
+                        case "SachetItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new SmokeBallItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new SmokeBallItem(Integer.parseInt(item[20]), Integer.parseInt(item[26])));
+                          break;
+                        case "HealingBreezeItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new HealingBreezeItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new HealingBreezeItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          break;
+                        case "PsycheBombXItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new PsycheBombXItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Element.fromFlag(Integer.parseInt(item[1])).get(), Integer.parseInt(item[22])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new PsycheBombXItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Element.fromFlag(Integer.parseInt(item[1])).get(), Integer.parseInt(item[22])));
+                          break;
+                        case "MenuHealingItem":
+                          DRAMOD_ITEM_REGISTRAR.register(item[35].split(":")[1], () -> new MenuHealingItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          registryItems.put(item[35].startsWith("lod") ? (this.idCore(item[35].split(":")[1])) : (this.id(item[35].split(":")[1])), new MenuHealingItem(Integer.parseInt(item[20]), Integer.parseInt(item[26]), targetAll, Integer.parseInt(item[22])));
+                          break;
+                        default:
+                          throw new Exception("Invalid item type found: " + item[30]);
+                      }
+                    }
+                  } catch(final DuplicateRegistryIdException ignored) {
+                  } catch(final Exception e) {
+                    throw new RuntimeException(e);
+                  }
                 }
               }
             }
+
 
             this.print("Registered " + registryItems.size() + " items.");
           } catch (final IOException | CsvException e) {
@@ -855,6 +940,8 @@ public class DragoonModifier {
         }
       }
     }
+
+    DRAMOD_ITEM_REGISTRAR.registryEvent(event);
 
     for(final var entry : registryItems.entrySet()) {
       this.print("Item Registry: " + entry.getKey());
@@ -935,7 +1022,7 @@ public class DragoonModifier {
       event._1a = update._1a;
       event.onHitStatus_1b = update.onHitStatus_1b;
     } else {
-      print("NULL EQUIPMENT FOUND DOES NOT EXIST IN DRAMOD REGISTRY: " + event.equipment.getRegistryId());
+      this.print("NULL EQUIPMENT FOUND DOES NOT EXIST IN DRAMOD REGISTRY: " + event.equipment.getRegistryId());
     }
   }
   //endregion
@@ -954,7 +1041,8 @@ public class DragoonModifier {
     }*/
   }
 
-  @EventListener public void battleDescription(final BattleDescriptionEvent event) {
+  /* TODO Combat description events
+   @EventListener public void battleDescription(final BattleDescriptionEvent event) {
     this.print("Description: " + event.textType + '/' + event.textIndex);
     if(event.textType == 4) {
       if(selectedItemId > -1) {
@@ -962,7 +1050,7 @@ public class DragoonModifier {
       }
     }
     lastSelectedMenuType = event.textType;
-  }
+  }*/
 
 /*
   @EventListener public void temporaryItemStats(final TemporaryItemStatsEvent event) {
@@ -1053,10 +1141,10 @@ public class DragoonModifier {
     event.attackAvoid = Integer.parseInt(monsterStats.get(ovrId)[8]);
     event.magicAvoid = Integer.parseInt(monsterStats.get(ovrId)[9]);
     event.specialEffectFlag = Integer.parseInt(monsterStats.get(ovrId)[10]);
-    event.elementFlag = Element.fromFlag(Integer.parseInt(monsterStats.get(ovrId)[12]));
+    event.elementFlag = Element.fromFlag(Integer.parseInt(monsterStats.get(ovrId)[12])).get();
     event.elementalImmunityFlag.clear();
     if(Integer.parseInt(monsterStats.get(ovrId)[13]) > 0)
-      event.elementalImmunityFlag.add(Element.fromFlag(Integer.parseInt(monsterStats.get(ovrId)[13])));
+      event.elementalImmunityFlag.add(Element.fromFlag(Integer.parseInt(monsterStats.get(ovrId)[13])).get());
     event.statusResistFlag = Integer.parseInt(monsterStats.get(ovrId)[14]);
   }
 
@@ -1484,12 +1572,11 @@ public class DragoonModifier {
               monster.attackAvoid_40 = Integer.parseInt(ultimateData.get(x)[8]);
               monster.magicAvoid_42 = Integer.parseInt(ultimateData.get(x)[9]);
               monster.specialEffectFlag_14 = Integer.parseInt(ultimateData.get(x)[10]);
-              monster.monsterElement_72 = Element.fromFlag(Integer.parseInt(ultimateData.get(x)[12]));
-              monster.displayElement_1c = Element.fromFlag(Integer.parseInt(ultimateData.get(x)[12]));
+              monster.element = Element.fromFlag(Integer.parseInt(ultimateData.get(x)[12])).get();
               monster.equipmentStatusResist_24 = Integer.parseInt(ultimateData.get(x)[13]);
               monster.monsterElementalImmunity_74.clear();
               if(Integer.parseInt(ultimateData.get(x)[13]) > 0)
-                monster.monsterElementalImmunity_74.add(Element.fromFlag(Integer.parseInt(ultimateData.get(x)[13])));
+                monster.monsterElementalImmunity_74.add(Element.fromFlag(Integer.parseInt(ultimateData.get(x)[13])).get());
               monster.monsterStatusResistFlag_76 = Integer.parseInt(ultimateData.get(x)[14]);
               break;
             }
@@ -1684,8 +1771,7 @@ public class DragoonModifier {
         this.elementalBombTurns[monster.charSlot_276] -= 1;
 
         if(this.elementalBombTurns[monster.charSlot_276] == 0) {
-          monster.displayElement_1c = this.elementalBombPreviousElement[monster.charSlot_276];
-          monster.monsterElement_72 = this.elementalBombPreviousElement[monster.charSlot_276];
+          monster.element = this.elementalBombPreviousElement[monster.charSlot_276];
         }
       }
     }
@@ -1728,7 +1814,7 @@ public class DragoonModifier {
               event.damage *= 1.5;
             }
           } else {
-            if(player.element == Element.fromFlag(0x80) && ((Battle)currentEngineState_8004dd04).dragoonSpaceElement_800c6b64 == Element.fromFlag(0x8)) { //Divine Dart special physical boost
+            if(player.element == Element.fromFlag(0x80).get() && ((Battle)currentEngineState_8004dd04).dragoonSpaceElement_800c6b64 == Element.fromFlag(0x8).get()) { //Divine Dart special physical boost
               if("dragoon_modifier:firebrand".equals(player.equipment_11e.get(EquipmentSlot.WEAPON).getRegistryId().toString())) {
                 event.damage *= 1.1; //TODO this doesn't seem right
               } else {
@@ -1945,7 +2031,7 @@ public class DragoonModifier {
                 }
               } else {
                 try {
-                  final int damage = event.attacker.spell_94.element_08.adjustDragoonSpaceDamage(event.attackType, event.damage, this.ringOfElementsElement[i]);
+                  final int damage = event.attacker.spell_94.element_08.get().adjustDragoonSpaceDamage(event.attackType, event.damage, this.ringOfElementsElement[i]);
                   if(damage != event.damage) {
                     event.damage = damage;
                   }
@@ -1964,7 +2050,7 @@ public class DragoonModifier {
 
         if(event.defender instanceof final MonsterBattleEntity monster) { //Haschel in party thunder charge
           try {
-            if(event.attacker.spell_94.element_08 == THUNDER_ELEMENT.get() && new Random().nextBoolean()) {
+            if(event.attacker.spell_94.element_08.get() == THUNDER_ELEMENT.get() && new Random().nextBoolean()) {
               this.thunderCharge[monster.charSlot_276] = Math.min(10, this.thunderCharge[monster.charSlot_276] + 1);
             }
           } catch (final Exception ignored) {}
@@ -2076,7 +2162,7 @@ public class DragoonModifier {
           } catch (final Exception ignored) {}
 
           if(attackElement == null) {
-            attackElement = event.attacker.spell_94.element_08;
+            attackElement = event.attacker.spell_94.element_08.get();
           }
 
           //Divine Dragon Armor 15% elemental reduction instead of half
@@ -2343,8 +2429,7 @@ public class DragoonModifier {
               final Element swapTo = player.item_d4.getAttackElement();
               this.elementalBombPreviousElement[monster.charSlot_276] = monster.getElement();
               this.elementalBombTurns[monster.charSlot_276] = 5;
-              monster.monsterElement_72 = swapTo;
-              monster.displayElement_1c = swapTo;
+              monster.element = swapTo;
             }
           }
           //}
@@ -2434,14 +2519,14 @@ public class DragoonModifier {
       transforms.transfer.set(event.charSlot * 94 + 16, 226.0, 124.0f);
       transforms.scaling(92.0f, 12.0f, 1.0f);
       RENDERER
-        .queueOrthoModel(RENDERER.opaqueQuad, transforms)
+        .queueOrthoModel(RENDERER.opaqueQuad, transforms, QueuedModelStandard.class)
         .screenspaceOffset(0.0f, 0.0f)
         .monochrome(0.0f);
 
       transforms.transfer.set(event.charSlot * 94 + 16, 226.0, 120.0f);
       transforms.scaling(92.0f * burn, 12.0f, 1.0f);
       RENDERER
-        .queueOrthoModel(RENDERER.opaqueQuad, transforms)
+        .queueOrthoModel(RENDERER.opaqueQuad, transforms, QueuedModelStandard.class)
         .screenspaceOffset(0.0f, 0.0f)
         .colour(1.0f, 0.0f, 0.0f);
 
@@ -2460,14 +2545,14 @@ public class DragoonModifier {
           transforms.transfer.set(player.charSlot_276 * 94 + 16, 226.0, 124.0f);
           transforms.scaling(92.0f, 12.0f, 1.0f);
           RENDERER
-            .queueOrthoModel(RENDERER.opaqueQuad, transforms)
+            .queueOrthoModel(RENDERER.opaqueQuad, transforms, QueuedModelStandard.class)
             .screenspaceOffset(0.0f, 0.0f)
             .monochrome(0.0f);
 
           transforms.transfer.set(player.charSlot_276 * 94 + 16, 226.0, 120.0f);
           transforms.scaling(92.0f * wind, 12.0f, 1.0f);
           RENDERER
-            .queueOrthoModel(RENDERER.opaqueQuad, transforms)
+            .queueOrthoModel(RENDERER.opaqueQuad, transforms, QueuedModelStandard.class)
             .screenspaceOffset(0.0f, 0.0f)
             .colour(0.0f, 1.0f, 0.0f);
 
@@ -2478,14 +2563,14 @@ public class DragoonModifier {
           transforms.transfer.set(player.charSlot_276 * 94 + 16, 226.0, 124.0f);
           transforms.scaling(92.0f, 12.0f, 1.0f);
           RENDERER
-            .queueOrthoModel(RENDERER.opaqueQuad, transforms)
+            .queueOrthoModel(RENDERER.opaqueQuad, transforms, QueuedModelStandard.class)
             .screenspaceOffset(0.0f, 0.0f)
             .monochrome(0.0f);
 
           transforms.transfer.set(player.charSlot_276 * 94 + 16, 226.0, 120.0f);
           transforms.scaling(92.0f * thunder, 12.0f, 1.0f);
           RENDERER
-            .queueOrthoModel(RENDERER.opaqueQuad, transforms)
+            .queueOrthoModel(RENDERER.opaqueQuad, transforms, QueuedModelStandard.class)
             .screenspaceOffset(0.0f, 0.0f)
             .colour(0.63f, 0.0f, 1.0f);
 
@@ -2605,7 +2690,7 @@ public class DragoonModifier {
   }
 
   @EventListener public void shopType(final ShopTypeEvent event) {
-    event.shopType = "e".equals(shopItems.get(event.shopId)[0].substring(0, 1)) ? 0 : 1;
+    event.shopType = Integer.parseInt(shopItems.get(event.shopId)[16]);
   }
 
   @EventListener public void shopEquipment(final ShopEquipmentEvent event) {
@@ -2613,43 +2698,68 @@ public class DragoonModifier {
 
     for(int i = 0; i < 16; i++) {
       final String id = shopItems.get(event.shopId)[i];
-      if(!id.startsWith("N")) {
-        //TODO shopEvent
-        //final Equipment equipment = REGISTRIES.equipment.getEntry(equipmentIdMap.get(Integer.parseInt(id.substring(1)))).get();
-        //event.equipment.add(new ShopScreen.ShopEntry<>(equipment, equipment.getPrice() * 2));
+      if(!id.startsWith("Nothing")) {
+        final int icon;
+        final Equipment equip;
+
+        if(id.startsWith("lod")) {
+          equip = REGISTRIES.equipment.getEntry(id).get();
+          icon = this.getEquipFromRegistry(id).getIcon();
+        } else {
+          equip = this.getEquipFromRegistry(id);
+          icon = equip.getIcon();
+        }
+        event.equipment.add(new ShopScreen.ShopEntry<>(equip, equip.getPrice() * 2, icon));
       }
     }
   }
 
   @EventListener public void shopItem(final ShopItemEvent event) {
-    /*event.items.clear();
+    event.items.clear();
     for(int i = 0; i < 16; i++) {
       final String id = shopItems.get(event.shopId)[i];
-      if(!id.startsWith("N")) {
-        final Item item = REGISTRIES.items.getEntry(itemIdMap.get(Integer.parseInt(id.substring(1)))).get();
+      if(!id.startsWith("Nothing")) {
+        final int icon;
+        final Item item;
+
+        if(id.startsWith("lod")) {
+          item = REGISTRIES.items.getEntry(id).get();
+          icon = this.getItemFromRegistry(id).getIcon();
+        } else {
+          item = this.getItemFromRegistry(id);
+          icon = item.getIcon();
+        }
 
         if(event.shopId == 40) {
-          final int price = item.getPrice() * 2;
-          /*if(item.getName().equals("Spirit Potion")) { //TODO
+          int price = item.getPrice() * 2;
+          if("lod:spirt_potion".equals(item.getRegistryId().toString())) {
             price = 300;
-          } else if(item.getName().equals("Total Vanishing")) {
+          } else if("lod:total_vanishing".equals(item.getRegistryId().toString())) {
             price = 600;
-          } else if(item.getName().equals("Healing Rain")) {
+          } else if("lod:healing_rain".equals(item.getRegistryId().toString())) {
             price = 900;
-          }*/
-          /*event.items.add(new ShopScreen.ShopEntry<>(item, price));
+          }
+          event.items.add(new ShopScreen.ShopEntry<>(item, price, icon));
         } else if(event.shopId == 41) {
-          event.items.add(new ShopScreen.ShopEntry<>(item, 1000));
+          event.items.add(new ShopScreen.ShopEntry<>(item, 1000, icon));
         } else {
-          event.items.add(new ShopScreen.ShopEntry<>(item, item.getPrice() * 2));
+          event.items.add(new ShopScreen.ShopEntry<>(item, item.getPrice() * 2, icon));
         }
       }
-    }*/
+    }
   }
 
   /*@EventListener public void shopSellPrice(final ShopSellPriceEvent shopItem) {
     shopItem.price = Integer.parseInt(shopPrices.get(shopItem.itemId)[0]);
   }*/
+
+  @EventListener public void equipIcon(final EquipMenuEntryIconEvent event) {
+    event.icon = this.getEquipFromRegistry(event.equip.getRegistryId()).getIcon();
+  }
+
+  @EventListener public void itemIcon(final ItemMenuEntryIconEvent event) {
+    event.icon = this.getItemFromRegistry(event.item.getRegistryId()).getIcon();
+  }
 
   //endregion
 
@@ -2752,13 +2862,14 @@ public class DragoonModifier {
                   final BattleEntity27c bobj = playerstate.innerStruct_00;
                   if(bobj instanceof final PlayerBattleEntity player) {
                     if(player.isDragoon() && this.shanaRapidFireContinue[player.charSlot_276]) {
-                      if(scriptStatePtrArr_800bc1c0[i].offset_18 == 0x1d2) {
-                        scriptStatePtrArr_800bc1c0[i].offset_18 = 0x2050; //TODO not this lol
+                      //TODO not this lol
+                      /*if(scriptStatePtrArr_800bc1c0[i].offset_18 == 0x1d2) {
+                        scriptStatePtrArr_800bc1c0[i].offset_18 = 0x2050;
                         this.shanaRapidFireCount[player.charSlot_276]++;
                         if(this.shanaRapidFireCount[player.charSlot_276] == 2) {
                           this.shanaRapidFireContinue[player.charSlot_276] = false;
                         }
-                      }
+                      }*/
                       break;
                     }
                   }
@@ -3065,28 +3176,24 @@ public class DragoonModifier {
         if("Hard Mode".equals(difficulty) || "US + Hard Bosses".equals(difficulty) || "Hell Mode".equals(difficulty) || "Hard + Hell Bosses".equals(difficulty)) {
           if(gameState_800babc8.chapterIndex_98 >= 1) {
             Scus94491BpeSegment_8007.shopId_8007a3b4 = 42;
-            Scus94491BpeSegment_800b.whichMenu_800bdc38 = WhichMenu.INIT_SHOP_MENU_6;
-            Scus94491BpeSegment_800b.inventoryMenuState_800bdc28 = InventoryMenuState._9;
+            initMenu(WhichMenu.RENDER_NEW_MENU, ShopScreen::new);
           }
         }
       } else if(this.hotkey.contains(InputAction.BUTTON_NORTH) && this.hotkey.contains(InputAction.BUTTON_SHOULDER_LEFT_1)) {
         if("Hard Mode".equals(difficulty) || "US + Hard Bosses".equals(difficulty) || "Hell Mode".equals(difficulty) || "Hard + Hell Bosses".equals(difficulty)) {
           if(gameState_800babc8.chapterIndex_98 >= 1) {
             Scus94491BpeSegment_8007.shopId_8007a3b4 = 43;
-            Scus94491BpeSegment_800b.whichMenu_800bdc38 = WhichMenu.INIT_SHOP_MENU_6;
-            Scus94491BpeSegment_800b.inventoryMenuState_800bdc28 = InventoryMenuState._9;
+            initMenu(WhichMenu.RENDER_NEW_MENU, ShopScreen::new);
           }
         }
       } else if(this.hotkey.contains(InputAction.BUTTON_NORTH) && this.hotkey.contains(InputAction.BUTTON_SHOULDER_RIGHT_2)) {
         if(gameState_800babc8.chapterIndex_98 >= 1) {
           Scus94491BpeSegment_8007.shopId_8007a3b4 = 40;
-          Scus94491BpeSegment_800b.whichMenu_800bdc38 = WhichMenu.INIT_SHOP_MENU_6;
-          Scus94491BpeSegment_800b.inventoryMenuState_800bdc28 = InventoryMenuState._9;
+          initMenu(WhichMenu.RENDER_NEW_MENU, ShopScreen::new);
         }
       } else if(this.hotkey.contains(InputAction.BUTTON_NORTH) && this.hotkey.contains(InputAction.BUTTON_SHOULDER_LEFT_2)) {
         Scus94491BpeSegment_8007.shopId_8007a3b4 = 41;
-        Scus94491BpeSegment_800b.whichMenu_800bdc38 = WhichMenu.INIT_SHOP_MENU_6;
-        Scus94491BpeSegment_800b.inventoryMenuState_800bdc28 = InventoryMenuState._9;
+        initMenu(WhichMenu.RENDER_NEW_MENU, ShopScreen::new);
       }
     }
   }

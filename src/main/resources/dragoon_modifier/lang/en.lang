@@ -107,3 +107,4 @@ dragoon_modifier.equipment.protection_armor.description=Negates damage up\nto 50
 # Items
 dragoon_modifier.items.rock_fireflies.name=Rock Fireflies
 dragoon_modifier.items.rock_fireflies.description=Rarely found near\nRock Fireflies.\nGlows faintly.
+dragoon_modifier.items.rock_fireflies.battle_description=Recovers 100% HP for all
