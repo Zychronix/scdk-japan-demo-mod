@@ -24,10 +24,10 @@ public class DifficultyEntryConfig extends ConfigEntry<String> {
 
     this.setEditControl((current, gameState) -> {
       final Dropdown dropdown = new Dropdown();
-      final File[] modFolders = Path.of("./mods/csvstat/").toFile().listFiles(File::isDirectory);
+      final File[] modFolders = Path.of("./mods/dragoon_modifier/").toFile().listFiles(File::isDirectory);
       int i = 0;
-      for(File directory : modFolders) {
-        if(!directory.getName().equals("Ultimate")) {
+      for(final File directory : modFolders) {
+        if((!"Ultimate".equals(directory.getName()) && !"Damage Tracker".equals(directory.getName()) && !"scripts".equals(directory.getName()) && !"patches".equals(directory.getName()))) {
           dropdown.addOption(directory.getName());
           if(directory.getName().equals(gameState.getConfig(this))) {
             dropdown.setSelectedIndex(i);
