@@ -1,1 +1,4 @@
+@ParametersAreNonnullByDefault
 package lod.dragoonmodifier.configs;
+
+import javax.annotation.ParametersAreNonnullByDefault;
